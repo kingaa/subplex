@@ -1,3 +1,5 @@
+// Dear Emacs, treat this as -*- C++ -*-
+
 #include <R.h>
 #include <Rmath.h>
 #include <Rdefines.h>
@@ -33,25 +35,21 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, 
   SEXP ans, ansnames, X, Xnames, val, counts, conv, fn, arglist;
 
   n = LENGTH(x);
-  PROTECT(fn=f); nprotect++;
-  PROTECT(Xnames=GET_NAMES(x)); nprotect++;
-  x = AS_NUMERIC(x);
-  PROTECT(X = NEW_NUMERIC(n)); nprotect++; // for passing to subplx and return
-  PROTECT(_subplex_Xvec = NEW_NUMERIC(n)); nprotect++; // for internal use within subplex_objective
-  SET_NAMES(X,Xnames);
-  SET_NAMES(_subplex_Xvec,Xnames);
-  PROTECT(_subplex_envir=rho); nprotect++; // store the function's environment
-  PROTECT(arglist = CONS(_subplex_Xvec,args)); nprotect++; // prepend Xvec onto the argument list
-  PROTECT(_subplex_fcall = LCONS(fn,arglist)); nprotect++; // set up the function call
-  
-  tol = AS_NUMERIC(tol);
-  if ((LENGTH(tol) > 1) || (REAL(tol)[0] <= 0.0)) {
+  PROTECT(x = AS_NUMERIC(x)); nprotect++;
+
+  if (!isFunction(f)) {
     UNPROTECT(nprotect);
-    error("'tol' must be a positive scalar");
+    error("'f' must be a function");
   }
 
-  maxnfe = AS_INTEGER(maxnfe);
-  if (INTEGER(maxnfe)[0] <= 0) {
+  PROTECT(tol = AS_NUMERIC(tol)); nprotect++;
+  if ((LENGTH(tol) > 1) || (NUMERIC_VALUE(tol) < 0.0)) {
+    UNPROTECT(nprotect);
+    error("'tol' must be a non-negative scalar");
+  }
+
+  PROTECT(maxnfe = AS_INTEGER(maxnfe)); nprotect++;
+  if (INTEGER_VALUE(maxnfe) <= 0) {
     UNPROTECT(nprotect);
     error("'maxnfe' must be a positive integer");
   }
@@ -61,7 +59,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, 
     UNPROTECT(nprotect);
     error("'scale' misspecified: either specify a single scale or one for each component of 'par'");
   }
-  scale = AS_NUMERIC(scale);
+  PROTECT(scale = AS_NUMERIC(scale)); nprotect++;
   scalp = REAL(scale);
   if (nscal == 1) {
     scalp[0] = -fabs(scalp[0]);
@@ -69,6 +67,16 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, 
     for (k = 0; k < nscal; k++) scalp[k] = fabs(scalp[k]);
   }
 
+  PROTECT(fn=f); nprotect++;
+  PROTECT(Xnames=GET_NAMES(x)); nprotect++;
+  PROTECT(X = NEW_NUMERIC(n)); nprotect++; // for passing to subplx and return
+  PROTECT(_subplex_Xvec = NEW_NUMERIC(n)); nprotect++; // for internal use within subplex_objective
+  SET_NAMES(X,Xnames);
+  SET_NAMES(_subplex_Xvec,Xnames);
+  PROTECT(_subplex_envir=rho); nprotect++; // store the function's environment
+  PROTECT(arglist = CONS(_subplex_Xvec,args)); nprotect++; // prepend Xvec onto the argument list
+  PROTECT(_subplex_fcall = LCONS(fn,arglist)); nprotect++; // set up the function call
+  
   PROTECT(val = NEW_NUMERIC(1)); nprotect++;
   PROTECT(counts = NEW_INTEGER(1)); nprotect++;
   PROTECT(conv = NEW_INTEGER(1)); nprotect++;
@@ -88,7 +96,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, 
   F77_CALL(subplx)(subplex_objective,&n,REAL(tol),INTEGER(maxnfe),&mode,scalp,Xp,REAL(val),INTEGER(counts),
 		   work,iwork,INTEGER(conv));
 
-  if (INTEGER(conv)[0] == -2) {
+  if (INTEGER_VALUE(conv) == -2) {
     UNPROTECT(nprotect);
     error("illegal input in subplex");
   }
