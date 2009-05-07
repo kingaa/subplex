@@ -24,47 +24,74 @@ static double subplex_objective (int *n, double *x)
   return retval;
 }
 
-SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho) 
+SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, SEXP args) 
 {
   int nprotect = 0;
   double *work, *scalp, *xp, *Xp;
   int n, *iwork, mode = 0;
   int k, nscal;
-  SEXP ans, ansnames, X, Xnames, val, counts, conv, fn;
+  SEXP ans, ansnames, X, Xnames, val, counts, conv, fn, arglist;
 
-  n = GET_LENGTH(x);
+  n = LENGTH(x);
   PROTECT(fn=f); nprotect++;
   PROTECT(Xnames=GET_NAMES(x)); nprotect++;
-  PROTECT(X = NEW_NUMERIC(n)); nprotect++; // for returning
+  x = AS_NUMERIC(x);
+  PROTECT(X = NEW_NUMERIC(n)); nprotect++; // for passing to subplx and return
   PROTECT(_subplex_Xvec = NEW_NUMERIC(n)); nprotect++; // for internal use within subplex_objective
   SET_NAMES(X,Xnames);
   SET_NAMES(_subplex_Xvec,Xnames);
   PROTECT(_subplex_envir=rho); nprotect++; // store the function's environment
-  PROTECT(_subplex_fcall = lang2(fn,_subplex_Xvec)); nprotect++; // set up the function call
+  PROTECT(arglist = CONS(_subplex_Xvec,args)); nprotect++; // prepend Xvec onto the argument list
+  PROTECT(_subplex_fcall = LCONS(fn,arglist)); nprotect++; // set up the function call
+  
+  tol = AS_NUMERIC(tol);
+  if ((LENGTH(tol) > 1) || (REAL(tol)[0] <= 0.0)) {
+    UNPROTECT(nprotect);
+    error("'tol' must be a positive scalar");
+  }
 
-  xp = REAL(x); Xp = REAL(X);
-  for (k = 0; k < n; k++) Xp[k] = xp[k]; // copy in the initial guess vector
+  maxnfe = AS_INTEGER(maxnfe);
+  if (INTEGER(maxnfe)[0] <= 0) {
+    UNPROTECT(nprotect);
+    error("'maxnfe' must be a positive integer");
+  }
 
-  // the following memory allocation is based on an interpretation of the subplex documentation
-  if (!(work = (double *) R_alloc(n*(n+6)+1,sizeof(double))))
-    error("'par' too large, insufficient memory available");
-  if (!(iwork = (int *) R_alloc(2*n,sizeof(int))))
-    error("'par' too large, insufficient memory available");
-
-  nscal = GET_LENGTH(scale);
+  nscal = LENGTH(scale);
+  if ((nscal > 1) && (nscal != n)) {
+    UNPROTECT(nprotect);
+    error("'scale' misspecified: either specify a single scale or one for each component of 'par'");
+  }
+  scale = AS_NUMERIC(scale);
   scalp = REAL(scale);
   if (nscal == 1) {
     scalp[0] = -fabs(scalp[0]);
   } else {
     for (k = 0; k < nscal; k++) scalp[k] = fabs(scalp[k]);
   }
-  
+
   PROTECT(val = NEW_NUMERIC(1)); nprotect++;
   PROTECT(counts = NEW_INTEGER(1)); nprotect++;
   PROTECT(conv = NEW_INTEGER(1)); nprotect++;
 
+  // the following memory allocation is based on an interpretation of the subplex documentation
+  if (
+      !(work = (double *) R_alloc(n*(n+6)+1,sizeof(double))) ||
+      !(iwork = (int *) R_alloc(2*n,sizeof(int)))
+      ) {
+    UNPROTECT(nprotect);
+    error("'par' too large, insufficient memory available");
+  }
+
+  xp = REAL(x); Xp = REAL(X);
+  for (k = 0; k < n; k++) Xp[k] = xp[k]; // copy in the initial guess vector
+
   F77_CALL(subplx)(subplex_objective,&n,REAL(tol),INTEGER(maxnfe),&mode,scalp,Xp,REAL(val),INTEGER(counts),
 		   work,iwork,INTEGER(conv));
+
+  if (INTEGER(conv)[0] == -2) {
+    UNPROTECT(nprotect);
+    error("illegal input in subplex");
+  }
 
   PROTECT(ansnames = NEW_CHARACTER(4)); nprotect++;
   SET_STRING_ELT(ansnames,0,mkChar("par"));
