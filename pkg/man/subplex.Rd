@@ -30,7 +30,7 @@ subplex(par, fn, tol = sqrt(.Machine$double.eps), maxnfe = 10000,
 rosen <- function (x) {   ## Rosenbrock Banana function
   x1 <- x['a']
   x2 <- x['b']
-  100 * (x2 - x1 * x1)^2 + (1 - x1)^2
+  100*(x2-x1*x1)^2+(1-x1)^2
 }
 subplex(par=c(a=11,b=-33),fn=rosen)
 rosen2 <- function (x) {
