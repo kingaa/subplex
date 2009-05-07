@@ -2,9 +2,9 @@
 #include <Rmath.h>
 #include <Rdefines.h>
 
-SEXP Xvec;
-SEXP subplex_envir;
-SEXP R_fcall;
+SEXP _subplex_Xvec;
+SEXP _subplex_envir;
+SEXP _subplex_fcall;
 
 void F77_NAME(subplx) (double (*f)(int *n, double *x), int *n, double *tol, int *maxnfe, int *mode,
 		       double *scale, double *x, double *fx, int *nfe, double *work, int *iwork, 
@@ -17,9 +17,9 @@ static double subplex_objective (int *n, double *x)
   int k;
   SEXP ans;
   R_CheckUserInterrupt();
-  xp = REAL(Xvec);
+  xp = REAL(_subplex_Xvec);
   for (k = 0; k < *n; k++) xp[k] = x[k];
-  PROTECT(ans = eval(R_fcall,subplex_envir)); nprotect++;
+  PROTECT(ans = eval(_subplex_fcall,_subplex_envir)); nprotect++;
   retval = REAL(ans)[0];
   UNPROTECT(nprotect);
   return retval;
@@ -34,21 +34,21 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho)
   SEXP ans, ansnames, X, Xnames, val, counts, conv, fn;
 
   n = GET_LENGTH(x);
-  PROTECT(subplex_envir=rho); nprotect++;
+  PROTECT(_subplex_envir=rho); nprotect++;
   PROTECT(fn=f); nprotect++;
   PROTECT(Xnames=GET_NAMES(x)); nprotect++;
   PROTECT(X = NEW_NUMERIC(n)); nprotect++; // for returning
-  PROTECT(Xvec = NEW_NUMERIC(n)); nprotect++; // for internal use within subplex_objective
+  PROTECT(_subplex_Xvec = NEW_NUMERIC(n)); nprotect++; // for internal use within subplex_objective
   SET_NAMES(X,Xnames);
-  SET_NAMES(Xvec,Xnames);
-  PROTECT(R_fcall = lang2(fn,Xvec)); nprotect++;
+  SET_NAMES(_subplex_Xvec,Xnames);
+  PROTECT(_subplex_fcall = lang2(fn,_subplex_Xvec)); nprotect++;
 
   xp = REAL(x); Xp = REAL(X);
   for (k = 0; k < n; k++) Xp[k] = xp[k];
 
   // the following memory allocation is based on an interpretation of the subplex documentation
   work = (double *) R_alloc(n*(n+6)+1,sizeof(double));
-  iwork = (int *) R_alloc(2*n,sizeof(int));
+  iwork = (int *) R_alloc(2*n+1,sizeof(int));
 
   nscal = GET_LENGTH(scale);
   scalp = REAL(scale);
