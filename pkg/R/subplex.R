@@ -7,7 +7,6 @@ subplex <- function (par, fn, control = list(), hessian = FALSE, ...) {
               )
   namc <- names(control)[names(control)%in%names(con)]
   con[namc] <- control[namc]
-  print(con)
   .Call(
         "call_subplex",
         par,

@@ -42,28 +42,28 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
 
   if (!isFunction(f)) {
     UNPROTECT(nprotect);
-    error("'f' must be a function");
+    error("`f' must be a function");
   }
 
   // check the convergence tolerance, tol
   PROTECT(tol = AS_NUMERIC(tol)); nprotect++;
   if ((LENGTH(tol) > 1) || (NUMERIC_VALUE(tol) < 0.0)) {
     UNPROTECT(nprotect);
-    error("'tol' must be a non-negative scalar");
+    error("`reltol' must be a non-negative scalar");
   }
 
   // check the maximum number of function evaluations, maxnfe
   PROTECT(maxnfe = AS_INTEGER(maxnfe)); nprotect++;
   if (INTEGER_VALUE(maxnfe) <= 0) {
     UNPROTECT(nprotect);
-    error("'maxnfe' must be a positive integer");
+    error("`maxit' must be a positive integer");
   }
 
   // process the scale and first step parameters, scale
   nscal = LENGTH(scale);
   if ((nscal > 1) && (nscal != n)) {
     UNPROTECT(nprotect);
-    error("'scale' misspecified: either specify a single scale or one for each component of 'par'");
+    error("`parscale' misspecified: either specify a single scale or one for each component of `par'");
   }
   PROTECT(scale = AS_NUMERIC(scale)); nprotect++;
   scalp = REAL(scale);
@@ -76,8 +76,8 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   PROTECT(hess = AS_LOGICAL(hessian)); nprotect++;
   hess_reqd = LOGICAL_VALUE(hess);
 
-  PROTECT(fn=f); nprotect++;
-  PROTECT(Xnames=GET_NAMES(x)); nprotect++; // get the names attribute
+  PROTECT(fn = f); nprotect++;
+  PROTECT(Xnames = GET_NAMES(x)); nprotect++; // get the names attribute
   PROTECT(X = NEW_NUMERIC(n)); nprotect++; // allocate a vector for passing to subplx and holding the return values
   PROTECT(_subplex_Xvec = NEW_NUMERIC(n)); nprotect++; // for internal use
   SET_NAMES(X,Xnames); // make sure the names attribute is copied to the return vector
@@ -98,7 +98,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
       !(iwork = (int *) R_alloc(2*n,sizeof(int)))
       ) {
     UNPROTECT(nprotect);
-    error("'par' too long, insufficient memory available");
+    error("`par' too long, insufficient memory available");
   }
 
   xp = REAL(x); Xp = REAL(X);
@@ -116,7 +116,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
     PROTECT(message = NEW_CHARACTER(1)); nprotect++;
     switch (INTEGER_VALUE(conv)) {
     case -1:
-      SET_STRING_ELT(message,0,mkChar("number of function evaluations exceeds `maxnfe'"));
+      SET_STRING_ELT(message,0,mkChar("number of function evaluations exceeds `maxit'"));
       break;
     case 1:
       SET_STRING_ELT(message,0,mkChar("limit of machine precision reached"));
