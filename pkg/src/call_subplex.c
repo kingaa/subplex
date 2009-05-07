@@ -41,13 +41,6 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho)
   PROTECT(subplex_envir=rho); nprotect++;
   PROTECT(subplex_obj_fn=f); nprotect++;
   PROTECT(subplex_X_names=GET_NAMES(x)); nprotect++;
-  PROTECT(ans = NEW_LIST(4)); nprotect++;
-  PROTECT(ansnames = NEW_CHARACTER(4)); nprotect++;
-  SET_ELEMENT(ansnames,0,mkChar("par"));
-  SET_ELEMENT(ansnames,1,mkChar("value"));
-  SET_ELEMENT(ansnames,2,mkChar("counts"));
-  SET_ELEMENT(ansnames,3,mkChar("convergence"));
-  SET_NAMES(ans,ansnames);
   PROTECT(X = NEW_NUMERIC(n)); nprotect++;
   SET_NAMES(X,subplex_X_names);
 
@@ -78,10 +71,17 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho)
   INTEGER(counts)[0] = nfe;
   PROTECT(conv = NEW_INTEGER(1)); nprotect++;
   INTEGER(conv)[0] = iflag;
-  SET_ELEMENT(ans,0,X);
-  SET_ELEMENT(ans,1,val);
-  SET_ELEMENT(ans,2,counts);
-  SET_ELEMENT(ans,3,conv);
+  PROTECT(ans = NEW_LIST(4)); nprotect++;
+  PROTECT(ansnames = NEW_CHARACTER(4)); nprotect++;
+  SET_STRING_ELT(ansnames,0,mkChar("par"));
+  SET_STRING_ELT(ansnames,1,mkChar("value"));
+  SET_STRING_ELT(ansnames,2,mkChar("counts"));
+  SET_STRING_ELT(ansnames,3,mkChar("convergence"));
+  SET_NAMES(ans,ansnames);
+  SET_VECTOR_ELT(ans,0,X);
+  SET_VECTOR_ELT(ans,1,val);
+  SET_VECTOR_ELT(ans,2,counts);
+  SET_VECTOR_ELT(ans,3,conv);
 
 /*   if (inherits(func, "NativeSymbol"))  */
 /*     { */
