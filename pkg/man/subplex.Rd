@@ -31,6 +31,8 @@ subplex(par, fn, tol = .Machine$double.eps, maxnfe = 10000, scale = 1,
   \item{value}{Minimized value of the function.}
   \item{count}{Number of function evaluations required.}
   \item{convergence}{Convergence code (see Details).}
+  \item{message}{A character string giving a diagnostic message from the
+    optimizer, or 'NULL'.}
   \item{hessian}{Hessian matrix.}
 }
 \details{

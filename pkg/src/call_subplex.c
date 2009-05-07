@@ -18,7 +18,7 @@ void F77_NAME(subplx) (_subplex_objective_function *f, int *n, double *tol, int 
 		       double *scale, double *x, double *fx, int *nfe, double *work, int *iwork, 
 		       int *iflag);
 
-// these global objects will pass the needed information to the user-defined function
+// these global objects will pass the needed information to the user-defined function (see 'default_subplex_objective')
 SEXP _subplex_Xvec; // vector of arguments (allocated once, refilled many times)
 SEXP _subplex_envir;	  // environment in which function was defined
 SEXP _subplex_fcall;	      // function call (constructed just once)
@@ -29,11 +29,12 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   double *work = 0, *scalp, *xp, *Xp, eps, *hstep;
   int n, *iwork = 0, mode = 0;
   int k, nscal;
-  int do_hess;
+  int hess_reqd;
   _subplex_objective_function *objfn = default_subplex_objective;
   SEXP ans, ansnames;
   SEXP X, Xnames;
   SEXP val, counts, conv, fn, arglist, hess;
+  SEXP message = R_NilValue;
   SEXP H = R_NilValue, Hnames;
 
   n = LENGTH(x);
@@ -73,7 +74,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   }
 
   PROTECT(hess = AS_LOGICAL(hessian)); nprotect++;
-  do_hess = LOGICAL_VALUE(hess);
+  hess_reqd = LOGICAL_VALUE(hess);
 
   PROTECT(fn=f); nprotect++;
   PROTECT(Xnames=GET_NAMES(x)); nprotect++; // get the names attribute
@@ -89,8 +90,9 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   PROTECT(counts = NEW_INTEGER(1)); nprotect++;	// to count the number of function evaluations
   PROTECT(conv = NEW_INTEGER(1)); nprotect++; // to hold the convergence code
 
-  // the following memory allocation is based on an interpretation of the subplex documentation
-  // the memory *should* be reclaimed by R upon return from .Call
+  // ALERT: POTENTIAL BUG
+  // THE FOLLOWING MEMORY ALLOCATION IS BASED ON AN INTERPRETATION OF THE SUBPLEX DOCUMENTATION
+  // THE MEMORY *SHOULD* BE RECLAIMED BY R UPON RETURN FROM .CALL
   // I HAVE NOT VERIFIED THAT IT IS CORRECT.
   if (
       !(work = (double *) R_alloc(n*(n+6)+1,sizeof(double))) ||
@@ -111,35 +113,53 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
     error("illegal input in subplex");
   }
 
-  if (do_hess) {
+  if (INTEGER_VALUE(conv) != 0) {
+    PROTECT(message = NEW_CHARACTER(1)); nprotect++;
+    switch (INTEGER_VALUE(conv)) {
+    case -1:
+      SET_STRING_ELT(message,0,mkChar("number of function evaluations exceeds `maxnfe'"));
+      break;
+    case 1:
+      SET_STRING_ELT(message,0,mkChar("limit of machine precision reached"));
+      break;
+    case 2:
+      SET_STRING_ELT(message,0,mkChar("fstop reached"));
+      break;
+    }
+  }
+
+  if (hess_reqd) {	     // compute the Hessian matrix if required
     PROTECT(H = allocMatrix(REALSXP,n,n)); nprotect++;
     hstep = vect(n);
-    eps = pow(DOUBLE_EPS,1.0/3.0);
-    if (nscal == 1) {
+    eps = pow(DOUBLE_EPS,1.0/3.0); // scale with the cube-root of the machine precision
+    // ALERT: FEATURE IMPROVEMENT NEEDED
+    if (nscal == 1) { // THE DOUBLE USE OF 'scale' SHOULD PROBABLY BE REPLACED WITH 'ndeps' AS IN 'optim'
       for (k = 0; k < n; k++) hstep[k] = fabs(scalp[0])*eps;
     } else {
       for (k = 0; k < n; k++) hstep[k] = fabs(scalp[k])*eps;
     }
-    numer_hessian(objfn,Xp,hstep,REAL(H),n);
+    numer_hessian(objfn,Xp,hstep,REAL(H),n); // just a naive finite difference approach
     PROTECT(Hnames = allocVector(VECSXP,2)); nprotect++;
     SET_VECTOR_ELT(Hnames,0,Xnames);
     SET_VECTOR_ELT(Hnames,1,Xnames);
     SET_DIMNAMES(H,Hnames);
   }
 
-  PROTECT(ansnames = NEW_CHARACTER(5)); nprotect++;
+  PROTECT(ansnames = NEW_CHARACTER(6)); nprotect++;
   SET_STRING_ELT(ansnames,0,mkChar("par"));
   SET_STRING_ELT(ansnames,1,mkChar("value"));
   SET_STRING_ELT(ansnames,2,mkChar("counts"));
   SET_STRING_ELT(ansnames,3,mkChar("convergence"));
-  SET_STRING_ELT(ansnames,4,mkChar("hessian"));
-  PROTECT(ans = NEW_LIST(5)); nprotect++;
+  SET_STRING_ELT(ansnames,4,mkChar("message"));
+  SET_STRING_ELT(ansnames,5,mkChar("hessian"));
+  PROTECT(ans = NEW_LIST(6)); nprotect++;
   SET_NAMES(ans,ansnames);
   SET_VECTOR_ELT(ans,0,X);
   SET_VECTOR_ELT(ans,1,val);
   SET_VECTOR_ELT(ans,2,counts);
   SET_VECTOR_ELT(ans,3,conv);
-  SET_VECTOR_ELT(ans,4,H);
+  SET_VECTOR_ELT(ans,4,message);
+  SET_VECTOR_ELT(ans,5,H);
 
   UNPROTECT(nprotect);
   return ans;
