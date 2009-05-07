@@ -12,16 +12,15 @@ void F77_NAME(subplx) (double (*f)(int *n, double *x), int *n, double *tol, int 
 
 static double subplex_objective (int *n, double *x) 
 {
-  int nprotect = 0;
   double *xp, retval;
   int k;
   SEXP ans;
   R_CheckUserInterrupt();
   xp = REAL(_subplex_Xvec);
   for (k = 0; k < *n; k++) xp[k] = x[k];
-  PROTECT(ans = eval(_subplex_fcall,_subplex_envir)); nprotect++;
-  retval = REAL(ans)[0];
-  UNPROTECT(nprotect);
+  PROTECT(ans = eval(_subplex_fcall,_subplex_envir));
+  retval = NUMERIC_VALUE(ans);
+  UNPROTECT(1);
   return retval;
 }
 
@@ -34,21 +33,23 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho)
   SEXP ans, ansnames, X, Xnames, val, counts, conv, fn;
 
   n = GET_LENGTH(x);
-  PROTECT(_subplex_envir=rho); nprotect++;
   PROTECT(fn=f); nprotect++;
   PROTECT(Xnames=GET_NAMES(x)); nprotect++;
   PROTECT(X = NEW_NUMERIC(n)); nprotect++; // for returning
   PROTECT(_subplex_Xvec = NEW_NUMERIC(n)); nprotect++; // for internal use within subplex_objective
   SET_NAMES(X,Xnames);
   SET_NAMES(_subplex_Xvec,Xnames);
-  PROTECT(_subplex_fcall = lang2(fn,_subplex_Xvec)); nprotect++;
+  PROTECT(_subplex_envir=rho); nprotect++; // store the function's environment
+  PROTECT(_subplex_fcall = lang2(fn,_subplex_Xvec)); nprotect++; // set up the function call
 
   xp = REAL(x); Xp = REAL(X);
-  for (k = 0; k < n; k++) Xp[k] = xp[k];
+  for (k = 0; k < n; k++) Xp[k] = xp[k]; // copy in the initial guess vector
 
   // the following memory allocation is based on an interpretation of the subplex documentation
-  work = (double *) R_alloc(n*(n+6)+1,sizeof(double));
-  iwork = (int *) R_alloc(2*n+1,sizeof(int));
+  if (!(work = (double *) R_alloc(n*(n+6)+1,sizeof(double))))
+    error("'par' too large, insufficient memory available");
+  if (!(iwork = (int *) R_alloc(2*n,sizeof(int))))
+    error("'par' too large, insufficient memory available");
 
   nscal = GET_LENGTH(scale);
   scalp = REAL(scale);
