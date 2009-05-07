@@ -2,8 +2,8 @@ Package: subplex
 Version: 1.0-1
 Date: 2007-07-18
 Title: Subplex optimization algorithm
-Author: Rick Reeves, Aaron A. King
-Maintainer: Rick Reeves <reeves@nceas.ucsb.edu>
+Author: Aaron A. King, Rick Reeves
+Maintainer: Aaron A. King <kingaa@umich.edu>
 Depends: R (>= 2.0.1)
 Description: The subplex algorithm for unconstrained optimization, developed by Tom Rowan.
 License: GPL (version 2 or later)
