@@ -1,0 +1,7 @@
+useDynLib(subplex)
+export(subplex)
+
+
+
+
+
