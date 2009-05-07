@@ -5,7 +5,8 @@
   \code{subplex} minimizes a function.
 }
 \usage{
-subplex(par, fn, tol = .Machine$double.eps, maxnfe = 10000, scale = 1, \dots)
+subplex(par, fn, tol = .Machine$double.eps, maxnfe = 10000, scale = 1,
+        hessian = FALSE, \dots)
 }
 \arguments{
   \item{par}{Initial guess of the parameters to be optimized over.}
@@ -20,6 +21,8 @@ subplex(par, fn, tol = .Machine$double.eps, maxnfe = 10000, scale = 1, \dots)
     \code{par}.  This must either be a single scalar, in which case the
     same scale is used for all parameters, or a vector of length equal
     to the length of \code{par}.}
+  \item{hessian}{If \code{hessian=TRUE}, the Hessian of the objective at
+    the estimated optimum will be numerically computed.}
   \item{\dots}{Additional arguments to be passed to the function
     \code{fn}.}
 }
@@ -28,6 +31,7 @@ subplex(par, fn, tol = .Machine$double.eps, maxnfe = 10000, scale = 1, \dots)
   \item{value}{Minimized value of the function.}
   \item{count}{Number of function evaluations required.}
   \item{convergence}{Convergence code (see Details).}
+  \item{hessian}{Hessian matrix.}
 }
 \details{
   The convergence codes are as follows:
@@ -58,15 +62,15 @@ ripple <- function (x) {
   r <- sqrt(sum(x^2))
   1-exp(-r^2)*cos(10*r)^2
 }
-subplex(par=c(1),fn=ripple)
-subplex(par=c(0.1,3),fn=ripple)
-subplex(par=c(0.1,3,2),fn=ripple)
+subplex(par=c(1),fn=ripple,hessian=TRUE)
+subplex(par=c(0.1,3),fn=ripple,hessian=TRUE)
+subplex(par=c(0.1,3,2),fn=ripple,hessian=TRUE)
 rosen <- function (x, g = 0, h = 0) {   ## Rosenbrock Banana function (using names)
   x1 <- x['a']
   x2 <- x['b']-h
   100*(x2-x1*x1)^2+(1-x1)^2+g
 }
-subplex(par=c(b=11,a=-33),fn=rosen,h=22,tol=1e-9,scale=5)
+subplex(par=c(b=11,a=-33),fn=rosen,h=22,tol=1e-9,scale=5,hessian=TRUE)
 }
 \seealso{\code{\link{optim}}}
 \keyword{optimize}

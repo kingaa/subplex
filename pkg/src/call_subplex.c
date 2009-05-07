@@ -3,44 +3,38 @@
 #include <R.h>
 #include <Rmath.h>
 #include <Rdefines.h>
+#include <R_ext/Constants.h>
 
 typedef double _subplex_objective_function (int *, double *);
 
-SEXP call_subplex(SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, SEXP args);
+static double *vect(int n);
+static double default_subplex_objective(int *n, double *x);
+static void numer_deriv(_subplex_objective_function *f, const double *x, const double *h, double *Rf_df, int n);
+static void numer_hessian(_subplex_objective_function *f, const double *x, const double *h, double *d2f, int n);
+
+SEXP call_subplex(SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessian, SEXP rho, SEXP args);
+
 void F77_NAME(subplx) (_subplex_objective_function *f, int *n, double *tol, int *maxnfe, int *mode,
 		       double *scale, double *x, double *fx, int *nfe, double *work, int *iwork, 
 		       int *iflag);
-static double default_subplex_objective(int *n, double *x);
 
 // these global objects will pass the needed information to the user-defined function
 SEXP _subplex_Xvec; // vector of arguments (allocated once, refilled many times)
 SEXP _subplex_envir;	  // environment in which function was defined
 SEXP _subplex_fcall;	      // function call (constructed just once)
 
-// the wrapper around the user's objective function.
-// will be called by the Fortran routine "subplx".
-static double default_subplex_objective (int *n, double *x) 
-{
-  double *xp, retval;
-  int k;
-  SEXP ans;
-  R_CheckUserInterrupt();
-  xp = REAL(_subplex_Xvec);
-  for (k = 0; k < *n; k++) xp[k] = x[k]; // copy the values
-  PROTECT(ans = eval(_subplex_fcall,_subplex_envir)); // evaluate the call
-  retval = NUMERIC_VALUE(ans);	// extract the function value
-  UNPROTECT(1);
-  return retval;
-}
-
-SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, SEXP args) 
+SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessian, SEXP rho, SEXP args) 
 {
   int nprotect = 0;
-  double *work, *scalp, *xp, *Xp;
-  int n, *iwork, mode = 0;
+  double *work = 0, *scalp, *xp, *Xp, eps, *hstep;
+  int n, *iwork = 0, mode = 0;
   int k, nscal;
+  int do_hess;
   _subplex_objective_function *objfn = default_subplex_objective;
-  SEXP ans, ansnames, X, Xnames, val, counts, conv, fn, arglist;
+  SEXP ans, ansnames;
+  SEXP X, Xnames;
+  SEXP val, counts, conv, fn, arglist, hess;
+  SEXP H = R_NilValue, Hnames;
 
   n = LENGTH(x);
   PROTECT(x = AS_NUMERIC(x)); nprotect++;
@@ -78,6 +72,9 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, 
     for (k = 0; k < nscal; k++) scalp[k] = fabs(scalp[k]);
   }
 
+  PROTECT(hess = AS_LOGICAL(hessian)); nprotect++
+  do_hess = LOGICAL_VALUE(hess);
+
   PROTECT(fn=f); nprotect++;
   PROTECT(Xnames=GET_NAMES(x)); nprotect++; // get the names attribute
   PROTECT(X = NEW_NUMERIC(n)); nprotect++; // allocate a vector for passing to subplx and holding the return values
@@ -114,18 +111,94 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP rho, 
     error("illegal input in subplex");
   }
 
-  PROTECT(ansnames = NEW_CHARACTER(4)); nprotect++;
+  if (do_hess) {
+    PROTECT(H = allocMatrix(REALSXP,n,n)); nprotect++;
+    hstep = vect(n);
+    eps = pow(DOUBLE_EPS,1.0/3.0);
+    if (nscal == 1) {
+      for (k = 0; k < n; k++) hstep[k] = fabs(scalp[0])*eps;
+    } else {
+      for (k = 0; k < n; k++) hstep[k] = fabs(scalp[k])*eps;
+    }
+    numer_hessian(objfn,Xp,hstep,REAL(H),n);
+    PROTECT(Hnames = allocVector(VECSXP,2)); nprotect++;
+    SET_VECTOR_ELT(Hnames,0,Xnames);
+    SET_VECTOR_ELT(Hnames,1,Xnames);
+    SET_DIMNAMES(H,Hnames);
+  }
+
+  PROTECT(ansnames = NEW_CHARACTER(5)); nprotect++;
   SET_STRING_ELT(ansnames,0,mkChar("par"));
   SET_STRING_ELT(ansnames,1,mkChar("value"));
   SET_STRING_ELT(ansnames,2,mkChar("counts"));
   SET_STRING_ELT(ansnames,3,mkChar("convergence"));
-  PROTECT(ans = NEW_LIST(4)); nprotect++;
+  SET_STRING_ELT(ansnames,4,mkChar("hessian"));
+  PROTECT(ans = NEW_LIST(5)); nprotect++;
   SET_NAMES(ans,ansnames);
   SET_VECTOR_ELT(ans,0,X);
   SET_VECTOR_ELT(ans,1,val);
   SET_VECTOR_ELT(ans,2,counts);
   SET_VECTOR_ELT(ans,3,conv);
+  SET_VECTOR_ELT(ans,4,H);
 
   UNPROTECT(nprotect);
   return ans;
+}
+
+// the wrapper around the user's objective function.
+// will be called by the Fortran routine "subplx".
+static double default_subplex_objective (int *n, double *x) 
+{
+  double *xp, retval;
+  int k;
+  SEXP ans;
+  R_CheckUserInterrupt();
+  xp = REAL(_subplex_Xvec);
+  for (k = 0; k < *n; k++) xp[k] = x[k]; // copy the values
+  PROTECT(ans = eval(_subplex_fcall,_subplex_envir)); // evaluate the call
+  retval = NUMERIC_VALUE(ans);	// extract the function value
+  UNPROTECT(1);
+  return retval;
+}
+
+static double *vect (int n)
+{
+  return (double *) R_alloc(n,sizeof(double));
+}
+
+static void numer_deriv (_subplex_objective_function *f, const double *x, const double *h, double *df, int n)
+{
+  double *xx;
+  double fv1, fv2;
+  int i;
+  xx = vect(n);
+  for (i = 0; i < n; i++) xx[i] = x[i];
+  for (i = 0; i < n; i++) {
+    xx[i] = x[i] + h[i];
+    fv1 = f(&n,xx);
+    xx[i] = x[i] - h[i];
+    fv2 = f(&n,xx);
+    df[i] = (fv1-fv2)/(x[i]-xx[i])/2;
+    xx[i] = x[i];
+  }
+}
+
+static void numer_hessian (_subplex_objective_function *f, const double *x, const double *h, double *d2f, int n)
+{
+  double *xx;
+  double *df1, *df2;
+  int i, j;
+  xx = vect(n);
+  df1 = vect(n);
+  df2 = vect(n);
+  for (i = 0; i < n; i++) xx[i] = x[i];
+  for (i = 0; i < n; i++) {
+    xx[i] = x[i] + h[i];
+    numer_deriv(f,xx,h,df1,n);
+    xx[i] = x[i] - h[i];
+    numer_deriv(f,xx,h,df2,n);
+    for (j = 0; j < n; j++) 
+      d2f[i*n+j] = (df1[j]-df2[j])/(x[i]-xx[i])/2;
+    xx[i] = x[i];
+  }
 }
