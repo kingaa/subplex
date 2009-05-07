@@ -72,7 +72,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
     for (k = 0; k < nscal; k++) scalp[k] = fabs(scalp[k]);
   }
 
-  PROTECT(hess = AS_LOGICAL(hessian)); nprotect++
+  PROTECT(hess = AS_LOGICAL(hessian)); nprotect++;
   do_hess = LOGICAL_VALUE(hess);
 
   PROTECT(fn=f); nprotect++;
