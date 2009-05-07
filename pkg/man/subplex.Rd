@@ -61,12 +61,12 @@ ripple <- function (x) {
 subplex(par=c(1),fn=ripple)
 subplex(par=c(0.1,3),fn=ripple)
 subplex(par=c(0.1,3,2),fn=ripple)
-rosen <- function (x, f = 0, g = 0) {   ## Rosenbrock Banana function (using names)
+rosen <- function (x, g = 0, h = 0) {   ## Rosenbrock Banana function (using names)
   x1 <- x['a']
-  x2 <- x['b']-f
+  x2 <- x['b']-h
   100*(x2-x1*x1)^2+(1-x1)^2+g
 }
-subplex(par=c(b=11,a=-33),fn=rosen,f=22,tol=1e-9,scale=5)
+subplex(par=c(b=11,a=-33),fn=rosen,h=22,tol=1e-9,scale=5)
 }
 \seealso{\code{\link{optim}}}
 \keyword{optimize}
