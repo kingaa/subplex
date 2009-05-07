@@ -33,7 +33,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   _subplex_objective_function *objfn = default_subplex_objective;
   SEXP ans, ansnames;
   SEXP X, Xnames;
-  SEXP val, counts, conv, fn, arglist, hess;
+  SEXP val, counts, conv, fn, hess;
   SEXP message = R_NilValue;
   SEXP H = R_NilValue, Hnames;
 
@@ -83,8 +83,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   SET_NAMES(X,Xnames); // make sure the names attribute is copied to the return vector
   SET_NAMES(_subplex_Xvec,Xnames); // make sure the names attribute shows up in each call to the user function
   PROTECT(_subplex_envir=rho); nprotect++; // store the function's environment
-  PROTECT(arglist = CONS(_subplex_Xvec,args)); nprotect++; // prepend Xvec onto the argument list
-  PROTECT(_subplex_fcall = LCONS(fn,arglist)); nprotect++; // set up the function call
+  PROTECT(_subplex_fcall = LCONS(fn,LCONS(_subplex_Xvec,args))); nprotect++; // set up the function call
   
   PROTECT(val = NEW_NUMERIC(1)); nprotect++; // to hold the objective function value
   PROTECT(counts = NEW_INTEGER(1)); nprotect++;	// to count the number of function evaluations

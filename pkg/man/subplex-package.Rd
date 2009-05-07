@@ -2,7 +2,7 @@
 \docType{package}
 \alias{subplex-package}
 \title{Subplex unconstrained optimization algorithm}
-\description{The `subplex' package implements the subplex
+\description{The `subplex' package implements Tom Rowan's
   subspace-searching simplex algorithm for unconstrained minimization of
   a function.}
 \details{
@@ -23,5 +23,4 @@
   of Texas at Austin, 1990.}
 \author{Aaron A. King (kingaa at umich dot edu)}
 \seealso{\code{\link{subplex}}, \code{\link{optim}}}
-}
 \keyword{optimize}
