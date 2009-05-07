@@ -9,18 +9,33 @@ subplex(par, fn, tol = sqrt(.Machine$double.eps), maxnfe = 10000,
         scale = 1)
 }
 \arguments{
-  \item{par}{initial guess}
-  \item{fn}{function to be minimized}
-  \item{tol}{tolerance}
-  \item{maxnfe}{maximum number of function evaluations to perform before
-    giving up}
-  \item{scale}{sets the scale on the parameters}
+  \item{par}{Initial guess of the parameters to be optimized over.}
+  \item{fn}{The function to be minimized.  Its first argument must be
+    the vector of parameters to be optimized over.  It should return a
+    scalar result.}
+  \item{tol}{The relative optimization tolerance.  This must be a
+    positive number.}
+  \item{maxnfe}{Maximum number of function evaluations to perform before
+    giving up.}
+  \item{scale}{The scale and initial stepsizes for the components of
+    \code{par}.  This must either be a single scalar, in which case the
+    same scale is used for all parameters, or a vector of length equal
+    to the length of \code{par}.}
 }
 \value{
   \item{par}{Estimated parameters that minimize the function.}
   \item{value}{Minimized value of the function.}
   \item{count}{Number of function evaluations required.}
-  \item{convergence}{Convergence code (see below).}
+  \item{convergence}{Convergence code (see Details).}
+}
+\details{
+  The convergence codes are as follows:
+  \item{-2}{invalid input}
+  \item{-1}{number of function evaluations needed exceeds \code{maxnfe}}
+  \item{0}{success: tolerance \code{tol} satisfied}
+  \item{1}{limit of machine precision reached}
+  \item{2}{fstop reached.  Currently, the option to use fstop is not
+    implemented.}
 }
 \author{Aaron A. King \email{kingaa@umich.edu}}
 \references{T. Rowan, "Functional Stability Analysis of Numerical
@@ -28,11 +43,11 @@ subplex(par, fn, tol = sqrt(.Machine$double.eps), maxnfe = 10000,
   of Texas at Austin, 1990.}
 \examples{
 rosen <- function (x) {   ## Rosenbrock Banana function
-  x1 <- x['a']
-  x2 <- x['b']
+  x1 <- x[1]
+  x2 <- x[2]
   100*(x2-x1*x1)^2+(1-x1)^2
 }
-subplex(par=c(a=11,b=-33),fn=rosen)
+subplex(par=c(11,-33),fn=rosen)
 rosen2 <- function (x) {
   X <- matrix(x,ncol=2) 
   sum(apply(X,1,rosen))
