@@ -5,8 +5,7 @@
   \code{subplex} minimizes a function.
 }
 \usage{
-subplex(par, fn, tol = sqrt(.Machine$double.eps), maxnfe = 10000,
-        scale = 1)
+subplex(par, fn, tol = .Machine$double.eps, maxnfe = 10000, scale = 1)
 }
 \arguments{
   \item{par}{Initial guess of the parameters to be optimized over.}
@@ -59,6 +58,13 @@ ripple <- function (x) {
 }
 subplex(par=c(1),fn=ripple)
 subplex(par=c(0.1,3),fn=ripple)
+subplex(par=c(0.1,3,2),fn=ripple)
+rosen <- function (x) {   ## Rosenbrock Banana function (using names)
+  x1 <- x['a']
+  x2 <- x['b']
+  100*(x2-x1*x1)^2+(1-x1)^2
+}
+subplex(par=c(b=11,a=-33),fn=rosen)
 }
 \seealso{\code{\link{optim}}}
 \keyword{optimize}

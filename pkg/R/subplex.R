@@ -1,4 +1,4 @@
-subplex <- function (par, fn, tol = sqrt(.Machine$double.eps), maxnfe = 10000, scale = 1) {
+subplex <- function (par, fn, tol = .Machine$double.eps, maxnfe = 10000, scale = 1) {
   if (!is.numeric(par)) {
     nm <- names(par)
     par <- as.numeric(par)
