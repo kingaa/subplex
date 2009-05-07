@@ -14,7 +14,7 @@ subplex(par, fn, tol = sqrt(.Machine$double.eps), maxnfe = 10000,
   \item{tol}{tolerance}
   \item{maxnfe}{maximum number of function evaluations to perform before
     giving up}
-  \item{scale}{sets the scale on the parameters}.
+  \item{scale}{sets the scale on the parameters}
 }
 \value{
   \item{par}{Estimated parameters that minimize the function.}
