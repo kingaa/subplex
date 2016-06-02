@@ -1,0 +1,93 @@
+
+R version 3.3.0 (2016-05-03) -- "Supposedly Educational"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(subplex)
+> 
+> ripple <- function (x) {
++     r <- sqrt(sum(x^2))
++     1-exp(-r^2)*cos(10*r)^2
++ }
+> 
+> subplex(par=c(1),fn=ripple,hessian=TRUE)
+$par
+[1] 0
+
+$value
+[1] 0
+
+$counts
+[1] 157
+
+$convergence
+[1] 0
+
+$message
+NULL
+
+$hessian
+     [,1]
+[1,]  202
+
+> 
+> subplex(par=c(0.1,3),fn=ripple,hessian=TRUE)
+$par
+[1] -7.334164e-10  3.492460e-10
+
+$value
+[1] 0
+
+$counts
+[1] 323
+
+$convergence
+[1] 0
+
+$message
+NULL
+
+$hessian
+              [,1]          [,2]
+[1,]  2.020000e+02 -1.513864e-06
+[2,] -1.513864e-06  2.020000e+02
+
+> 
+> subplex(par=c(0.1,3,2),fn=ripple,hessian=TRUE)
+$par
+[1] 0.4593216 1.1039981 0.3440788
+
+$value
+[1] 0.7906068
+
+$counts
+[1] 435
+
+$convergence
+[1] 0
+
+$message
+NULL
+
+$hessian
+          [,1]     [,2]      [,3]
+[1,]  5.852392 14.06646  4.384038
+[2,] 14.066459 33.80930 10.537214
+[3,]  4.384038 10.53721  3.284092
+
+> 
+> proc.time()
+   user  system elapsed 
+  0.272   0.048   0.282 
