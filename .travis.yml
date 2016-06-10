@@ -1,14 +1,6 @@
-language: r
+language: R
 sudo: false
-
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then curl -O http://kingaa.github.io/scripts/mac-fortran.sh; sh mac-fortran.sh; rm -f mac-fortran.sh; fi
-
-r_github_packages:
-  - jimhester/covr
-
-after_success:
-  - Rscript -e 'covr::codecov()'
+cache: packages
 
 notifications:
   email:
@@ -18,12 +10,24 @@ notifications:
 matrix:
   include:
     - os: linux
+      env: RVERSION=release
+      r_github_packages:
+        - jimhester/covr
+      after_success:
+        - travis_wait 20 Rscript -e 'covr::codecov()'
+    - os: linux
       env: RVERSION=2.5.1
     - os: linux
-      env: RVERSION=release
-    - os: linux
       env: RVERSION=devel
     - os: osx
       env: RVERSION=release
+      before_install:
+        - curl -O http://kingaa.github.io/scripts/mac-fortran.sh
+        - sh mac-fortran.sh
+        - rm -f mac-fortran.sh
     - os: osx
       env: RVERSION=devel
+      before_install:
+        - curl -O http://kingaa.github.io/scripts/mac-fortran.sh
+        - sh mac-fortran.sh
+        - rm -f mac-fortran.sh
