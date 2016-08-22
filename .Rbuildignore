@@ -1,3 +1,6 @@
 README\.md
 ^\.gitignore$
 ^\.travis\.yml$
+tests/Makefile
+tests/(.+?)\.png$
+^codecov\.yml$
