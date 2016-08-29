@@ -4,3 +4,5 @@ README\.md
 tests/Makefile
 tests/(.+?)\.png$
 ^codecov\.yml$
+^.*\.Rproj$
+^\.Rproj\.user$
