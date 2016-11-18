@@ -1,11 +1,13 @@
 
-R version 3.3.0 (2016-05-03) -- "Supposedly Educational"
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 Copyright (C) 2016 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -24,50 +26,16 @@ Type 'q()' to quit R.
 +     100*(x2-x1*x1)^2+(1-x1)^2
 + }
 > 
-> subplex(par=c(11,-33),fn=rosen)
-$par
-[1] 1 1
-
-$value
-[1] 9.034923e-28
-
-$counts
-[1] 659
-
-$convergence
-[1] 0
-
-$message
-NULL
-
-$hessian
-NULL
-
+> fit <- subplex(par=c(11,-33),fn=rosen)
+> stopifnot(all.equal(fit$par,c(1,1),tol=1e-4))
 > 
 > rosen2 <- function (x) {
 +     X <- matrix(x,ncol=2) 
 +     sum(apply(X,1,rosen))
 + }
 > 
-> subplex(par=c(-33,11,14,9,0,12),fn=rosen2,control=list(maxit=30000))
-$par
-[1] 1 1 1 1 1 1
-
-$value
-[1] 1.434691e-27
-
-$counts
-[1] 23697
-
-$convergence
-[1] 1
-
-$message
-[1] "limit of machine precision reached"
-
-$hessian
-NULL
-
+> fit <- subplex(par=c(-33,11,14,9,0,12),fn=rosen2,control=list(maxit=30000))
+> stopifnot(all.equal(fit$par,c(1,1,1,1,1,1),tol=1e-4))
 > 
 > ## Rosenbrock Banana function (using names)
 > rosen <- function (x, g = 0, h = 0) {
@@ -76,30 +44,8 @@ NULL
 +     100*(x2-x1*x1)^2+(1-x1)^2+g
 + }
 > 
-> subplex(par=c(b=11,a=-33),fn=rosen,h=22,
-+         control=list(abstol=1e-9,parscale=5),hessian=TRUE)
-$par
- b  a 
-23  1 
-
-$value
-[1] 6.660402e-27
-
-$counts
-[1] 557
-
-$convergence
-[1] 1
-
-$message
-[1] "limit of machine precision reached"
-
-$hessian
-     b    a
-b  200 -400
-a -400  802
-
+> fit <- subplex(par=c(b=11,a=-33),fn=rosen,h=22,
++                control=list(abstol=1e-9,parscale=5),hessian=TRUE)
+> stopifnot(all.equal(fit$par,c(b=23,a=1),tol=1e-5))
+> stopifnot(all.equal(as.numeric(fit$hessian),c(200,-400,-400,802),tol=1e-5))
 > 
-> proc.time()
-   user  system elapsed 
-  1.156   0.048   1.169 

@@ -1,5 +1,5 @@
 
-R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 Copyright (C) 2016 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -24,72 +24,15 @@ Type 'q()' to quit R.
 +     1-exp(-r^2)*cos(10*r)^2
 + }
 > 
-> subplex(par=c(1),fn=ripple,hessian=TRUE)
-$par
-[1] 0
-
-$value
-[1] 0
-
-$counts
-[1] 157
-
-$convergence
-[1] 0
-
-$message
-NULL
-
-$hessian
-     [,1]
-[1,]  202
-
+> fit <- subplex(par=c(1),fn=ripple,hessian=TRUE)
+> stopifnot(all.equal(fit$par,0,tol=1e-5))
 > 
-> subplex(par=c(0.1,3),fn=ripple,hessian=TRUE)
-$par
-[1] -7.334164e-10  3.492460e-10
-
-$value
-[1] 0
-
-$counts
-[1] 323
-
-$convergence
-[1] 0
-
-$message
-NULL
-
-$hessian
-              [,1]          [,2]
-[1,]  2.020000e+02 -1.513864e-06
-[2,] -1.513864e-06  2.020000e+02
-
+> fit <- subplex(par=c(0.1,3),fn=ripple,hessian=TRUE)
+> stopifnot(all.equal(fit$value,0,tol=1e-5))
 > 
-> subplex(par=c(0.1,3,2),fn=ripple,hessian=TRUE)
-$par
-[1] 0.4593216 1.1039981 0.3440788
-
-$value
-[1] 0.7906068
-
-$counts
-[1] 435
-
-$convergence
-[1] 0
-
-$message
-NULL
-
-$hessian
-          [,1]     [,2]      [,3]
-[1,]  5.852392 14.06646  4.384038
-[2,] 14.066459 33.80930 10.537214
-[3,]  4.384038 10.53721  3.284092
-
-> 
+> fit <- subplex(par=c(0.1,3,2),fn=ripple,hessian=TRUE)
+> stopifnot(all.equal(fit$par,c(0.45932,1.10399,0.34408),tol=1e-4))
+>     
 > try(subplex(par=c(0.1,3,2),fn=3,hessian=FALSE))
 Error in match.fun(fn) : '3' is not a function, character or symbol
 > try(subplex(par=c(0.1,3,2),fn=ripple,control=list(reltol=-100)))
@@ -99,66 +42,16 @@ Error in subplex(par = c(0.1, 3, 2), fn = ripple, control = list(reltol = -100))
 Error in subplex(par = c(0.1, 3, 2), fn = ripple, control = list(maxit = -100)) : 
   `maxit' must be a positive integer
 > 
-> subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=0.1))
-$par
-[1] -0.03414993  3.10310069  2.07693295
-
-$value
-[1] 0.9999992
-
-$counts
-[1] 386
-
-$convergence
-[1] 0
-
-$message
-NULL
-
-$hessian
-NULL
-
+> fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=0.1))
+> stopifnot(all.equal(fit$value,1,tol=1e-4))
+> 
 > try(subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=c(0.1,0.5))))
 Error in subplex(par = c(0.1, 3, 2), fn = ripple, control = list(parscale = c(0.1,  : 
   `parscale' misspecified: either specify a single scale or one for each component of `par'
 > 
-> try(subplex(par=c(0.1,3,2),fn=ripple,control=list(maxit=2)))
-$par
-[1] 1.1 3.0 2.0
-
-$value
-[1] 0.9999993
-
-$counts
-[1] 5
-
-$convergence
-[1] -1
-
-$message
-[1] "number of function evaluations exceeds `maxit'"
-
-$hessian
-NULL
-
+> fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(maxit=2))
+> stopifnot(fit$conv==-1)
 > 
-> try(subplex(par=c(0.1,3,2),fn=ripple,control=list(reltol=1e-3)))
-$par
-[1] 0.4592363 1.1040256 0.3442109
-
-$value
-[1] 0.7906068
-
-$counts
-[1] 125
-
-$convergence
-[1] 0
-
-$message
-NULL
-
-$hessian
-NULL
-
+> fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(reltol=1e-3))
+> stopifnot(all.equal(fit$value,0.791,tol=1e-3))
 > 
