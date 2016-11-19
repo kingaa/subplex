@@ -90,6 +90,8 @@ rosen2 <- function (x) {
   sum(apply(X,1,rosen))
 }
 subplex(par=c(-33,11,14,9,0,12),fn=rosen2,control=list(maxit=30000))
+## compare with optim:
+optim(par=c(-33,11,14,9,0,12),fn=rosen2,control=list(maxit=30000))
 
 ripple <- function (x) {
   r <- sqrt(sum(x^2))

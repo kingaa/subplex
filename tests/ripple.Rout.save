@@ -27,27 +27,30 @@ Type 'q()' to quit R.
 > fit <- subplex(par=c(1),fn=ripple,hessian=TRUE)
 > stopifnot(all.equal(fit$par,0,tol=1e-5))
 > 
+> fit <- subplex(par=c(1),fn="ripple",hessian=TRUE)
+> stopifnot(all.equal(fit$par,0,tol=1e-5))
+> 
+> fit <- subplex(par=c(1),fn="ripple",hessian=TRUE)
+> stopifnot(all.equal(fit$par,0,tol=1e-5))
+> 
 > fit <- subplex(par=c(0.1,3),fn=ripple,hessian=TRUE)
 > stopifnot(all.equal(fit$value,0,tol=1e-5))
 > 
 > fit <- subplex(par=c(0.1,3,2),fn=ripple,hessian=TRUE)
 > stopifnot(all.equal(fit$par,c(0.45932,1.10399,0.34408),tol=1e-4))
->     
+> 
 > try(subplex(par=c(0.1,3,2),fn=3,hessian=FALSE))
-Error in match.fun(fn) : '3' is not a function, character or symbol
+Error : in ‘subplex’: no objective function specified: '3' is not a function, character or symbol
 > try(subplex(par=c(0.1,3,2),fn=ripple,control=list(reltol=-100)))
-Error in subplex(par = c(0.1, 3, 2), fn = ripple, control = list(reltol = -100)) : 
-  `reltol' must be a non-negative scalar
+Error : in ‘subplex’: 'reltol' must be a non-negative scalar
 > try(subplex(par=c(0.1,3,2),fn=ripple,control=list(maxit=-100)))
-Error in subplex(par = c(0.1, 3, 2), fn = ripple, control = list(maxit = -100)) : 
-  `maxit' must be a positive integer
+Error : in ‘subplex’: 'maxit' must be a positive integer
 > 
 > fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=0.1))
 > stopifnot(all.equal(fit$value,1,tol=1e-4))
 > 
 > try(subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=c(0.1,0.5))))
-Error in subplex(par = c(0.1, 3, 2), fn = ripple, control = list(parscale = c(0.1,  : 
-  `parscale' misspecified: either specify a single scale or one for each component of `par'
+Error : in ‘subplex’: 'parscale' misspecified: either specify a single scale or one for each component of 'par'
 > 
 > fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(maxit=2))
 > stopifnot(fit$conv==-1)

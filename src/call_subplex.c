@@ -15,7 +15,7 @@ static void numer_hessian(_subplex_objective_function *f, const double *x, const
 SEXP call_subplex(SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessian, SEXP rho, SEXP args);
 
 void F77_NAME(subplx) (_subplex_objective_function *f, int *n, double *tol, int *maxnfe, int *mode,
-		       double *scale, double *x, double *fx, int *nfe, double *work, int *iwork, 
+		       double *scale, double *x, double *fx, int *nfe, double *work, int *iwork,
 		       int *iflag);
 
 // these global objects will pass the needed information to the user-defined function (see 'default_subplex_objective')
@@ -23,7 +23,7 @@ SEXP _subplex_Xvec; // vector of arguments (allocated once, refilled many times)
 SEXP _subplex_envir;	  // environment in which function was defined
 SEXP _subplex_fcall;	      // function call (constructed just once)
 
-SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessian, SEXP rho, SEXP args) 
+SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessian, SEXP rho, SEXP args)
 {
   int nprotect = 0;
   double *work = 0, *scalp, *xp, *Xp, eps, *hstep;
@@ -40,30 +40,22 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   n = LENGTH(x);
   PROTECT(x = AS_NUMERIC(x)); nprotect++;
 
-  if (!isFunction(f)) {
-    UNPROTECT(nprotect);
-    error("`f' must be a function");
-  }
-
   // check the convergence tolerance, tol
   PROTECT(tol = AS_NUMERIC(tol)); nprotect++;
   if ((LENGTH(tol) > 1) || (NUMERIC_VALUE(tol) < 0.0)) {
-    UNPROTECT(nprotect);
-    error("`reltol' must be a non-negative scalar");
+    errorcall(R_NilValue,"'reltol' must be a non-negative scalar");
   }
 
   // check the maximum number of function evaluations, maxnfe
   PROTECT(maxnfe = AS_INTEGER(maxnfe)); nprotect++;
   if (INTEGER_VALUE(maxnfe) <= 0) {
-    UNPROTECT(nprotect);
-    error("`maxit' must be a positive integer");
+    errorcall(R_NilValue,"'maxit' must be a positive integer");
   }
 
   // process the scale and first step parameters, scale
   nscal = LENGTH(scale);
   if ((nscal > 1) && (nscal != n)) {
-    UNPROTECT(nprotect);
-    error("`parscale' misspecified: either specify a single scale or one for each component of `par'");
+    errorcall(R_NilValue,"'parscale' misspecified: either specify a single scale or one for each component of 'par'");
   }
   PROTECT(scale = AS_NUMERIC(scale)); nprotect++;
   scalp = REAL(scale);
@@ -84,22 +76,15 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   SET_NAMES(_subplex_Xvec,Xnames); // make sure the names attribute shows up in each call to the user function
   PROTECT(_subplex_envir=rho); nprotect++; // store the function's environment
   PROTECT(_subplex_fcall = LCONS(fn,LCONS(_subplex_Xvec,args))); nprotect++; // set up the function call
-  
+
   PROTECT(val = NEW_NUMERIC(1)); nprotect++; // to hold the objective function value
   PROTECT(counts = NEW_INTEGER(1)); nprotect++;	// to count the number of function evaluations
   PROTECT(conv = NEW_INTEGER(1)); nprotect++; // to hold the convergence code
 
   // ALERT: POTENTIAL BUG
   // THE FOLLOWING MEMORY ALLOCATION IS BASED ON AN INTERPRETATION OF THE SUBPLEX DOCUMENTATION
-  // THE MEMORY *SHOULD* BE RECLAIMED BY R UPON RETURN FROM .CALL
-  // I HAVE NOT VERIFIED THAT IT IS CORRECT.
-  if (
-      !(work = (double *) R_alloc(n*(n+6)+1,sizeof(double))) ||
-      !(iwork = (int *) R_alloc(2*n,sizeof(int)))
-      ) {
-    UNPROTECT(nprotect);
-    error("`par' too long, insufficient memory available");
-  }
+  work = (double *) Calloc(n*(n+6)+1,double);
+  iwork = (int *) Calloc(2*n,int);
 
   xp = REAL(x); Xp = REAL(X);
   for (k = 0; k < n; k++) Xp[k] = xp[k]; // copy in the initial guess vector
@@ -107,16 +92,19 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   F77_CALL(subplx)(objfn,&n,REAL(tol),INTEGER(maxnfe),&mode,scalp,Xp,REAL(val),INTEGER(counts),
 		   work,iwork,INTEGER(conv));
 
+  Free(iwork);
+  Free(work);
+
   if (INTEGER_VALUE(conv) == -2) {
     UNPROTECT(nprotect);
-    error("illegal input in subplex");
+    errorcall(R_NilValue,"illegal input in subplex");
   }
 
   if (INTEGER_VALUE(conv) != 0) {
     PROTECT(message = NEW_CHARACTER(1)); nprotect++;
     switch (INTEGER_VALUE(conv)) {
     case -1:
-      SET_STRING_ELT(message,0,mkChar("number of function evaluations exceeds `maxit'"));
+      SET_STRING_ELT(message,0,mkChar("number of function evaluations exceeds 'maxit'"));
       break;
     case 1:
       SET_STRING_ELT(message,0,mkChar("limit of machine precision reached"));
@@ -166,7 +154,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
 
 // the wrapper around the user's objective function.
 // will be called by the Fortran routine "subplx".
-static double default_subplex_objective (int *n, double *x) 
+static double default_subplex_objective (int *n, double *x)
 {
   double *xp, retval;
   int k;
@@ -216,7 +204,7 @@ static void numer_hessian (_subplex_objective_function *f, const double *x, cons
     numer_deriv(f,xx,h,df1,n);
     xx[i] = x[i] - h[i];
     numer_deriv(f,xx,h,df2,n);
-    for (j = 0; j < n; j++) 
+    for (j = 0; j < n; j++)
       d2f[i*n+j] = (df1[j]-df2[j])/(x[i]-xx[i])/2;
     xx[i] = x[i];
   }
