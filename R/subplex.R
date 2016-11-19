@@ -7,13 +7,7 @@ subplex <- function (par, fn, control = list(), hessian = FALSE, ...) {
               )
   namc <- names(control)[names(control)%in%names(con)]
   con[namc] <- control[namc]
-  fn <- tryCatch(match.fun(fn),
-                 error = function (e) {
-                   stop("in ",sQuote("subplex"),
-                        ": no objective function specified: ",
-                        conditionMessage(e),
-                        call.=FALSE)
-                 })
+  fn <- match.fun(fn)
   tryCatch(
     .Call(
       call_subplex,
