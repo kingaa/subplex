@@ -1,2 +1,2 @@
-useDynLib(subplex,call_subplex)
+useDynLib(subplex,.registration=TRUE)
 export(subplex)
