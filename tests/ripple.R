@@ -10,6 +10,7 @@ stopifnot(all.equal(fit$par,0,tol=1e-5))
 
 fit <- subplex(par=c(1),fn="ripple",hessian=TRUE)
 stopifnot(all.equal(fit$par,0,tol=1e-5))
+print(fit$message)
 
 fit <- subplex(par=c(1),fn="ripple",hessian=TRUE)
 stopifnot(all.equal(fit$par,0,tol=1e-5))
@@ -19,6 +20,12 @@ stopifnot(all.equal(fit$value,0,tol=1e-5))
 
 fit <- subplex(par=c(0.1,3,2),fn=ripple,hessian=TRUE)
 stopifnot(all.equal(fit$par,c(0.45932,1.10399,0.34408),tol=1e-4))
+print(fit$message)
+
+fit <- subplex(par=c(0.1,3),fn=ripple,control=list(reltol=0))
+print(fit$message)
+fit <- subplex(par=c(0.1,3),fn=ripple,control=list(reltol=0,maxit=10))
+print(fit$message)
 
 try(subplex(par=c(0.1,3,2),fn=3,hessian=FALSE))
 try(subplex(par=c(0.1,3,2),fn=ripple,control=list(reltol=-100)))

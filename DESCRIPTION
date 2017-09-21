@@ -1,6 +1,6 @@
 Package: subplex
-Version: 1.4-1
-Date: 2017-07-17
+Version: 1.6-1
+Date: 2017-09-21
 Title: Unconstrained Optimization using the Subplex Algorithm
 Author: Aaron A. King
 Maintainer: Aaron A. King <kingaa@umich.edu>

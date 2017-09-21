@@ -60,10 +60,6 @@ subplex(par, fn, control = list(), hessian = FALSE, \dots)
     \item{-1}{number of function evaluations needed exceeds \code{maxnfe}}
     \item{0}{success: tolerance \code{tol} satisfied}
     \item{1}{limit of machine precision reached}
-    \item{2}{
-      fstop reached.
-      Currently, the option to use fstop is not implemented.
-    }
   }
 
   For more details, see the source code.
@@ -86,7 +82,7 @@ rosen <- function (x) {   ## Rosenbrock Banana function
 subplex(par=c(11,-33),fn=rosen)
 
 rosen2 <- function (x) {
-  X <- matrix(x,ncol=2) 
+  X <- matrix(x,ncol=2)
   sum(apply(X,1,rosen))
 }
 subplex(par=c(-33,11,14,9,0,12),fn=rosen2,control=list(maxit=30000))

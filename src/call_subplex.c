@@ -100,19 +100,23 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
     errorcall(R_NilValue,"illegal input in subplex");
   }
 
-  if (INTEGER_VALUE(conv) != 0) {
-    PROTECT(message = NEW_CHARACTER(1)); nprotect++;
-    switch (INTEGER_VALUE(conv)) {
-    case -1:
-      SET_STRING_ELT(message,0,mkChar("number of function evaluations exceeds 'maxit'"));
-      break;
-    case 1:
-      SET_STRING_ELT(message,0,mkChar("limit of machine precision reached"));
-      break;
-    case 2:
-      SET_STRING_ELT(message,0,mkChar("fstop reached"));
-      break;
-    }
+  PROTECT(message = NEW_CHARACTER(1)); nprotect++;
+  switch (INTEGER_VALUE(conv)) {
+  case -2:
+    SET_STRING_ELT(message,0,mkChar("invalid input"));
+    break;
+  case -1:
+    SET_STRING_ELT(message,0,mkChar("number of function evaluations exceeds 'maxit'"));
+    break;
+  case 0:
+    SET_STRING_ELT(message,0,mkChar("success! tolerance satisfied"));
+    break;
+  case 1:
+    SET_STRING_ELT(message,0,mkChar("limit of machine precision reached"));
+    break;
+  case 2: default:
+    SET_STRING_ELT(message,0,mkChar("impossible error!"));
+    break;
   }
 
   if (hess_reqd) {	     // compute the Hessian matrix if required
