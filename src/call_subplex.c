@@ -95,16 +95,8 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   Free(iwork);
   Free(work);
 
-  if (INTEGER_VALUE(conv) == -2) {
-    UNPROTECT(nprotect);
-    errorcall(R_NilValue,"illegal input in subplex");
-  }
-
   PROTECT(message = NEW_CHARACTER(1)); nprotect++;
   switch (INTEGER_VALUE(conv)) {
-  case -2:
-    SET_STRING_ELT(message,0,mkChar("invalid input"));
-    break;
   case -1:
     SET_STRING_ELT(message,0,mkChar("number of function evaluations exceeds 'maxit'"));
     break;
@@ -114,8 +106,11 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   case 1:
     SET_STRING_ELT(message,0,mkChar("limit of machine precision reached"));
     break;
+  case -2:
+    errorcall(R_NilValue,"illegal input in subplex");
+    break;
   case 2: default:
-    SET_STRING_ELT(message,0,mkChar("impossible error!"));
+    errorcall(R_NilValue,"impossible error in subplex");
     break;
   }
 
