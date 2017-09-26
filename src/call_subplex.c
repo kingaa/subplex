@@ -107,10 +107,10 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
     SET_STRING_ELT(message,0,mkChar("limit of machine precision reached"));
     break;
   case -2:
-    errorcall(R_NilValue,"illegal input in subplex");
+    errorcall(R_NilValue,"illegal input in subplex"); // # nocov
     break;
   case 2: default:
-    errorcall(R_NilValue,"impossible error in subplex");
+    errorcall(R_NilValue,"impossible error in subplex"); // # nocov
     break;
   }
 
