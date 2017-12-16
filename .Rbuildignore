@@ -3,6 +3,7 @@ README\.md
 ^\.travis\.yml$
 tests/Makefile
 tests/(.+?)\.png$
+inst
 ^codecov\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
