@@ -14,7 +14,7 @@ static void numer_hessian(_subplex_objective_function *f, const double *x, const
 
 SEXP call_subplex(SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessian, SEXP rho, SEXP args);
 
-void F77_NAME(subplx) (_subplex_objective_function *f, int *n, double *tol, int *maxnfe, int *mode,
+void F77_NAME(subplx) (_subplex_objective_function *f, int *n, double *tol, int *maxnfe,
 		       double *scale, double *x, double *fx, int *nfe, double *work, int *iwork,
 		       int *iflag);
 
@@ -27,7 +27,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
 {
   int nprotect = 0;
   double *work = 0, *scalp, *xp, *Xp, eps, *hstep;
-  int n, *iwork = 0, mode = 0;
+  int n, *iwork = 0;
   int k, nscal;
   int hess_reqd;
   _subplex_objective_function *objfn = default_subplex_objective;
@@ -89,7 +89,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   xp = REAL(x); Xp = REAL(X);
   for (k = 0; k < n; k++) Xp[k] = xp[k]; // copy in the initial guess vector
 
-  F77_CALL(subplx)(objfn,&n,REAL(tol),INTEGER(maxnfe),&mode,scalp,Xp,REAL(val),INTEGER(counts),
+  F77_CALL(subplx)(objfn,&n,REAL(tol),INTEGER(maxnfe),scalp,Xp,REAL(val),INTEGER(counts),
 		   work,iwork,INTEGER(conv));
 
   Free(iwork);

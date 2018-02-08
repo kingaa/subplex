@@ -14,14 +14,13 @@ c   n      - problem dimension
 c
 c common
 c
-      integer nsmin,nsmax,irepl,ifxsw,nfstop,nfxe
+      integer nsmin,nsmax,nfxe
       double precision alpha,beta,gamma,delta,psi,omega,
-     *     bonus,fstop,fxstat,ftest
-      logical minf,initx,newx
+     *     fxstat,ftest
+      logical initx
 c
       common /usubc/ alpha,beta,gamma,delta,psi,omega,nsmin,
-     *               nsmax,irepl,ifxsw,bonus,fstop,nfstop,
-     *               nfxe,fxstat(4),ftest,minf,initx,newx
+     *     nsmax,nfxe,initx,fxstat(4),ftest
 c
       save
 c
@@ -95,84 +94,5 @@ c***********************************************************
 c nelder-mead simplex method
 c   nsmin = nsmax = n, psi = small positive
 c***********************************************************
-c
-c irepl, ifxsw, and bonus deal with measurement replication.
-c Objective functions subject to large amounts of noise can
-c cause an optimization method to halt at a false optimum.
-c An expensive solution to this problem is to evaluate f
-c several times at each point and return the average (or max
-c or min) of these trials as the function value.  subplx
-c performs measurement replication only at the current best
-c point. The longer a point is retained as best, the more
-c accurate its function value becomes.
-c
-c The common variable nfxe contains the number of function
-c evaluations at the current best point. fxstat contains the
-c mean, max, min, and standard deviation of these trials.
-c
-c irepl  - measurement replication switch
-c irepl  = 0, 1, or 2
-c        = 0 : no measurement replication
-c        = 1 : subplx performs measurement replication
-c        = 2 : user performs measurement replication
-c              (This is useful when optimizing on the mean,
-c              max, or min of trials is insufficient. Common
-c              variable initx is true for first function
-c              evaluation. newx is true for first trial at
-c              this point. The user uses subroutine fstats
-c              within his objective function to maintain
-c              fxstat. By monitoring newx, the user can tell
-c              whether to return the function evaluation
-c              (newx = .true.) or to use the new function
-c              evaluation to refine the function evaluation
-c              of the current best point (newx = .false.).
-c              The common variable ftest gives the function
-c              value that a new point must beat to be
-c              considered the new best point.)
-c
-      irepl = 0
-c
-c ifxsw  - measurement replication optimization switch
-c ifxsw  = 1, 2, or 3
-c        = 1 : retain mean of trials as best function value
-c        = 2 : retain max
-c        = 3 : retain min
-c
-      ifxsw = 1
-c
-c Since the current best point will also be the most
-c accurately evaluated point whenever irepl .gt. 0, a bonus
-c should be added to the function value of the best point
-c so that the best point is not replaced by a new point
-c that only appears better because of noise.
-c subplx uses bonus to determine how many multiples of
-c fxstat(4) should be added as a bonus to the function
-c evaluation. (The bonus is adjusted automatically by
-c subplx when ifxsw or minf is changed.)
-c
-c bonus  - measurement replication bonus coefficient
-c          bonus .ge. 0 (normally, bonus = 0 or 1)
-c        = 0 : bonus not used
-c        = 1 : bonus used
-c
-      bonus = 1.d0
-c
-c nfstop = 0 : f(x) is not tested against fstop
-c        = 1 : if f(x) has reached fstop, subplx returns
-c              iflag = 2
-c        = 2 : (only valid when irepl .gt. 0)
-c              if f(x) has reached fstop and
-c              nfxe .gt. nfstop, subplx returns iflag = 2
-c
-      nfstop = 0
-c
-c fstop  - f target value
-c          Its usage is determined by the value of nfstop.
-c
-c minf   - logical switch
-c        = .true.  : subplx performs minimization
-c        = .false. : subplx performs maximization
-c
-      minf = .true.
       return
       end

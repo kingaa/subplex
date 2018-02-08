@@ -27,14 +27,13 @@ c   step   - new stepsizes
 c
 c common
 c
-      integer nsmin,nsmax,irepl,ifxsw,nfstop,nfxe
+      integer nsmin,nsmax,nfxe
       double precision alpha,beta,gamma,delta,psi,omega,
-     *     bonus,fstop,fxstat,ftest
-      logical minf,initx,newx
+     *     fxstat,ftest
+      logical initx
 c
       common /usubc/ alpha,beta,gamma,delta,psi,omega,nsmin,
-     *               nsmax,irepl,ifxsw,bonus,fstop,nfstop,
-     *               nfxe,fxstat(4),ftest,minf,initx,newx
+     *     nsmax,nfxe,initx,fxstat(4),ftest
 c
 c local variables
 c

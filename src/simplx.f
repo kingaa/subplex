@@ -61,19 +61,13 @@ c            =  2 : reached fstop
 c
 c common
 c
-      integer nsmin,nsmax,irepl,ifxsw,nfstop,nfxe
+      integer nsmin,nsmax,nfxe
       double precision alpha,beta,gamma,delta,psi,omega,
-     *     bonus,fstop,fxstat,ftest
-      logical minf,initx,newx
+     *     fxstat,ftest
+      logical initx
 c
       common /usubc/ alpha,beta,gamma,delta,psi,omega,nsmin,
-     *               nsmax,irepl,ifxsw,bonus,fstop,nfstop,
-     *               nfxe,fxstat(4),ftest,minf,initx,newx
-c
-      double precision fbonus,sfstop,sfbest
-      logical new
-c
-      common /isubc/ fbonus,sfstop,sfbest,new
+     *     nsmax,nfxe,initx,fxstat(4),ftest
 c
 c local variables
 c
@@ -92,7 +86,7 @@ c   fortran
       intrinsic min
 c
 c-----------------------------------------------------------
-c
+c     
       if (cmode) go to 50
       npts = ns+1
       icent = ns+2
@@ -100,114 +94,101 @@ c
       updatc = .false.
       call start (n,x,step,ns,ips,s,small)
       if (small) then
-        iflag = 1
-        return
+         iflag = 1
+         return
       end if
-      if (irepl .gt. 0) then
-        new = .false.
-        call evalf (f,ns,ips,s(1,1),n,x,fs(1),nfe)
-      else
-        fs(1) = fx
-      end if
-      new = .true.
+      fs(1) = fx
       do 10 j = 2,npts
-        call evalf (f,ns,ips,s(1,j),n,x,fs(j),nfe)
-   10 continue
+         call evalf (f,ns,ips,s(1,j),n,x,fs(j),nfe)
+ 10   continue
       il = 1
       call order (npts,fs,il,is,ih)
       tol = psi*dist(ns,s(1,ih),s(1,il))
-c
+c     
 c     main loop
-c
-   20 continue
-        call calcc (ns,s,ih,inew,updatc,s(1,icent))
-        updatc = .true.
-        inew = ih
-c
-c       reflect
-c
-        call newpt (ns,alpha,s(1,icent),s(1,ih),.true.,
-     *              s(1,itemp),small)
-        if (small) go to 40
-        call evalf (f,ns,ips,s(1,itemp),n,x,fr,nfe)
-        if (fr .lt. fs(il)) then
-c
-c         expand
-c
-          call newpt (ns,-gamma,s(1,icent),s(1,itemp),
-     *                .true.,s(1,ih),small)
-          if (small) go to 40
-          call evalf (f,ns,ips,s(1,ih),n,x,fe,nfe)
-          if (fe .lt. fr) then
+c     
+ 20   continue
+      call calcc (ns,s,ih,inew,updatc,s(1,icent))
+      updatc = .true.
+      inew = ih
+c     
+c     reflect
+c     
+      call newpt (ns,alpha,s(1,icent),s(1,ih),.true.,
+     *     s(1,itemp),small)
+      if (small) go to 40
+      call evalf (f,ns,ips,s(1,itemp),n,x,fr,nfe)
+      if (fr .lt. fs(il)) then
+c     
+c     expand
+c     
+         call newpt (ns,-gamma,s(1,icent),s(1,itemp),
+     *        .true.,s(1,ih),small)
+         if (small) go to 40
+         call evalf (f,ns,ips,s(1,ih),n,x,fe,nfe)
+         if (fe .lt. fr) then
             fs(ih) = fe
-          else
+         else
             call dcopy (ns,s(1,itemp),1,s(1,ih),1)
             fs(ih) = fr
-          end if
-        else if (fr .lt. fs(is)) then
-c
-c         accept reflected point
-c
-          call dcopy (ns,s(1,itemp),1,s(1,ih),1)
-          fs(ih) = fr
-        else
-c
-c         contract
-c
-          if (fr .gt. fs(ih)) then
+         end if
+      else if (fr .lt. fs(is)) then
+c     
+c     accept reflected point
+c     
+         call dcopy (ns,s(1,itemp),1,s(1,ih),1)
+         fs(ih) = fr
+      else
+c     
+c     contract
+c     
+         if (fr .gt. fs(ih)) then
             call newpt (ns,-beta,s(1,icent),s(1,ih),.true.,
-     *                  s(1,itemp),small)
-          else
+     *           s(1,itemp),small)
+         else
             call newpt (ns,-beta,s(1,icent),s(1,itemp),
-     *                  .false.,dum,small)
-          end if
-          if (small) go to 40
-          call evalf (f,ns,ips,s(1,itemp),n,x,fc,nfe)
-          if (fc .lt. min(fr,fs(ih))) then
+     *           .false.,dum,small)
+         end if
+         if (small) go to 40
+         call evalf (f,ns,ips,s(1,itemp),n,x,fc,nfe)
+         if (fc .lt. min(fr,fs(ih))) then
             call dcopy (ns,s(1,itemp),1,s(1,ih),1)
             fs(ih) = fc
-          else
-c
-c           shrink simplex
-c
+         else
+c     
+c     shrink simplex
+c     
             do 30 j = 1,npts
-              if (j .ne. il) then
-                call newpt (ns,-delta,s(1,il),s(1,j),
-     *                      .false.,dum,small)
-                if (small) go to 40
-                call evalf (f,ns,ips,s(1,j),n,x,fs(j),nfe)
-              end if
-   30       continue
-          end if
-          updatc = .false.
-        end if
-        call order (npts,fs,il,is,ih)
-c
-c       check termination
-c
-   40   continue
-        if (irepl .eq. 0) then
-          fx = fs(il)
-        else
-          fx = sfbest
-        end if
-   50   continue
-        if (nfstop .gt. 0 .and. fx .le. sfstop .and.
-     *      nfxe .ge. nfstop) then
-          iflag = 2
-        else if (nfe .ge. maxnfe) then
-          iflag = -1
-        else if (dist(ns,s(1,ih),s(1,il)) .le. tol .or.
-     *           small) then
-          iflag = 0
-        else
-          go to 20
-        end if
-c
+               if (j .ne. il) then
+                  call newpt (ns,-delta,s(1,il),s(1,j),
+     *                 .false.,dum,small)
+                  if (small) go to 40
+                  call evalf (f,ns,ips,s(1,j),n,x,fs(j),nfe)
+               end if
+ 30         continue
+         end if
+         updatc = .false.
+      end if
+      call order (npts,fs,il,is,ih)
+c     
+c     check termination
+c     
+ 40   continue
+      fx = fs(il)
+ 50   continue
+      if (nfe .ge. maxnfe) then
+         iflag = -1
+      else if (dist(ns,s(1,ih),s(1,il)) .le. tol .or.
+     *        small) then
+         iflag = 0
+      else
+         go to 20
+      end if
+c     
 c     end main loop, return best point
-c
+c     
       do 60 i = 1,ns
-        x(ips(i)) = s(i,il)
-   60 continue
+         x(ips(i)) = s(i,il)
+ 60   continue
       return
       end

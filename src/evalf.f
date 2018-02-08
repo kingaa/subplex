@@ -35,25 +35,18 @@ c   nfe    - incremented number of function evaluations
 c
 c common
 c
-      integer nsmin,nsmax,irepl,ifxsw,nfstop,nfxe
+      integer nsmin,nsmax,nfxe
       double precision alpha,beta,gamma,delta,psi,omega,
-     *     bonus,fstop,fxstat,ftest
-      logical minf,initx,newx
+     *     fxstat,ftest
+      logical initx
 c
       common /usubc/ alpha,beta,gamma,delta,psi,omega,nsmin,
-     *               nsmax,irepl,ifxsw,bonus,fstop,nfstop,
-     *               nfxe,fxstat(4),ftest,minf,initx,newx
-c
-      double precision fbonus,sfstop,sfbest
-      logical new
-c
-      common /isubc/ fbonus,sfstop,sfbest,new
+     *     nsmax,nfxe,initx,fxstat(4),ftest
 c
 c local variables
 c
       integer i
       double precision fx
-      logical newbst
 c
       save
 c
@@ -64,43 +57,10 @@ c
 c-----------------------------------------------------------
 c
       do 10 i = 1,ns
-        x(ips(i)) = xs(i)
-   10 continue
-      newx = new .or. irepl .ne. 2
+         x(ips(i)) = xs(i)
+ 10   continue
       fx = f(n,x)
-      if (irepl .eq. 0) then
-        if (minf) then
-          sfx = fx
-        else
-          sfx = -fx
-        end if
-      else if (new) then
-        if (minf) then
-          sfx = fx
-          newbst = fx .lt. ftest
-        else
-          sfx = -fx
-          newbst = fx .gt. ftest
-        end if
-        if (initx .or. newbst) then
-          if (irepl .eq. 1) call fstats (fx,1,.true.)
-          ftest = fx
-          sfbest = sfx
-        end if
-      else
-        if (irepl .eq. 1) then
-          call fstats (fx,1,.false.)
-          fx = fxstat(ifxsw)
-        end if
-        ftest = fx+fbonus*fxstat(4)
-        if (minf) then
-          sfx = ftest
-          sfbest = fx
-        else
-          sfx = -ftest
-          sfbest = -fx
-        end if
-      end if
+      sfx = fx
       nfe = nfe+1
       return
       end
