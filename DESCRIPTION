@@ -1,9 +1,13 @@
 Package: subplex
 Version: 1.6-1
-Date: 2018-02-08
+Date: 2018-02-09
 Title: Unconstrained Optimization using the Subplex Algorithm
-Author: Aaron A. King
-Maintainer: Aaron A. King <kingaa@umich.edu>
+Authors@R: c(person(given=c("Aaron","A."),family="King",
+		role=c("aut","trl","cre"),email="kingaa@umich.edu"),
+	  person(given=c("Tom"),family="Rowan",role=c("aut")))
+License: GPL-3
 Depends: R(>= 2.5.1)
+URL: https://kingaa.github.io/subplex/
+BugReports: https://github.com/kingaa/subplex/issues/
 Description: The subplex algorithm for unconstrained optimization, developed by Tom Rowan <http://www.netlib.org/opt/subplex.tgz>.
-License: GPL(>= 2)
+
