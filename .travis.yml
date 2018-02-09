@@ -21,14 +21,6 @@ matrix:
       env: RVERSION=devel
     - os: osx
       env: RVERSION=release
-      before_install:
-        - curl -O http://kingaa.github.io/scripts/mac-fortran.sh
-        - sh mac-fortran.sh
-        - rm -f mac-fortran.sh
       after_failure: cat /Users/travis/build/kingaa/subplex/subplex.Rcheck/00install.out /Users/travis/build/kingaa/subplex/subplex.Rcheck/00check.log
     - os: osx
       env: RVERSION=devel
-      before_install:
-        - curl -O http://kingaa.github.io/scripts/mac-fortran.sh
-        - sh mac-fortran.sh
-        - rm -f mac-fortran.sh
