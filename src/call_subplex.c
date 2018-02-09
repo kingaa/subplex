@@ -39,6 +39,9 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
 
   n = LENGTH(x);
   PROTECT(x = AS_NUMERIC(x)); nprotect++;
+  if (n < 1) {
+    errorcall(R_NilValue,"'par' must be a non-empty vector");
+  }
 
   // check the convergence tolerance, tol
   PROTECT(tol = AS_NUMERIC(tol)); nprotect++;
@@ -107,7 +110,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
     SET_STRING_ELT(message,0,mkChar("limit of machine precision reached"));
     break;
   case -2:
-    errorcall(R_NilValue,"illegal input in subplex"); // # nocov
+    errorcall(R_NilValue,"'parscale' is too small relative to 'par'");
     break;
   case 2: default:
     errorcall(R_NilValue,"impossible error in subplex"); // # nocov

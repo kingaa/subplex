@@ -31,6 +31,8 @@ subplex(par, fn, control = list(), hessian = FALSE, \dots)
       \item{parscale}{
 	The scale and initial stepsizes for the components of \code{par}.
 	This must either be a single scalar, in which case the same scale is used for all parameters, or a vector of length equal to the length of \code{par}.
+	For \code{parscale} to be valid, it must not be too small relative to \code{par}:
+	if \code{par + parscale = par} in any component, \code{parscale} is too small.
 	The default value is \code{1}.
       }
     }

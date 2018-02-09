@@ -3,7 +3,7 @@ subplex <- function (par, fn, control = list(), hessian = FALSE, ...) {
   con <- list(
               reltol = .Machine$double.eps,
               maxit = 10000,
-              parscale = rep.int(1,length(par))
+              parscale = 1
               )
   namc <- names(control)[names(control)%in%names(con)]
   con[namc] <- control[namc]

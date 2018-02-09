@@ -41,3 +41,6 @@ stopifnot(fit$conv==-1)
 
 fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(reltol=1e-3))
 stopifnot(all.equal(fit$value,0.791,tol=1e-3))
+
+try(fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=c(1e-90))))
+try(fit <- subplex(par=c(1e100,3e100,2e100),fn=ripple,control=list(parscale=1e-10)))

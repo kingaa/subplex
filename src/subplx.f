@@ -115,9 +115,6 @@ c-----------------------------------------------------------
 c     
 c     first call, check input
 c     
-      if (n .lt. 1) go to 120
-      if (tol .lt. 0.d0) go to 120
-      if (maxnfe .lt. 1) go to 120
       if (scale(1) .ge. 0.d0) then
          do 10 i = 1,n
             xpscl = x(i)+scale(i)
