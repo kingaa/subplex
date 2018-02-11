@@ -62,6 +62,9 @@ Error : in ‘subplex’: 'maxit' must be a positive integer
 > 
 > try(subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=c(0.1,0.5))))
 Error : in ‘subplex’: 'parscale' misspecified: either specify a single scale or one for each component of 'par'
+> try(subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=c(0.01,0.05,1e-30))))
+Error : in ‘subplex’: 'parscale' is too small relative to 'par'
+> fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(parscale=c(0.01,0.05,0.1)))
 > 
 > fit <- subplex(par=c(0.1,3,2),fn=ripple,control=list(maxit=2))
 > stopifnot(fit$conv==-1)
@@ -73,4 +76,5 @@ Error : in ‘subplex’: 'parscale' misspecified: either specify a single scale
 Error : in ‘subplex’: 'parscale' is too small relative to 'par'
 > try(fit <- subplex(par=c(1e100,3e100,2e100),fn=ripple,control=list(parscale=1e-10)))
 Error : in ‘subplex’: 'parscale' is too small relative to 'par'
+> 
 > 
