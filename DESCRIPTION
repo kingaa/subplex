@@ -7,7 +7,7 @@ Authors@R: c(person(given=c("Aaron","A."),family="King",
 	  person(given=c("Tom"),family="Rowan",role=c("aut")))
 License: GPL-3
 Depends: R(>= 2.5.1)
-URL: https://kingaa.github.io/subplex/
+URL: https://github.com/kingaa/subplex/
 BugReports: https://github.com/kingaa/subplex/issues/
 Description: The subplex algorithm for unconstrained optimization, developed by Tom Rowan <http://www.netlib.org/opt/subplex.tgz>.
 

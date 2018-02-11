@@ -1,10 +1,12 @@
 README\.md
 LICENSE\.md$
+TODO\.md$
 ^\.gitignore$
 ^\.travis\.yml$
+^codecov\.yml$
 tests/Makefile
 tests/(.+?)\.png$
-inst
-^codecov\.yml$
+tests/(.+?)\.pdf$
+tests/(.+?)\.Rout$
 ^.*\.Rproj$
 ^\.Rproj\.user$
