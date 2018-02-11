@@ -1,5 +1,5 @@
 Package: subplex
-Version: 1.5-2
+Version: 1.5-3
 Date: 2018-02-11
 Title: Unconstrained Optimization using the Subplex Algorithm
 Authors@R: c(person(given=c("Aaron","A."),family="King",
