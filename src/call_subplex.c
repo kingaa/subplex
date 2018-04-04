@@ -60,7 +60,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   if ((nscal > 1) && (nscal != n)) {
     errorcall(R_NilValue,"'parscale' misspecified: either specify a single scale or one for each component of 'par'");
   }
-  PROTECT(scale = AS_NUMERIC(scale)); nprotect++;
+  PROTECT(scale = duplicate(AS_NUMERIC(scale))); nprotect++;
   scalp = REAL(scale);
   if (nscal == 1) { // peculiarity of subplex: if scale < 0, assume there is one scale for all components
     scalp[0] = -fabs(scalp[0]);
