@@ -46,9 +46,8 @@ jobs:
     - R CMD INSTALL --build -l plib ${TARBALL}
     - rm -rf plib
     deploy:
-      provider: releases
       api-key:
-        secure: V0UAes1YbF80zUnOhV8W3fgL16R3s6Dp28LxHT/Z07HaZruI1SnuNrxLRCLG54sY+7WKrZUz7d8hAYMQmDNDWmctAffBgomy4lKsXhi6OiytFbWi+8np616syzqB0kfF14wysqF8dldGFXd4ArHIx4JGmsPiAbiWx3mBaYtrqmG6rhCpD6+tM+EttK4n8eg6c1Mq0rnbmJd+0ZlSYz+55ueTsGv1zF14oScI/+C1ghHgwAghzhvFtTimTCU7dkLxFoZtTD1WEHDdqwsqwfr++vyM7GkTi/gvxxIMgB0fH1NkgRt+VMutODv49qX1E5PoLE7KoQI9zy0ij20n+O0waGVvM6fTlaxf+qb+UnCs7hypwFFGLb3eMJgmcptWEs048KjHcnEv8etMeYYF+ljkQ4euMoDoBMPE+7yLFRyWihI0gsBBRfvOFeab1PnSXuMCojxfwMz+gsdOt5wfgWR2fycQ5hpDMS58W+UgGML7FbQyd8smw8xIyBFSxfO9APgrNoLG86atmPv27pDPoEw2q7D98OPHZXt/j7lrA59TyEOi4DpozoyW37RKhqLkOEjxJOz+NM2u9duIMdNgOuq2qfuAiJRFqhEKvA5dArZadJEzUlzjGUUWKlmiTHeAkiJE0+3tuS5PgkC1VuuxYE42TYFfQHalf2gJsU4VfCj4Ji8=
+        secure: 1vWSQibrv35OZTq6Y7psNdCGcwyibR8qduy2cylzLv1Rq7mATRet0WoremqbXY7wUUrJMvqMVns3c4114Kh91e4Fd/RAtBTx+A1WzGTW6tdkW/EuPu4frXxcqdXR0XIk71sAJedkIHf+sv19x+zUKHWmjkp5lDfmDlr+7t04rTFUQRyXAj8AiDZ5w1A87XDUvU4J+lhusfWo2mVrMY52nh0eOWylprBAHCtbp50VnIWidZkHh65MQb6c382I8LaZfY7kg3vzyxTNpNKt60rpQ7IxGhdZeTwJRiKWsUPdUSEj3sy3TgHKwVNqjqCbYkoo7VAxLtnHh2CwBFchT2HumA+6C9P2XmI77a0j2S3dFutMHS87mLT5A1P6Y6+bLesrccVqa0dD4+KbhQ/pRSDTxiUVQ0IQ4mDgQrbTPQy2pQtTkJJavm+E+ydAcI2ZRzLHf4Onz0fJHZ0eDkMrcTq6+4i/LMYIPzPYrcug04jMnCsV+NkEYJ7U1Ds8LXoWH/tpRJitQruXcIazi/b2ngXz1DVOuJRZ08L/bTU0khXbgNDqTY1Y4TmdmbFnn8sMXfczIY3nWodTAhjsOs1ybRLFdgUHSLmzZEuoQs8BApRYINqBjTRw0g9sHT704QdqyGUK8iMxdxqFZM0Z8UII9klhIdAPkOXvt7NyJvN0FFahJg4=
       file_glob: true
       file:
       - subplex_*.tgz
