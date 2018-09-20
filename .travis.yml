@@ -46,6 +46,7 @@ jobs:
     - R CMD INSTALL --build -l plib ${TARBALL}
     - rm -rf plib
     deploy:
+      provider: releases
       api-key:
         secure: 1vWSQibrv35OZTq6Y7psNdCGcwyibR8qduy2cylzLv1Rq7mATRet0WoremqbXY7wUUrJMvqMVns3c4114Kh91e4Fd/RAtBTx+A1WzGTW6tdkW/EuPu4frXxcqdXR0XIk71sAJedkIHf+sv19x+zUKHWmjkp5lDfmDlr+7t04rTFUQRyXAj8AiDZ5w1A87XDUvU4J+lhusfWo2mVrMY52nh0eOWylprBAHCtbp50VnIWidZkHh65MQb6c382I8LaZfY7kg3vzyxTNpNKt60rpQ7IxGhdZeTwJRiKWsUPdUSEj3sy3TgHKwVNqjqCbYkoo7VAxLtnHh2CwBFchT2HumA+6C9P2XmI77a0j2S3dFutMHS87mLT5A1P6Y6+bLesrccVqa0dD4+KbhQ/pRSDTxiUVQ0IQ4mDgQrbTPQy2pQtTkJJavm+E+ydAcI2ZRzLHf4Onz0fJHZ0eDkMrcTq6+4i/LMYIPzPYrcug04jMnCsV+NkEYJ7U1Ds8LXoWH/tpRJitQruXcIazi/b2ngXz1DVOuJRZ08L/bTU0khXbgNDqTY1Y4TmdmbFnn8sMXfczIY3nWodTAhjsOs1ybRLFdgUHSLmzZEuoQs8BApRYINqBjTRw0g9sHT704QdqyGUK8iMxdxqFZM0Z8UII9klhIdAPkOXvt7NyJvN0FFahJg4=
       file_glob: true
