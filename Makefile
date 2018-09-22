@@ -45,15 +45,12 @@ NEWS: inst/NEWS
 inst/NEWS: inst/NEWS.Rd
 	$(RCMD) Rdconv -t txt $^ -o $@
 
-www/NEWS.html: inst/NEWS.Rd
-	$(RCMD) Rdconv -t html inst/NEWS.Rd -o www/NEWS.html
-
 dist: NEWS $(PKGVERS).tar.gz
 
 $(PKGVERS).tar.gz: $(SOURCE)
 	$(RCMD) build --force --no-manual --resave-data --compact-vignettes=both --md5 .
 
-publish: dist manual news
+publish: dist manual
 	$(RSCRIPT) -e 'drat::insertPackage("$(PKGVERS).tar.gz",repodir="../www",action="prune")'
 	-$(RSCRIPT) -e 'drat::insertPackage("$(PKGVERS).tgz",repodir="../www",action="prune")'
 	-$(RSCRIPT) -e 'drat::insertPackage("$(PKGVERS).zip",repodir="../www",action="prune")'
