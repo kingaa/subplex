@@ -15,7 +15,7 @@ INSTALL = install
 PKG = $(shell perl -ne 'print $$1 if /Package:\s+((\w+[-\.]?)+)/;' DESCRIPTION)
 VERSION = $(shell perl -ne 'print $$1 if /Version:\s+((\d+[-\.]?)+)/;' DESCRIPTION)
 PKGVERS = $(PKG)_$(VERSION)
-SOURCE=$(shell ls R/*R src/* man/*Rd data/* tests/*R)
+SOURCE=$(shell ls R/*R src/* man/*Rd tests/*R)
 
 default:
 	@echo $(PKGVERS)
