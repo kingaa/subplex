@@ -28,9 +28,8 @@ dist manual vignettes: export GS_QUALITY=ebook
 dist manual vignettes: export R_HOME=$(shell $(REXE) RHOME)
 check xcheck xxcheck: export FULL_TESTS=yes
 xcheck tests: export R_PROFILE_USER=$(CURDIR)/.Rprofile
-htmldocs vignettes data tests manual: export R_LIBS=$(CURDIR)/library
+htmldocs xxcheck vignettes data tests manual: export R_LIBS=$(CURDIR)/library
 session: export R_DEFAULT_PACKAGES=datasets,utils,grDevices,graphics,stats,methods,subplex,tidyverse
-xxcheck: export R_LIBS=$(CURDIR)/check
 
 includes: inst/include/pomp.h inst/include/pomp_defines.h
 
@@ -78,10 +77,10 @@ qqcheck: dist
 	$(RCMD) check --library=check -o check --no-codoc --no-examples --no-vignettes --no-manual --no-tests $(PKGVERS).tar.gz
 
 xcheck: dist
-	mkdir -p check
+	mkdir -p check library
 	$(RCMD_ALT) check --no-stop-on-test-error --as-cran --library=library -o check $(PKGVERS).tar.gz
 
-xxcheck: xcheck
+xxcheck: install xcheck
 	mkdir -p check
 	$(REXE) -d "valgrind --tool=memcheck --track-origins=yes --leak-check=full" < check/$(PKG).Rcheck/$(PKG)-Ex.R 2>&1 | tee $(PKG)-Ex.Rout
 
@@ -107,7 +106,7 @@ library/$(PKG): dist
 
 remove:
 	-$(RCMD) REMOVE --library=library $(PKG)
-	rmdir library
+	-rmdir library
 
 inst/include/%.h: src/%.h
 	$(CP) $^ $@
