@@ -55,6 +55,6 @@ jobs:
       file:
       - subplex_*.tgz
       - subplex_*.tar.gz
-      cleanup: false
+      skip_cleanup: true
       on:
         tags: true
