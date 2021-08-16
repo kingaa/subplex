@@ -1,6 +1,5 @@
 ## subplex
 
-[![Build Status](https://travis-ci.org/kingaa/subplex.svg?branch=master)](https://travis-ci.org/kingaa/subplex)
 [![codecov](https://codecov.io/gh/kingaa/subplex/branch/master/graph/badge.svg)](https://codecov.io/gh/kingaa/subplex/)
 [![Development Release](https://img.shields.io/github/release/kingaa/subplex.svg)](https://github.com/kingaa/subplex/)
 [![CRAN Status](http://www.r-pkg.org/badges/version/subplex)](http://cran.r-project.org/package=subplex)
@@ -27,4 +26,5 @@ install_github("kingaa/subplex")
 
 #### Package manual
 
-[Download it here.](http://kingaa.github.io/manuals/subplex.pdf)
+[HTML](https://kingaa.github.io/manuals/subplex/html/00Index.html)
+[PDF](https://kingaa.github.io/manuals/subplex/subplex.pdf)

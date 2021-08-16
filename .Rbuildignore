@@ -20,4 +20,5 @@ www
 ^(.+?)\.tar\.gz
 ^(.+?)\.tgz
 ^(.+?)\.zip
-hub_cov\.R
+covr.rds
+covr.html
