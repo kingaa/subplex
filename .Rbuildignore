@@ -2,6 +2,9 @@ tests/Makefile
 tests/(.+?)\.png$
 tests/(.+?)\.pdf$
 tests/(.+?)\.Rout$
+inst/doc/Makefile
+inst/doc/(.+?).md
+inst/doc/(.+?).Rmd
 LICENSE\.md$
 README\.md$
 TODO\.md$
@@ -12,6 +15,7 @@ TODO\.md$
 ^\.Rproj\.user$
 \.Rprofile
 Makefile
+rules.mk
 lib
 library
 check
@@ -20,5 +24,5 @@ www
 ^(.+?)\.tar\.gz
 ^(.+?)\.tgz
 ^(.+?)\.zip
-covr.rds
-covr.html
+covr\.rds
+covr\.html
