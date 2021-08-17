@@ -3,7 +3,7 @@ RCMD = $(REXE) CMD
 RCMD_ALT = R --no-save --no-restore CMD
 RSCRIPT = Rscript --vanilla
 REPODIR = ../www
-MANUALDIR = ../www/manuals/subplex
+MANUALDIR = ../www/manuals/$(PKG)
 
 PDFLATEX = pdflatex
 BIBTEX = bibtex
@@ -33,19 +33,21 @@ roxy headers dist manual vignettes: export R_HOME=$(shell $(REXE) RHOME)
 check xcheck xxcheck: export FULL_TESTS=yes
 dist revdeps session tests check xcheck xxcheck: export R_KEEP_PKG_SOURCE=yes
 revdeps xcheck tests: export R_PROFILE_USER=$(CURDIR)/.Rprofile
-revdeps session xxcheck vignettes data tests manual: export R_LIBS=$(CURDIR)/library
-session: export R_DEFAULT_PACKAGES=
-
-headers:
+revdeps session xxcheck htmldocs vignettes data tests manual: export R_LIBS=$(CURDIR)/library
+session: export R_DEFAULT_PACKAGES=datasets,utils,grDevices,graphics,stats,methods,tidyverse,$(PKG)
 
 includes:
+
+headers:
 
 inst/include/%.h: src/%.h
 	$(CP) $^ $@
 
+htmldocs: inst/doc/*.html
+
 htmlhelp: install
-	rsync --delete -a library/subplex/html/ $(MANUALDIR)/html
-	rsync --delete --exclude=aliases.rds --exclude=paths.rds --exclude=subplex.rdb --exclude=subplex.rdx --exclude=macros -a library/subplex/help/ $(MANUALDIR)/help
+	rsync --delete -a library/$(PKG)/html/ $(MANUALDIR)/html
+	rsync --delete --exclude=aliases.rds --exclude=paths.rds --exclude=$(PKG).rdb --exclude=$(PKG).rdx --exclude=macros -a library/$(PKG)/help/ $(MANUALDIR)/help
 	(cd $(MANUALDIR)/html; (cat ../links.ed && echo w ) | ed - 00Index.html)
 	$(CP) ../www/_includes/pompstyle.css $(MANUALDIR)/html/R.css
 
