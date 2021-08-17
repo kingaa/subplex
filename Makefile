@@ -45,7 +45,7 @@ inst/include/%.h: src/%.h
 
 htmldocs: inst/doc/*.html
 
-htmlhelp: install
+htmlhelp: install news
 	rsync --delete -a library/$(PKG)/html/ $(MANUALDIR)/html
 	rsync --delete --exclude=aliases.rds --exclude=paths.rds --exclude=$(PKG).rdb --exclude=$(PKG).rdx --exclude=macros -a library/$(PKG)/help/ $(MANUALDIR)/help
 	(cd $(MANUALDIR); (cat links.ed && echo w ) | ed - html/00Index.html)
@@ -85,7 +85,7 @@ binary: dist
 	$(RCMD) INSTALL --build --library=plib --preclean --clean $(PKGVERS).tar.gz
 	rm -rf plib
 
-publish: dist manual news htmlhelp
+publish: dist manual htmlhelp
 	$(RSCRIPT) -e 'drat::insertPackage("$(PKGVERS).tar.gz",repodir="$(REPODIR)",action="prune")'
 	-$(RSCRIPT) -e 'drat::insertPackage("$(PKGVERS).tgz",repodir="$(REPODIR)",action="prune")'
 	-$(RSCRIPT) -e 'drat::insertPackage("$(PKGVERS).zip",repodir="$(REPODIR)",action="prune")'
