@@ -26,5 +26,5 @@ install_github("kingaa/subplex")
 
 #### Package manual
 
-[HTML](https://kingaa.github.io/manuals/subplex/html/00Index.html)
+[HTML](https://kingaa.github.io/manuals/subplex/html/00Index.html)  
 [PDF](https://kingaa.github.io/manuals/subplex/subplex.pdf)
