@@ -86,8 +86,8 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
 
   // ALERT: POTENTIAL BUG
   // THE FOLLOWING MEMORY ALLOCATION IS BASED ON AN INTERPRETATION OF THE SUBPLEX DOCUMENTATION
-  work = (double *) Calloc(n*(n+6)+1,double);
-  iwork = (int *) Calloc(2*n,int);
+  work = (double *) R_Calloc(n*(n+6)+1,double);
+  iwork = (int *) R_Calloc(2*n,int);
 
   xp = REAL(x); Xp = REAL(X);
   for (k = 0; k < n; k++) Xp[k] = xp[k]; // copy in the initial guess vector
@@ -95,8 +95,8 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   F77_CALL(subplx)(objfn,&n,REAL(tol),INTEGER(maxnfe),scalp,Xp,REAL(val),INTEGER(counts),
 		   work,iwork,INTEGER(conv));
 
-  Free(iwork);
-  Free(work);
+  R_Free(iwork);
+  R_Free(work);
 
   PROTECT(message = NEW_CHARACTER(1)); nprotect++;
   switch (INTEGER_VALUE(conv)) {
@@ -112,9 +112,9 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   case -2:
     errorcall(R_NilValue,"'parscale' is too small relative to 'par'");
     break;
-  case 2: default:
-    errorcall(R_NilValue,"impossible error in subplex"); // # nocov
-    break;
+  case 2: default:					 // #nocov
+    errorcall(R_NilValue,"impossible error in subplex"); // #nocov
+    break;						 // #nocov
   }
 
   if (hess_reqd) {	     // compute the Hessian matrix if required
