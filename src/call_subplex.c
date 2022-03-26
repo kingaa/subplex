@@ -120,7 +120,7 @@ SEXP call_subplex (SEXP x, SEXP f, SEXP tol, SEXP maxnfe, SEXP scale, SEXP hessi
   if (hess_reqd) {	     // compute the Hessian matrix if required
     PROTECT(H = allocMatrix(REALSXP,n,n)); nprotect++;
     hstep = vect(n);
-    eps = pow(DOUBLE_EPS,1.0/3.0); // scale with the cube-root of the machine precision
+    eps = pow(DBL_EPSILON,1.0/3.0); // scale with the cube-root of the machine precision
     // ALERT: FEATURE IMPROVEMENT NEEDED
     if (nscal == 1) { // THE DOUBLE USE OF 'scale' SHOULD PROBABLY BE REPLACED WITH 'ndeps' AS IN 'optim'
       for (k = 0; k < n; k++) hstep[k] = fabs(scalp[0])*eps;
