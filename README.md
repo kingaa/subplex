@@ -2,7 +2,7 @@
 
 [![Development Release](https://img.shields.io/github/release/kingaa/subplex.svg)](https://github.com/kingaa/subplex/)
 [![CRAN Status](http://www.r-pkg.org/badges/version/subplex)](http://cran.r-project.org/package=subplex)
-![Last CRAN release date](https://www.r-pkg.org/badges/last-release/subplex)
+[![Last CRAN release date](https://www.r-pkg.org/badges/last-release/subplex)](http://cran.r-project.org/package=subplex)
 [![R-CMD-check](https://github.com/kingaa/subplex/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/kingaa/subplex/actions/workflows/r-cmd-check.yml)
 [![test-coverage](https://github.com/kingaa/subplex/actions/workflows/test-coverage.yml/badge.svg)](https://github.com/kingaa/subplex/actions/workflows/test-coverage.yml)
 [![codecov](https://codecov.io/gh/kingaa/subplex/branch/master/graph/badge.svg)](https://codecov.io/gh/kingaa/subplex/)
