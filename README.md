@@ -1,5 +1,6 @@
 ## subplex
 
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Development Release](https://img.shields.io/github/release/kingaa/subplex.svg)](https://github.com/kingaa/subplex/)
 [![CRAN Status](http://www.r-pkg.org/badges/version/subplex)](http://cran.r-project.org/package=subplex)
 [![Last CRAN release date](https://www.r-pkg.org/badges/last-release/subplex)](http://cran.r-project.org/package=subplex)
