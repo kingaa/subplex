@@ -1,0 +1,65 @@
+* installing *source* package 'gsl' ...
+** package 'gsl' successfully unpacked and MD5 sums checked
+** using staged installation
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking for gsl-config... /usr/bin/gsl-config
+checking if GSL version >= 2.5... yes
+configure: creating ./config.status
+config.status: creating src/Makevars
+** libs
+make[2]: Entering directory '/tmp/RtmpOqckxm/R.INSTALL1273e757f1619/gsl/src'
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c airy.c -o airy.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c bessel.c -o bessel.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c clausen.c -o clausen.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c coulomb.c -o coulomb.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c coupling.c -o coupling.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c dawson.c -o dawson.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c debye.c -o debye.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c dilog.c -o dilog.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c ellint.c -o ellint.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c elljac.c -o elljac.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c error.c -o error.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c expint.c -o expint.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c fermi_dirac.c -o fermi_dirac.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c gamma.c -o gamma.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c gegenbauer.c -o gegenbauer.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c hyperg.c -o hyperg.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c init.c -o init.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c laguerre.c -o laguerre.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c lambert.c -o lambert.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c legendre.c -o legendre.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c log.c -o log.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c poly.c -o poly.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c pow_int.c -o pow_int.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c psi.c -o psi.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c qrng.c -o qrng.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c rng.c -o rng.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c synchrotron.c -o synchrotron.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c transport.c -o transport.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c trig.c -o trig.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c vector.c -o vector.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -I/usr/include -I.  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c zeta.c -o zeta.o
+gcc -shared -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -L/usr/local/lib64 -o gsl.so airy.o bessel.o clausen.o coulomb.o coupling.o dawson.o debye.o dilog.o ellint.o elljac.o error.o expint.o fermi_dirac.o gamma.o gegenbauer.o hyperg.o init.o laguerre.o lambert.o legendre.o log.o poly.o pow_int.o psi.o qrng.o rng.o synchrotron.o transport.o trig.o vector.o zeta.o -L/usr/lib/x86_64-linux-gnu -lgsl -lgslcblas -lm -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -lR
+make[2]: Leaving directory '/tmp/RtmpOqckxm/R.INSTALL1273e757f1619/gsl/src'
+installing to /home/kingaa/projects/Rpkg/subplex/revdep/Library/00LOCK-gsl/00new/gsl/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gsl)

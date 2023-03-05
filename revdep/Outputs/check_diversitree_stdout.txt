@@ -1,0 +1,169 @@
+* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/diversitree.Rcheck'
+* using R version 4.2.2 (2022-10-31)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using option '--as-cran'
+* checking for file 'diversitree/DESCRIPTION' ... OK
+* this is package 'diversitree' version '0.9-16'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package 'diversitree' can be installed ... [74s/96s] OK
+* checking installed package size ... NOTE
+  installed size is  9.5Mb
+  sub-directories of 1Mb or more:
+    libs   8.3Mb
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... WARNING
+A complete check needs the 'checkbashisms' script.
+See section 'Configure and cleanup' in the 'Writing R Extensions'
+manual.
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... [47s/70s] NOTE
+add.profile.outline: local variable ‘dx’ assigned but may not be used
+all.branches.list: local variable ‘n.tip’ assigned but may not be used
+all.branches.matrix: local variable ‘n.tip’ assigned but may not be
+  used
+caching.integer: local variable ‘ret’ assigned but may not be used
+clades.from.polytomies: local variable ‘is.node’ assigned but may not
+  be used
+constrain.i: local variable ‘pars.out’ assigned but may not be used
+constrain.i2: local variable ‘argnames.constrained’ assigned but may
+  not be used
+constrain.i2: local variable ‘pars.out’ assigned but may not be used
+drop.tip.fixed: local variable ‘Nnode’ assigned but may not be used
+drop.tip.fixed: local variable ‘tr’ assigned but may not be used
+expand.pars.quasse: local variable ‘x’ assigned but may not be used
+expm.expokit.sparse.pars: local variable ‘nz’ assigned but may not be
+  used
+fftR.propagate.x: local variable ‘f’ assigned but may not be used
+make.all.branches.bm.contrasts: local variable ‘states’ assigned but
+  may not be used
+make.all.branches.pgls.pruning.phylo: local variable ‘y’ assigned but
+  may not be used
+make.all.branches.rescale.contrasts: local variable ‘states’ assigned
+  but may not be used
+make.asr.marginal.bisse.t: local variable ‘cache’ assigned but may not
+  be used
+make.asr.marginal.dtlik.t: local variable ‘cache’ assigned but may not
+  be used
+make.asr.marginal.mkn: local variable ‘states.idx’ assigned but may not
+  be used
+make.asr.marginal.musse.t: local variable ‘cache’ assigned but may not
+  be used
+make.branches.quasse: local variable ‘branches’ assigned but may not be
+  used
+make.branches.quasse.fftC: local variable ‘tc’ assigned but may not be
+  used
+make.branches.quasse.fftR: local variable ‘tc’ assigned but may not be
+  used
+make.branches.quasse.mol: local variable ‘tc’ assigned but may not be
+  used
+make.branches.td : <anonymous>: local variable ‘out’ assigned but may
+  not be used
+make.cache.mkn.multitrait: local variable ‘k’ assigned but may not be
+  used
+make.cache.mkn.multitrait: local variable ‘types’ assigned but may not
+  be used
+make.cache.quasse: local variable ‘n.args’ assigned but may not be used
+make.caching.branches: local variable ‘prev.pars’ assigned but may not
+  be used
+make.derivs.mkn.meristic: local variable ‘dydt’ assigned but may not be
+  used
+make.initial.conditions.classe: local variable ‘d’ assigned but may not
+  be used
+make.initial.conditions.classe: local variable
+  ‘initial.conditions.classe’ assigned but may not be used
+make.initial.conditions.quasse: local variable ‘eps’ assigned but may
+  not be used
+make.pars.classe: local variable ‘np’ assigned but may not be used
+make.pars.classe: local variable ‘qmat’ assigned but may not be used
+make.pars.mkn: local variable ‘qmat’ assigned but may not be used
+make.pars.mkn.multitrait: local variable ‘f.pars’ assigned but may not
+  be used
+make.pars.mkn.multitrait: local variable ‘n.trait’ assigned but may not
+  be used
+make.pars.musse: local variable ‘qmat’ assigned but may not be used
+make.pars.musse.multitrait: local variable ‘k’ assigned but may not be
+  used
+make.pars.musse.multitrait: local variable ‘n.trait’ assigned but may
+  not be used
+make.quasse.split: local variable ‘n.part’ assigned but may not be used
+make.rescale.phylo.eb: local variable ‘t.max’ assigned but may not be
+  used
+make.rootfunc.quasse: local variable ‘root.idx’ assigned but may not be
+  used
+make.sim.character: local variable ‘y’ assigned but may not be used
+make.tree.bisse.C.core: local variable ‘info’ assigned but may not be
+  used
+make.tree.bisse.R.core: local variable ‘info’ assigned but may not be
+  used
+minimise.int1d: local variable ‘factor’ assigned but may not be used
+minimise.int1d: local variable ‘step’ assigned but may not be used
+plot.history: local variable ‘cols.seg’ assigned but may not be used
+pp.clades.phylogram: local variable ‘n’ assigned but may not be used
+pp.coords.phylogram: local variable ‘phy.p’ assigned but may not be
+  used
+rootfunc.mkn: local variable ‘k’ assigned but may not be used
+split.group: local variable ‘descendants.idx’ assigned but may not be
+  used
+starting.point.classe: local variable ‘d’ assigned but may not be used
+tree.musse.multitrait: local variable ‘np’ assigned but may not be used
+
+Found if() conditions comparing class() to string:
+File ‘diversitree/R/clade-tree.R’: if (class(class) != "character") ...
+Use inherits() (or maybe is()) instead.
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking line endings in shell scripts ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking compilation flags in Makevars ... OK
+* checking for GNU extensions in Makefiles ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking use of PKG_*FLAGS in Makefiles ... OK
+* checking use of SHLIB_OPENMP_*FLAGS in Makefiles ... OK
+* checking pragmas in C/C++ headers and code ... OK
+* checking compilation flags used ... OK
+* checking compiled code ... OK
+* checking examples ... [33s/15s] OK
+Examples with CPU (user + system) or elapsed time > 5s
+                  user system elapsed
+make.bisse.split 4.385  9.669   2.493
+make.bisse       3.292  6.737   1.903
+* checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 1 WARNING, 2 NOTEs

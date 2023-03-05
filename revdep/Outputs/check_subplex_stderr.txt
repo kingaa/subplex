@@ -1,0 +1,7 @@
+  Running ‘ripple.R’
+  Comparing ‘ripple.Rout’ to ‘ripple.Rout.save’ ... OK
+  Running ‘rosen.R’ [25s/35s]
+  Comparing ‘rosen.Rout’ to ‘rosen.Rout.save’ ... OK
+  Running ‘tinytest.R’
+
+

@@ -1,0 +1,7 @@
+  Running ‘tests.r’
+
+See
+  '/home/kingaa/projects/Rpkg/subplex/revdep/mvMORPH.Rcheck/00check.log'
+for details.
+
+

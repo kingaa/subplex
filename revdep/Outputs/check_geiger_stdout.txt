@@ -1,0 +1,200 @@
+* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/geiger.Rcheck'
+* using R version 4.2.2 (2022-10-31)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using option '--as-cran'
+* checking for file 'geiger/DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'geiger' version '2.0.10'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package 'geiger' can be installed ... [45s/53s] OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... [59s/92s] NOTE
+.adjustjump: local variable ‘fdesc’ assigned but may not be used
+.adjustjump: local variable ‘origjumps’ assigned but may not be used
+.adjustshift: local variable ‘root.des’ assigned but may not be used
+.cache.tree: local variable ‘mm’ assigned but may not be used
+.cache.y.nodes: local variable ‘rr’ assigned but may not be used
+.check.gbm: local variable ‘modzz’ assigned but may not be used
+.coda: local variable ‘nvar’ assigned but may not be used
+.constrain.m: local variable ‘npar’ assigned but may not be used
+.constrain.m: local variable ‘upar’ assigned but may not be used
+.delta.cache: local variable ‘mm’ assigned but may not be used
+.delta.phylo: local variable ‘mm’ assigned but may not be used
+.drop.tip: local variable ‘NEWROOT’ assigned but may not be used
+.drop.tip: local variable ‘Nedge’ assigned but may not be used
+.drop.tip: local variable ‘Nnode’ assigned but may not be used
+.drop.tip: local variable ‘ROOT’ assigned but may not be used
+.drop.tip: local variable ‘idx.old’ assigned but may not be used
+.edger: local variable ‘vv’ assigned but may not be used
+.fix.rjmcmc.matrix: local variable ‘nm’ assigned but may not be used
+.jumps.edgewise: local variable ‘jj’ assigned but may not be used
+.jumps.plot: local variable ‘j.var’ assigned but may not be used
+.jumps.plot: local variable ‘legend.seq’ assigned but may not be used
+.lambda.phylo: local variable ‘Tmax’ assigned but may not be used
+.laser.getlambda: local variable ‘Lfunc_phy’ assigned but may not be
+  used
+.laser.gettipdata: local variable ‘tmp’ assigned but may not be used
+.lik.partition.medusa: local variable ‘f’ assigned but may not be used
+.lik.partition.medusa: local variable ‘pend.n.0’ assigned but may not
+  be used
+.lrate.phylo: local variable ‘vv’ assigned but may not be used
+.make.bm.relaxed.direct: local variable ‘vv’ assigned but may not be
+  used
+.make.ode.deSolve: local variable ‘INTONE’ assigned but may not be used
+.make.ode.deSolve: local variable ‘INTTWO’ assigned but may not be used
+.make.ode.deSolve: local variable ‘INTZERO’ assigned but may not be
+  used
+.make.ode.deSolve: local variable ‘elag’ assigned but may not be used
+.make.ode.deSolve: local variable ‘flist’ assigned but may not be used
+.make.ode.deSolve: local variable ‘jacfunc’ assigned but may not be
+  used
+.make.ode.deSolve: local variable ‘jactype’ assigned but may not be
+  used
+.make.ode.deSolve: local variable ‘liw’ assigned but may not be used
+.make.ode.deSolve: local variable ‘lrw’ assigned but may not be used
+.make.ode.deSolve: local variable ‘np’ assigned but may not be used
+.make.pars.mkn: local variable ‘qmat’ assigned but may not be used
+.make.pij.mkn: local variable ‘method’ assigned but may not be used
+.nrate.phylo: local variable ‘mm’ assigned but may not be used
+.oldestyle.gfit.continuous: local variable ‘oddoldemodels’ assigned but
+  may not be used
+.oldestyle.gfit.discrete: local variable ‘nms’ assigned but may not be
+  used
+.oldestyle.gfit.discrete: local variable ‘numberize’ assigned but may
+  not be used
+.parlog.rjmcmc: local variable ‘pT’ assigned but may not be used
+.parlog.rjmcmc: local variable ‘parmbase’ assigned but may not be used
+.paths.cache: local variable ‘left’ assigned but may not be used
+.paths.cache: local variable ‘right’ assigned but may not be used
+.read.ests.rjmcmc: local variable ‘base’ assigned but may not be used
+.read.ests.rjmcmc: local variable ‘log’ assigned but may not be used
+.read.ests.rjmcmc: local variable ‘mod’ assigned but may not be used
+.replace.tip.with.subtree: local variable ‘N’ assigned but may not be
+  used
+.replace.tip.with.subtree: local variable ‘a_length’ assigned but may
+  not be used
+.rootfunc.mkn: local variable ‘k’ assigned but may not be used
+.shifts.plot: local variable ‘nodes’ assigned but may not be used
+.shifts.plot: local variable ‘xee’ assigned but may not be used
+.simple.yule.medusa: local variable ‘par’ assigned but may not be used
+.slater.branchingtimesfossil: local variable ‘phy2’ assigned but may
+  not be used
+.slater.initiate: local variable ‘p.out’ assigned but may not be used
+.slater.mrca: local variable ‘bb’ assigned but may not be used
+.splitormerge: local variable ‘new.values’ assigned but may not be used
+.startingpt.bm : .rates.simulation: local variable ‘nm’ assigned but
+  may not be used
+.startingpt.bm: local variable ‘j’ assigned but may not be used
+.subset.auteurRAW : <anonymous>: local variable ‘ngen’ assigned but may
+  not be used
+.traceplot : <anonymous>: local variable ‘xxx’ assigned but may not be
+  used
+.traceplot: local variable ‘xs’ assigned but may not be used
+.traceplot: local variable ‘ys’ assigned but may not be used
+aov.phylo: local variable ‘group’ assigned but may not be used
+bf: local variable ‘ordres’ assigned but may not be used
+bm.lik : ll.bm.direct : .xxSE: local variable ‘vv’ assigned but may not
+  be used
+bm.lik : ll.bm.direct: local variable ‘adjSE’ assigned but may not be
+  used
+calibrate.mecca: local variable ‘cmeans’ assigned but may not be used
+calibrate.mecca: local variable ‘cvar’ assigned but may not be used
+calibrate.mecca: local variable ‘mecca.env’ assigned but may not be
+  used
+calibrate.mecca: local variable ‘mecca.lm’ assigned but may not be used
+calibrate.rjmcmc: local variable ‘acc’ assigned but may not be used
+calibrate.rjmcmc: local variable ‘model’ assigned but may not be used
+calibrate.rjmcmc: local variable ‘wid’ assigned but may not be used
+dtt: local variable ‘mean.sims’ assigned but may not be used
+edges.phylo : .hash_proppart: local variable ‘nn’ assigned but may not
+  be used
+ex.jumpsimulator: local variable ‘edges’ assigned but may not be used
+exemplar.phylo: local variable ‘ff’ assigned but may not be used
+fitContinuousMCMC: local variable ‘foo’ assigned but may not be used
+fitDiscrete: local variable ‘constr’ assigned but may not be used
+glomogram.phylo: local variable ‘nn’ assigned but may not be used
+hashes.phylo : <anonymous>: local variable ‘ss’ assigned but may not be
+  used
+heights.phylo: local variable ‘labs’ assigned but may not be used
+lookup.phylo: local variable ‘genuslevel_tree’ assigned but may not be
+  used
+lookup.phylo: local variable ‘original_taxonomy’ assigned but may not
+  be used
+mecca: local variable ‘k’ assigned but may not be used
+medusa : medusa_runner : summarizeZ: local variable ‘opt.model’
+  assigned but may not be used
+medusa : medusa_runner: local variable ‘z.orig’ assigned but may not be
+  used
+nodelabel.phylo: local variable ‘orig’ assigned but may not be used
+nodelabel.phylo: local variable ‘true_missed’ assigned but may not be
+  used
+nodelabel.phylo: local variable ‘unmatched’ assigned but may not be
+  used
+ou.lik : fx_exporter : lik: local variable ‘rtmx’ assigned but may not
+  be used
+ou.lik: local variable ‘model’ assigned but may not be used
+rc: local variable ‘pp’ assigned but may not be used
+rjmcmc.bm: local variable ‘jumpsedgewise’ assigned but may not be used
+rjmcmc.bm: local variable ‘lnLikelihoodRatio’ assigned but may not be
+  used
+stem.limits: local variable ‘alpha’ assigned but may not be used
+write.pathd8: local variable ‘taxon’ assigned but may not be used
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of 'data' directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking compilation flags in Makevars ... OK
+* checking for GNU extensions in Makefiles ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking use of PKG_*FLAGS in Makefiles ... OK
+* checking use of SHLIB_OPENMP_*FLAGS in Makefiles ... OK
+* checking pragmas in C/C++ headers and code ... OK
+* checking compilation flags used ... OK
+* checking compiled code ... OK
+* checking examples ... [8s/14s] OK
+** found \donttest examples: check also with --run-donttest
+* checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 1 NOTE

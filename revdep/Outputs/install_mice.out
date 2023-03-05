@@ -1,0 +1,25 @@
+* installing *source* package 'mice' ...
+** package 'mice' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+make[2]: Entering directory '/tmp/RtmpEmmozr/R.INSTALL116d2785d0acb/mice/src'
+g++ -std=gnu++11 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/cpp11/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I/usr/local/include   -fpic  -g -O2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++11 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/cpp11/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I/usr/local/include   -fpic  -g -O2  -c legendre.cpp -o legendre.o
+g++ -std=gnu++11 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/cpp11/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I/usr/local/include   -fpic  -g -O2  -c match.cpp -o match.o
+g++ -std=gnu++11 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/cpp11/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I/usr/local/include   -fpic  -g -O2  -c matchindex.cpp -o matchindex.o
+g++ -std=gnu++11 -shared -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -L/usr/local/lib64 -o mice.so RcppExports.o legendre.o match.o matchindex.o -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -lR
+make[2]: Leaving directory '/tmp/RtmpEmmozr/R.INSTALL116d2785d0acb/mice/src'
+installing to /home/kingaa/projects/Rpkg/subplex/revdep/Library/00LOCK-mice/00new/mice/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (mice)

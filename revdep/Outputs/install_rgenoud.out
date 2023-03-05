@@ -1,0 +1,105 @@
+* installing *source* package 'rgenoud' ...
+** package 'rgenoud' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+make[2]: Entering directory '/tmp/RtmpMTKBZX/R.INSTALL11d5b252d8ae9/rgenoud/src'
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c change_order.cpp -o change_order.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c eval.cpp -o eval.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c evaluate.cpp -o evaluate.o
+evaluate.cpp: In function ‘void JaIntegerSort(double**, long int, long int)’:
+evaluate.cpp:4056:8: warning: variable ‘nvars’ set but not used [-Wunused-but-set-variable]
+ 4056 |   long nvars;
+      |        ^~~~~
+evaluate.cpp: In function ‘void JaDoubleSort(double**, long int, long int)’:
+evaluate.cpp:4093:8: warning: variable ‘nvars’ set but not used [-Wunused-but-set-variable]
+ 4093 |   long nvars;
+      |        ^~~~~
+evaluate.cpp: In function ‘void optimization(GND_IOstructure*, VECTOR, MATRIX)’:
+evaluate.cpp:1130:39: warning: ‘Memory’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1130 |    UniqueCount = RmemoryMatrixEvaluate(Structure->fnMemoryMatrixEvaluate, Structure->rho,
+      |                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1131 |            Memory, population,
+      |            ~~~~~~~~~~~~~~~~~~~         
+ 1132 |            MinMax, pop_size, UniqueCount,
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1133 |            nvars, Structure->Lexical, lexical_end);
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+evaluate.cpp:1549:22: warning: ‘oldfitvalueVEC’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1549 |     oldfitvalueVEC[0]=population[1][0];
+      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+evaluate.cpp:1456:72: warning: ‘LexicalReturn’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1456 |                       population[(pop_size-1)][i] = LexicalReturn[count];
+      |                                                     ~~~~~~~~~~~~~~~~~~~^
+evaluate.cpp: In function ‘void JaIntegerOptimization(GND_IOstructure*, VECTOR, MATRIX)’:
+evaluate.cpp:3488:39: warning: ‘Memory’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 3488 |    UniqueCount = RmemoryMatrixEvaluate(Structure->fnMemoryMatrixEvaluate, Structure->rho,
+      |                  ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3489 |            Memory, population,
+      |            ~~~~~~~~~~~~~~~~~~~         
+ 3490 |            MinMax, pop_size, UniqueCount,
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 3491 |            nvars, Structure->Lexical, lexical_end);
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+evaluate.cpp:3625:22: warning: ‘oldfitvalueVEC’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 3625 |     oldfitvalueVEC[0]=population[1][0];
+      |     ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+evaluate.cpp:3521:46: warning: ‘LexicalReturn’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 3521 |        population[i][j] = LexicalReturn[count];
+      |                           ~~~~~~~~~~~~~~~~~~~^
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c frange_ran.cpp -o frange_ran.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c genoud.cpp -o genoud.o
+genoud.cpp: In function ‘void genoud(GND_IOstructure*)’:
+genoud.cpp:66:8: warning: variable ‘LVMreturn’ set but not used [-Wunused-but-set-variable]
+   66 |   long LVMreturn;
+      |        ^~~~~~~~~
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c gradient.cpp -o gradient.o
+gradient.cpp: In function ‘void numgradc(SEXP, SEXP, double*, double*, int, double*, double*, double*, double (*)(SEXP, SEXP, double*, long int, short int, short int, double**), short int, short int, double**)’:
+gradient.cpp:208:10: warning: variable ‘u’ set but not used [-Wunused-but-set-variable]
+  208 |   double u, fplus, fminus;
+      |          ^
+gradient.cpp:209:10: warning: variable ‘epsuse’ set but not used [-Wunused-but-set-variable]
+  209 |   double epsuse;
+      |          ^~~~~~
+gradient.cpp: In function ‘estints* algfd(SEXP, SEXP, int, double*, double*, double*, double (*)(SEXP, SEXP, double*, long int, short int, short int, double**), short int, short int, double**)’:
+gradient.cpp:405:3: warning: label ‘FD1’ defined but not used [-Wunused-label]
+  405 |   FD1:
+      |   ^~~
+gradient.cpp:413:3: warning: label ‘FD2’ defined but not used [-Wunused-label]
+  413 |   FD2:
+      |   ^~~
+gradient.cpp:420:3: warning: label ‘FD3’ defined but not used [-Wunused-label]
+  420 |   FD3:
+      |   ^~~
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c init.c -o init.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c math.cpp -o math.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c multiply.cpp -o multiply.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c numerics.cpp -o numerics.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c operators.cpp -o operators.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c print_format.cpp -o print_format.o
+print_format.cpp: In function ‘long int ReadPopulation(double**, long int, long int, FILE*, short int)’:
+print_format.cpp:34:19: warning: variable ‘fint’ set but not used [-Wunused-but-set-variable]
+   34 |   int i, j, ltmp, fint;
+      |                   ^~~~
+print_format.cpp:114:15: warning: ‘OldData’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  114 |   JaMatrixFree(OldData, PopSize);
+      |   ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c rgenoud.cpp -o rgenoud.o
+rgenoud.cpp: In function ‘SEXPREC* rgenoud(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP, SEXP)’:
+rgenoud.cpp:167:34: warning: ‘StartingValues’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  167 |     MainStructure->StartingValues=StartingValues;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+g++ -std=gnu++14 -shared -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -L/usr/local/lib64 -o rgenoud.so change_order.o eval.o evaluate.o frange_ran.o genoud.o gradient.o init.o math.o multiply.o numerics.o operators.o print_format.o rgenoud.o -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -lR
+make[2]: Leaving directory '/tmp/RtmpMTKBZX/R.INSTALL11d5b252d8ae9/rgenoud/src'
+installing to /home/kingaa/projects/Rpkg/subplex/revdep/Library/00LOCK-rgenoud/00new/rgenoud/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rgenoud)

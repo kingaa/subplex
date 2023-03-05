@@ -1,0 +1,130 @@
+* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/mvMORPH.Rcheck'
+* using R version 4.2.2 (2022-10-31)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using option '--as-cran'
+* checking for file 'mvMORPH/DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'mvMORPH' version '1.1.6'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package 'mvMORPH' can be installed ... [30s/34s] OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking 'build' directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... [54s/91s] NOTE
+.aov.mvgls.perm.I : <anonymous>: local variable ‘Null’ assigned but may
+  not be used
+.aov.mvgls.perm.I: local variable ‘B0’ assigned but may not be used
+.aov.mvgls.perm.mar : <anonymous>: local variable ‘Null’ assigned but
+  may not be used
+.aov.mvgls.perm.mar: local variable ‘B0’ assigned but may not be used
+.aov.mvgls.perm.mar: local variable ‘Proj_full’ assigned but may not be
+  used
+.aov.mvgls.perm.mar: local variable ‘nb.resid’ assigned but may not be
+  used
+.penalizedCov: local variable ‘p’ assigned but may not be used
+EIC.mvgls: local variable ‘penalty’ assigned but may not be used
+EIC.mvgls: local variable ‘target’ assigned but may not be used
+EIC.mvgls: local variable ‘tuning’ assigned but may not be used
+GIC.mvgls: local variable ‘method’ assigned but may not be used
+LRT: local variable ‘simulations’ assigned but may not be used
+ancestral.mvgls: local variable ‘p’ assigned but may not be used
+estim: local variable ‘names_traits’ assigned but may not be used
+matrixParam: local variable ‘sigma’ assigned but may not be used
+mv.Precalc: local variable ‘decomp’ assigned but may not be used
+mv.Precalc: local variable ‘mod_stand’ assigned but may not be used
+mv.Precalc: local variable ‘model’ assigned but may not be used
+mvBM: local variable ‘value’ assigned but may not be used
+mvEB: local variable ‘IAr’ assigned but may not be used
+mvEB: local variable ‘JAr’ assigned but may not be used
+mvEB: local variable ‘warning’ assigned but may not be used
+mvOUTS: local variable ‘mt’ assigned but may not be used
+mvRWTS: local variable ‘constraint’ assigned but may not be used
+mvRWTS: local variable ‘dat’ assigned but may not be used
+mvRWTS: local variable ‘mt’ assigned but may not be used
+mvRWTS: local variable ‘root’ assigned but may not be used
+mvRWTS: local variable ‘sizeD’ assigned but may not be used
+mvgls: local variable ‘call’ assigned but may not be used
+mvgls: local variable ‘glsStruct’ assigned but may not be used
+mvgls: local variable ‘ncores’ assigned but may not be used
+mvgls.dfa: local variable ‘normalized’ assigned but may not be used
+plot.mvgls: local variable ‘pred’ assigned but may not be used
+plot.mvgls: local variable ‘scoreVar2’ assigned but may not be used
+predict.mvgls.dfa: local variable ‘grp’ assigned but may not be used
+summary.mvgls: local variable ‘meth’ assigned but may not be used
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of 'data' directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking compilation flags in Makevars ... OK
+* checking for GNU extensions in Makefiles ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking use of PKG_*FLAGS in Makefiles ... OK
+* checking use of SHLIB_OPENMP_*FLAGS in Makefiles ... OK
+* checking pragmas in C/C++ headers and code ... OK
+* checking compilation flags used ... OK
+* checking compiled code ... OK
+* checking sizes of PDF files under 'inst/doc' ... OK
+* checking installed files from 'inst/doc' ... OK
+* checking files in 'vignettes' ... OK
+* checking examples ... [285s/67s] OK
+Examples with CPU (user + system) or elapsed time > 5s
+             user system elapsed
+stationary 13.338 44.836  11.270
+mvSHIFT    11.973 39.705   8.848
+halflife   10.630 32.088   9.373
+mvRWTS      7.946 26.995   5.868
+estim       8.592 23.248   6.719
+mvBM        6.378 14.111   6.341
+LRT         2.740  6.987   1.984
+mvEB        1.523  5.056   1.369
+mvSIM       1.907  3.894   1.888
+** found \donttest examples: check also with --run-donttest
+* checking for unstated dependencies in 'tests' ... OK
+* checking tests ...
+ OK
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in 'inst/doc' ... OK
+* checking re-building of vignette outputs ... [852s/166s] OK
+* checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 1 NOTE

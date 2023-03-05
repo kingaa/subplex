@@ -1,0 +1,139 @@
+* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/metafor.Rcheck'
+* using R version 4.2.2 (2022-10-31)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using option '--as-cran'
+* checking for file 'metafor/DESCRIPTION' ... OK
+* this is package 'metafor' version '3.8-1'
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package 'metafor' can be installed ... [64s/77s] OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking 'build' directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... [139s/235s] NOTE
+.genuperms: local variable ‘z’ assigned but may not be used
+coef.permutest.rma.uni: local variable ‘mstyle’ assigned but may not be
+  used
+coef.rma: local variable ‘mstyle’ assigned but may not be used
+coef.summary.rma: local variable ‘mstyle’ assigned but may not be used
+confint.rma.glmm: local variable ‘mstyle’ assigned but may not be used
+confint.rma.ls: local variable ‘k’ assigned but may not be used
+confint.rma.ls: local variable ‘p’ assigned but may not be used
+confint.rma.mv: local variable ‘k’ assigned but may not be used
+confint.rma.mv: local variable ‘p’ assigned but may not be used
+confint.rma.uni.selmodel: local variable ‘k’ assigned but may not be
+  used
+confint.rma.uni.selmodel: local variable ‘p’ assigned but may not be
+  used
+confint.rma.uni.selmodel: local variable ‘tau2.pos’ assigned but may
+  not be used
+cooks.distance.rma.mv: local variable ‘m’ assigned but may not be used
+cumul.rma.mh: local variable ‘vi.f’ assigned but may not be used
+cumul.rma.mh: local variable ‘yi.f’ assigned but may not be used
+cumul.rma.peto: local variable ‘vi.f’ assigned but may not be used
+cumul.rma.peto: local variable ‘yi.f’ assigned but may not be used
+deviance.rma: local variable ‘mstyle’ assigned but may not be used
+df.residual.rma: local variable ‘mstyle’ assigned but may not be used
+funnel.default: local variable ‘phantom’ assigned but may not be used
+funnel.default: local variable ‘pval1’ assigned but may not be used
+funnel.default: local variable ‘pval2’ assigned but may not be used
+funnel.rma: local variable ‘phantom’ assigned but may not be used
+funnel.rma: local variable ‘pval1’ assigned but may not be used
+funnel.rma: local variable ‘pval2’ assigned but may not be used
+logLik.rma: local variable ‘mstyle’ assigned but may not be used
+nobs.rma: local variable ‘mstyle’ assigned but may not be used
+plot.profile.rma: local variable ‘mstyle’ assigned but may not be used
+plot.rma.glmm: local variable ‘mstyle’ assigned but may not be used
+plot.vif.rma: local variable ‘labline’ assigned but may not be used
+plot.vif.rma: local variable ‘tail’ assigned but may not be used
+print.infl.rma.uni: local variable ‘mstyle’ assigned but may not be
+  used
+print.profile.rma: local variable ‘mstyle’ assigned but may not be used
+print.summary.rma: local variable ‘mstyle’ assigned but may not be used
+profile.rma.uni.selmodel: local variable ‘tau2.pos’ assigned but may
+  not be used
+qqnorm.rma.glmm: local variable ‘mstyle’ assigned but may not be used
+qqnorm.rma.mv: local variable ‘mstyle’ assigned but may not be used
+ranef.rma.mv: local variable ‘rnames’ assigned but may not be used
+rma: local variable ‘Z.intercept’ assigned but may not be used
+rma: local variable ‘optmethod’ assigned but may not be used
+rma.glmm: local variable ‘QE’ assigned but may not be used
+rma.glmm: local variable ‘Surv’ assigned but may not be used
+rma.glmm: local variable ‘coxph’ assigned but may not be used
+rma.glmm: local variable ‘optmethod’ assigned but may not be used
+rma.glmm: local variable ‘strata’ assigned but may not be used
+rma.mv: local variable ‘optmethod’ assigned but may not be used
+rma.uni: local variable ‘Z.intercept’ assigned but may not be used
+rma.uni: local variable ‘optmethod’ assigned but may not be used
+selmodel.rma.uni: local variable ‘optmethod’ assigned but may not be
+  used
+selmodel.rma.uni: local variable ‘tau2.init’ assigned but may not be
+  used
+summary.rma: local variable ‘mstyle’ assigned but may not be used
+to.long: local variable ‘ni.u’ assigned but may not be used
+to.table: local variable ‘ni.u’ assigned but may not be used
+weights.rma.glmm: local variable ‘mstyle’ assigned but may not be used
+weights.rma.mh: local variable ‘Ni’ assigned but may not be used
+weights.rma.mh: local variable ‘Ti’ assigned but may not be used
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking sizes of PDF files under 'inst/doc' ... OK
+* checking installed files from 'inst/doc' ... OK
+* checking files in 'vignettes' ... OK
+* checking examples ... [1193s/161s] OK
+Examples with CPU (user + system) or elapsed time > 5s
+                       user  system elapsed
+influence.rma.mv    143.783 366.257  44.845
+anova.rma           113.613 253.949  63.786
+matreg               39.837 107.740   9.688
+confint.rma          14.276  34.471   7.070
+forest.rma            9.544  23.635   5.131
+methods.confint.rma  10.531  17.103   3.475
+update.rma            2.641   4.209   1.164
+robust                1.510   3.554   0.403
+* checking for unstated dependencies in 'tests' ... OK
+* checking tests ...
+ [370s/35s] OK
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in 'inst/doc' ... OK
+* checking re-building of vignette outputs ... OK
+* checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 1 NOTE

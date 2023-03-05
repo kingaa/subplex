@@ -1,0 +1,680 @@
+* installing *source* package 'DDD' ...
+** package 'DDD' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+make[2]: Entering directory '/tmp/RtmpRvrhHK/R.INSTALL5bc7be68e8f/DDD/src'
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c dd_integrate_bw_odeint.cpp -o dd_integrate_bw_odeint.o
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/aux_/na_assert.hpp:23,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/arg.hpp:25,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/placeholders.hpp:24,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/apply.hpp:24,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array_optimization.hpp:18,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array_wrapper.hpp:21,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array.hpp:26,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/ublas/storage.hpp:22,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/ublas/vector.hpp:21,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/ublas_wrapper.hpp:23,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:25,
+                 from odeint_helper.h:56,
+                 from dd_integrate_bw_odeint.cpp:4:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/assert.hpp:194:21: warning: unnecessary parentheses in declaration of ‘assert_arg’ [-Wparentheses]
+  194 | failed ************ (Pred::************
+      |                     ^
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/assert.hpp:199:21: warning: unnecessary parentheses in declaration of ‘assert_not_arg’ [-Wparentheses]
+  199 | failed ************ (boost::mpl::not_<Pred>::************
+      |                     ^
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/invocation/detail/that_ptr.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/invocation/invoke.hpp:52,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/adapter/fused.hpp:17,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/generation/make_fused.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/include/make_fused.hpp:11,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/resize.hpp:28,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/state_wrapper.hpp:26,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/ublas_wrapper.hpp:33,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:25,
+                 from odeint_helper.h:56,
+                 from dd_integrate_bw_odeint.cpp:4:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/get_pointer.hpp:48:40: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   48 | template<class T> T * get_pointer(std::auto_ptr<T> const& p)
+      |                                        ^~~~~~~~
+In file included from /usr/include/c++/9/bits/locale_conv.h:41,
+                 from /usr/include/c++/9/locale:43,
+                 from /usr/include/c++/9/iomanip:43,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/RcppCommon.h:53,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/Rcpp.h:27,
+                 from dd_integrate_bw_odeint.cpp:2:
+/usr/include/c++/9/bits/unique_ptr.h:53:28: note: declared here
+   53 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:19,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:54,
+                 from odeint_helper.h:56,
+                 from dd_integrate_bw_odeint.cpp:4:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/adaptive_adams_coefficients.hpp:189:6: warning: extra ‘;’ [-Wpedantic]
+  189 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:54,
+                 from odeint_helper.h:56,
+                 from dd_integrate_bw_odeint.cpp:4:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:93:6: warning: extra ‘;’ [-Wpedantic]
+   93 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:99:6: warning: extra ‘;’ [-Wpedantic]
+   99 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:108:6: warning: extra ‘;’ [-Wpedantic]
+  108 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:123:6: warning: extra ‘;’ [-Wpedantic]
+  123 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:151:6: warning: extra ‘;’ [-Wpedantic]
+  151 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:164:6: warning: extra ‘;’ [-Wpedantic]
+  164 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:197:6: warning: extra ‘;’ [-Wpedantic]
+  197 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:210:6: warning: extra ‘;’ [-Wpedantic]
+  210 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:215:6: warning: extra ‘;’ [-Wpedantic]
+  215 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:220:6: warning: extra ‘;’ [-Wpedantic]
+  220 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:22,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:55,
+                 from odeint_helper.h:56,
+                 from dd_integrate_bw_odeint.cpp:4:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:72:6: warning: extra ‘;’ [-Wpedantic]
+   72 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:82:6: warning: extra ‘;’ [-Wpedantic]
+   82 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:100:6: warning: extra ‘;’ [-Wpedantic]
+  100 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:55,
+                 from odeint_helper.h:56,
+                 from dd_integrate_bw_odeint.cpp:4:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:167:6: warning: extra ‘;’ [-Wpedantic]
+  167 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:173:6: warning: extra ‘;’ [-Wpedantic]
+  173 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:219:6: warning: extra ‘;’ [-Wpedantic]
+  219 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:277:6: warning: extra ‘;’ [-Wpedantic]
+  277 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:286:6: warning: extra ‘;’ [-Wpedantic]
+  286 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:297:6: warning: extra ‘;’ [-Wpedantic]
+  297 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:302:6: warning: extra ‘;’ [-Wpedantic]
+  302 |     };
+      |      ^
+      |      -
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c dd_integrate_odeint.cpp -o dd_integrate_odeint.o
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/aux_/na_assert.hpp:23,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/arg.hpp:25,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/placeholders.hpp:24,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/apply.hpp:24,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array_optimization.hpp:18,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array_wrapper.hpp:21,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array.hpp:26,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/ublas/storage.hpp:22,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/ublas/vector.hpp:21,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/ublas_wrapper.hpp:23,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:25,
+                 from odeint_helper.h:56,
+                 from dd_integrate_odeint.cpp:8:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/assert.hpp:194:21: warning: unnecessary parentheses in declaration of ‘assert_arg’ [-Wparentheses]
+  194 | failed ************ (Pred::************
+      |                     ^
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/assert.hpp:199:21: warning: unnecessary parentheses in declaration of ‘assert_not_arg’ [-Wparentheses]
+  199 | failed ************ (boost::mpl::not_<Pred>::************
+      |                     ^
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/invocation/detail/that_ptr.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/invocation/invoke.hpp:52,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/adapter/fused.hpp:17,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/generation/make_fused.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/include/make_fused.hpp:11,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/resize.hpp:28,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/state_wrapper.hpp:26,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/ublas_wrapper.hpp:33,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:25,
+                 from odeint_helper.h:56,
+                 from dd_integrate_odeint.cpp:8:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/get_pointer.hpp:48:40: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   48 | template<class T> T * get_pointer(std::auto_ptr<T> const& p)
+      |                                        ^~~~~~~~
+In file included from /usr/include/c++/9/bits/locale_conv.h:41,
+                 from /usr/include/c++/9/locale:43,
+                 from /usr/include/c++/9/iomanip:43,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/RcppCommon.h:53,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/Rcpp.h:27,
+                 from dd_integrate_odeint.cpp:5:
+/usr/include/c++/9/bits/unique_ptr.h:53:28: note: declared here
+   53 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:19,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:54,
+                 from odeint_helper.h:56,
+                 from dd_integrate_odeint.cpp:8:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/adaptive_adams_coefficients.hpp:189:6: warning: extra ‘;’ [-Wpedantic]
+  189 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:54,
+                 from odeint_helper.h:56,
+                 from dd_integrate_odeint.cpp:8:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:93:6: warning: extra ‘;’ [-Wpedantic]
+   93 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:99:6: warning: extra ‘;’ [-Wpedantic]
+   99 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:108:6: warning: extra ‘;’ [-Wpedantic]
+  108 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:123:6: warning: extra ‘;’ [-Wpedantic]
+  123 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:151:6: warning: extra ‘;’ [-Wpedantic]
+  151 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:164:6: warning: extra ‘;’ [-Wpedantic]
+  164 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:197:6: warning: extra ‘;’ [-Wpedantic]
+  197 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:210:6: warning: extra ‘;’ [-Wpedantic]
+  210 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:215:6: warning: extra ‘;’ [-Wpedantic]
+  215 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:220:6: warning: extra ‘;’ [-Wpedantic]
+  220 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:22,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:55,
+                 from odeint_helper.h:56,
+                 from dd_integrate_odeint.cpp:8:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:72:6: warning: extra ‘;’ [-Wpedantic]
+   72 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:82:6: warning: extra ‘;’ [-Wpedantic]
+   82 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:100:6: warning: extra ‘;’ [-Wpedantic]
+  100 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:55,
+                 from odeint_helper.h:56,
+                 from dd_integrate_odeint.cpp:8:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:167:6: warning: extra ‘;’ [-Wpedantic]
+  167 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:173:6: warning: extra ‘;’ [-Wpedantic]
+  173 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:219:6: warning: extra ‘;’ [-Wpedantic]
+  219 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:277:6: warning: extra ‘;’ [-Wpedantic]
+  277 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:286:6: warning: extra ‘;’ [-Wpedantic]
+  286 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:297:6: warning: extra ‘;’ [-Wpedantic]
+  297 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:302:6: warning: extra ‘;’ [-Wpedantic]
+  302 |     };
+      |      ^
+      |      -
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c dd_integrate_td_odeint.cpp -o dd_integrate_td_odeint.o
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/number_base.hpp:14,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/is_variable_precision.hpp:9,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/precision.hpp:9,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/number.hpp:11,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_int.hpp:14,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_bin_float.hpp:9,
+                 from dd_integrate_td_odeint.cpp:5:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:31:18: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   31 | struct is_signed<__int128> : public std::integral_constant<bool, true> {};
+      |                  ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:33:27: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   33 | struct is_signed<unsigned __int128> : public std::integral_constant<bool, false> {};
+      |                           ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:35:20: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   35 | struct is_unsigned<__int128> : public std::integral_constant<bool, false> {};
+      |                    ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:37:29: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   37 | struct is_unsigned<unsigned __int128> : public std::integral_constant<bool, true> {};
+      |                             ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:39:20: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   39 | struct is_integral<__int128> : public std::integral_constant<bool, true> {};
+      |                    ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:41:29: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   41 | struct is_integral<unsigned __int128> : public std::integral_constant<bool, true> {};
+      |                             ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:43:22: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   43 | struct is_arithmetic<__int128> : public std::integral_constant<bool, true> {};
+      |                      ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:45:31: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   45 | struct is_arithmetic<unsigned __int128> : public std::integral_constant<bool, true> {};
+      |                               ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:47:22: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   47 | struct make_unsigned<__int128>
+      |                      ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:49:26: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   49 |    using type = unsigned __int128;
+      |                          ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:52:31: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   52 | struct make_unsigned<unsigned __int128>
+      |                               ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:54:26: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   54 |    using type = unsigned __int128;
+      |                          ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:57:20: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   57 | struct make_signed<__int128>
+      |                    ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:59:17: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   59 |    using type = __int128;
+      |                 ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:62:29: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   62 | struct make_signed<unsigned __int128>
+      |                             ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/std_integer_traits.hpp:64:17: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   64 |    using type = __int128;
+      |                 ^~~~~~~~
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/aux_/na_assert.hpp:23,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/arg.hpp:25,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/placeholders.hpp:24,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/iterator/iterator_categories.hpp:16,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/iterator/iterator_facade.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/range/iterator_range_core.hpp:27,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/lexical_cast.hpp:30,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/number_base.hpp:19,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/traits/is_variable_precision.hpp:9,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/precision.hpp:9,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/number.hpp:11,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_int.hpp:14,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_bin_float.hpp:9,
+                 from dd_integrate_td_odeint.cpp:5:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/assert.hpp:194:21: warning: unnecessary parentheses in declaration of ‘assert_arg’ [-Wparentheses]
+  194 | failed ************ (Pred::************
+      |                     ^
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/assert.hpp:199:21: warning: unnecessary parentheses in declaration of ‘assert_not_arg’ [-Wparentheses]
+  199 | failed ************ (boost::mpl::not_<Pred>::************
+      |                     ^
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/generic_interconvert.hpp:9,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/number.hpp:12,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_int.hpp:14,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_bin_float.hpp:9,
+                 from dd_integrate_td_odeint.cpp:5:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/default_ops.hpp: In function ‘constexpr void boost::multiprecision::default_ops::eval_karatsuba_sqrt(Backend&, const Backend&, Backend&, Backend&, size_t)’:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/default_ops.hpp:1652:25: warning: ISO C++ does not support ‘__int128’ for ‘a’ [-Wpedantic]
+ 1652 |       unsigned __int128 a{}, b{}, c{};
+      |                         ^
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/default_ops.hpp:1652:30: warning: ISO C++ does not support ‘__int128’ for ‘b’ [-Wpedantic]
+ 1652 |       unsigned __int128 a{}, b{}, c{};
+      |                              ^
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/default_ops.hpp:1652:35: warning: ISO C++ does not support ‘__int128’ for ‘c’ [-Wpedantic]
+ 1652 |       unsigned __int128 a{}, b{}, c{};
+      |                                   ^
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/number.hpp:16,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_int.hpp:14,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_bin_float.hpp:9,
+                 from dd_integrate_td_odeint.cpp:5:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/hash.hpp: At global scope:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/hash.hpp:23:49: warning: ISO C++ does not support ‘__int128’ for ‘val’ [-Wpedantic]
+   23 | std::size_t hash_value(const unsigned __int128& val);
+      |                                                 ^~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/hash.hpp:25:47: warning: ISO C++ does not support ‘__int128’ for ‘val’ [-Wpedantic]
+   25 | inline std::size_t hash_value(const __int128& val)
+      |                                               ^~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/hash.hpp: In function ‘std::size_t boost::multiprecision::detail::hash_value(const __int128&)’:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/hash.hpp:27:43: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+   27 |    return hash_value(static_cast<unsigned __int128>(val));
+      |                                           ^~~~~~~~
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/hash.hpp: At global scope:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/detail/hash.hpp:44:56: warning: ISO C++ does not support ‘__int128’ for ‘val’ [-Wpedantic]
+   44 | inline std::size_t hash_value(const unsigned __int128& val)
+      |                                                        ^~~
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_int/multiply.hpp:16,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_int.hpp:2285,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/cpp_bin_float.hpp:9,
+                 from dd_integrate_td_odeint.cpp:5:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/integer.hpp: In function ‘constexpr Integer boost::multiprecision::detail::karatsuba_sqrt(const Integer&, Integer&, size_t)’:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/multiprecision/integer.hpp:214:71: warning: ISO C++ does not support ‘__int128’ for ‘type name’ [-Wpedantic]
+  214 |    using cutoff_t = typename std::conditional<(cutoff > 64), unsigned __int128, std::uint64_t>::type;
+      |                                                                       ^~~~~~~~
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/invocation/detail/that_ptr.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/invocation/invoke.hpp:52,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/adapter/fused.hpp:17,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/generation/make_fused.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/include/make_fused.hpp:11,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/resize.hpp:28,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/state_wrapper.hpp:26,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/ublas_wrapper.hpp:33,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:25,
+                 from odeint_helper.h:56,
+                 from dd_integrate_td_odeint.cpp:6:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/get_pointer.hpp: At global scope:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/get_pointer.hpp:48:40: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   48 | template<class T> T * get_pointer(std::auto_ptr<T> const& p)
+      |                                        ^~~~~~~~
+In file included from /usr/include/c++/9/bits/locale_conv.h:41,
+                 from /usr/include/c++/9/locale:43,
+                 from /usr/include/c++/9/iomanip:43,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/RcppCommon.h:53,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/Rcpp.h:27,
+                 from dd_integrate_td_odeint.cpp:2:
+/usr/include/c++/9/bits/unique_ptr.h:53:28: note: declared here
+   53 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:19,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:54,
+                 from odeint_helper.h:56,
+                 from dd_integrate_td_odeint.cpp:6:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/adaptive_adams_coefficients.hpp:189:6: warning: extra ‘;’ [-Wpedantic]
+  189 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:54,
+                 from odeint_helper.h:56,
+                 from dd_integrate_td_odeint.cpp:6:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:93:6: warning: extra ‘;’ [-Wpedantic]
+   93 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:99:6: warning: extra ‘;’ [-Wpedantic]
+   99 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:108:6: warning: extra ‘;’ [-Wpedantic]
+  108 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:123:6: warning: extra ‘;’ [-Wpedantic]
+  123 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:151:6: warning: extra ‘;’ [-Wpedantic]
+  151 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:164:6: warning: extra ‘;’ [-Wpedantic]
+  164 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:197:6: warning: extra ‘;’ [-Wpedantic]
+  197 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:210:6: warning: extra ‘;’ [-Wpedantic]
+  210 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:215:6: warning: extra ‘;’ [-Wpedantic]
+  215 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:220:6: warning: extra ‘;’ [-Wpedantic]
+  220 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:22,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:55,
+                 from odeint_helper.h:56,
+                 from dd_integrate_td_odeint.cpp:6:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:72:6: warning: extra ‘;’ [-Wpedantic]
+   72 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:82:6: warning: extra ‘;’ [-Wpedantic]
+   82 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:100:6: warning: extra ‘;’ [-Wpedantic]
+  100 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:55,
+                 from odeint_helper.h:56,
+                 from dd_integrate_td_odeint.cpp:6:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:167:6: warning: extra ‘;’ [-Wpedantic]
+  167 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:173:6: warning: extra ‘;’ [-Wpedantic]
+  173 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:219:6: warning: extra ‘;’ [-Wpedantic]
+  219 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:277:6: warning: extra ‘;’ [-Wpedantic]
+  277 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:286:6: warning: extra ‘;’ [-Wpedantic]
+  286 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:297:6: warning: extra ‘;’ [-Wpedantic]
+  297 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:302:6: warning: extra ‘;’ [-Wpedantic]
+  302 |     };
+      |      ^
+      |      -
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c dd_logliknorm_odeint.cpp -o dd_logliknorm_odeint.o
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/aux_/na_assert.hpp:23,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/arg.hpp:25,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/placeholders.hpp:24,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/apply.hpp:24,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array_optimization.hpp:18,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array_wrapper.hpp:21,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/serialization/array.hpp:26,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/ublas/storage.hpp:22,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/ublas/vector.hpp:21,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/ublas/matrix.hpp:18,
+                 from dd_logliknorm_odeint.cpp:7:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/assert.hpp:194:21: warning: unnecessary parentheses in declaration of ‘assert_arg’ [-Wparentheses]
+  194 | failed ************ (Pred::************
+      |                     ^
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mpl/assert.hpp:199:21: warning: unnecessary parentheses in declaration of ‘assert_not_arg’ [-Wparentheses]
+  199 | failed ************ (boost::mpl::not_<Pred>::************
+      |                     ^
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/invocation/detail/that_ptr.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/invocation/invoke.hpp:52,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/adapter/fused.hpp:17,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/functional/generation/make_fused.hpp:13,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/fusion/include/make_fused.hpp:11,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/resize.hpp:28,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/state_wrapper.hpp:26,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/util/ublas_wrapper.hpp:33,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:25,
+                 from odeint_helper.h:56,
+                 from dd_logliknorm_odeint.cpp:9:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/get_pointer.hpp:48:40: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   48 | template<class T> T * get_pointer(std::auto_ptr<T> const& p)
+      |                                        ^~~~~~~~
+In file included from /usr/include/c++/9/bits/locale_conv.h:41,
+                 from /usr/include/c++/9/locale:43,
+                 from /usr/include/c++/9/iomanip:43,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/RcppCommon.h:53,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/Rcpp.h:27,
+                 from dd_logliknorm_odeint.cpp:2:
+/usr/include/c++/9/bits/unique_ptr.h:53:28: note: declared here
+   53 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:19,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:54,
+                 from odeint_helper.h:56,
+                 from dd_logliknorm_odeint.cpp:9:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/adaptive_adams_coefficients.hpp:189:6: warning: extra ‘;’ [-Wpedantic]
+  189 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:54,
+                 from odeint_helper.h:56,
+                 from dd_logliknorm_odeint.cpp:9:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:93:6: warning: extra ‘;’ [-Wpedantic]
+   93 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:99:6: warning: extra ‘;’ [-Wpedantic]
+   99 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:108:6: warning: extra ‘;’ [-Wpedantic]
+  108 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:123:6: warning: extra ‘;’ [-Wpedantic]
+  123 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:151:6: warning: extra ‘;’ [-Wpedantic]
+  151 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:164:6: warning: extra ‘;’ [-Wpedantic]
+  164 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:197:6: warning: extra ‘;’ [-Wpedantic]
+  197 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:210:6: warning: extra ‘;’ [-Wpedantic]
+  210 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:215:6: warning: extra ‘;’ [-Wpedantic]
+  215 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp:220:6: warning: extra ‘;’ [-Wpedantic]
+  220 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:22,
+                 from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:55,
+                 from odeint_helper.h:56,
+                 from dd_logliknorm_odeint.cpp:9:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:72:6: warning: extra ‘;’ [-Wpedantic]
+   72 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:82:6: warning: extra ‘;’ [-Wpedantic]
+   82 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp:100:6: warning: extra ‘;’ [-Wpedantic]
+  100 |     };
+      |      ^
+      |      -
+In file included from /home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint.hpp:55,
+                 from odeint_helper.h:56,
+                 from dd_logliknorm_odeint.cpp:9:
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:167:6: warning: extra ‘;’ [-Wpedantic]
+  167 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:173:6: warning: extra ‘;’ [-Wpedantic]
+  173 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:219:6: warning: extra ‘;’ [-Wpedantic]
+  219 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:277:6: warning: extra ‘;’ [-Wpedantic]
+  277 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:286:6: warning: extra ‘;’ [-Wpedantic]
+  286 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:297:6: warning: extra ‘;’ [-Wpedantic]
+  297 |     };
+      |      ^
+      |      -
+/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp:302:6: warning: extra ‘;’ [-Wpedantic]
+  302 |     };
+      |      ^
+      |      -
+g++ -std=gnu++14 -shared -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -L/usr/local/lib64 -o DDD.so RcppExports.o dd_integrate_bw_odeint.o dd_integrate_odeint.o dd_integrate_td_odeint.o dd_logliknorm_odeint.o -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -lR
+make[2]: Leaving directory '/tmp/RtmpRvrhHK/R.INSTALL5bc7be68e8f/DDD/src'
+installing to /home/kingaa/projects/Rpkg/subplex/revdep/Library/00LOCK-DDD/00new/DDD/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (DDD)

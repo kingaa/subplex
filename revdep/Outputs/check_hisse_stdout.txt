@@ -1,0 +1,164 @@
+* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/hisse.Rcheck'
+* using R version 4.2.2 (2022-10-31)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using option '--as-cran'
+* checking for file 'hisse/DESCRIPTION' ... OK
+* this is package 'hisse' version '2.1.11'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package 'hisse' can be installed ... [57s/72s] OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking 'build' directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... [97s/176s] NOTE
+AdaptiveConfidenceIntervalSampling.old: local variable ‘actual.params’
+  assigned but may not be used
+AdaptiveConfidenceIntervalSamplingGeoHiSSE: local variable
+  ‘actual.params’ assigned but may not be used
+AdaptiveConfidenceIntervalSamplingGeoHiSSE.old: local variable
+  ‘actual.params’ assigned but may not be used
+AdaptiveConfidenceIntervalSamplingMiSSE: local variable ‘actual.params’
+  assigned but may not be used
+AdaptiveConfidenceIntervalSamplingMuHiSSE: local variable
+  ‘actual.params’ assigned but may not be used
+AdaptiveConfidenceIntervalSamplingfHiSSE: local variable
+  ‘actual.params’ assigned but may not be used
+AddKNodes: local variable ‘ntip’ assigned but may not be used
+DownPass: local variable ‘TIPS’ assigned but may not be used
+DownPassGeoHisse: local variable ‘TIPS’ assigned but may not be used
+DownPassGeoHissefast: local variable ‘compE’ assigned but may not be
+  used
+DownPassGeoHissefast: local variable ‘nb.node’ assigned but may not be
+  used
+DownPassHiSSE: local variable ‘.’ assigned but may not be used
+DownPassHiSSE: local variable ‘compE’ assigned but may not be used
+DownPassMisse: local variable ‘.’ assigned but may not be used
+DownPassMisse: local variable ‘compE’ assigned but may not be used
+DownPassMuHisse: local variable ‘.’ assigned but may not be used
+DownPassMuHisse: local variable ‘compE’ assigned but may not be used
+DownPassMusse: local variable ‘TIPS’ assigned but may not be used
+DownPassNull: local variable ‘TIPS’ assigned but may not be used
+GeoHiSSE: local variable ‘category.rates.unique’ assigned but may not
+  be used
+GeoHiSSE.old: local variable ‘category.rates.unique’ assigned but may
+  not be used
+GetEdgeCombined: local variable ‘extinct_taxa_indices’ assigned but may
+  not be used
+GetEdgeDetails: local variable ‘tipwards_nodes_of_rootwards_nodes’
+  assigned but may not be used
+GetRootProb: local variable ‘.’ assigned but may not be used
+GetRootProbGeo: local variable ‘.’ assigned but may not be used
+GetRootProbHiSSE: local variable ‘.’ assigned but may not be used
+GetTreeTable: local variable ‘max.age’ assigned but may not be used
+MarginRecon.old: local variable ‘nodes’ assigned but may not be used
+MarginReconGeoSSE: local variable ‘nstates’ assigned but may not be
+  used
+MarginReconGeoSSE.old: local variable ‘nodes’ assigned but may not be
+  used
+MarginReconHiSSE: local variable ‘nstates’ assigned but may not be used
+MarginReconMiSSE: local variable ‘nstates’ assigned but may not be used
+MarginReconMuHiSSE: local variable ‘nstates’ assigned but may not be
+  used
+MuHiSSE: local variable ‘category.rates.unique’ assigned but may not be
+  used
+MuHiSSE: local variable ‘sann.counts’ assigned but may not be used
+OrganizeData: local variable ‘nb.node’ assigned but may not be used
+OrganizeDataGeo: local variable ‘nb.node’ assigned but may not be used
+OrganizeDataHiSSE: local variable ‘cols’ assigned but may not be used
+OrganizeDataHiSSE: local variable ‘nb.node’ assigned but may not be
+  used
+OrganizeDataMiSSE: local variable ‘nb.node’ assigned but may not be
+  used
+RerunBadOptim: local variable ‘current.fit’ assigned but may not be
+  used
+SupportRegion.old: local variable ‘free.parameters’ assigned but may
+  not be used
+SupportRegionGeoSSE: local variable ‘free.parameters’ assigned but may
+  not be used
+SupportRegionGeoSSE.old: local variable ‘free.parameters’ assigned but
+  may not be used
+SupportRegionHiSSE: local variable ‘free.parameters’ assigned but may
+  not be used
+SupportRegionMiSSE: local variable ‘free.parameters’ assigned but may
+  not be used
+SupportRegionMuHiSSE: local variable ‘free.parameters’ assigned but may
+  not be used
+hisse: local variable ‘category.rates.unique’ assigned but may not be
+  used
+makeGeoHiSSELikelihood: local variable ‘category.rates.unique’ assigned
+  but may not be used
+makeHiSSELikelihood: local variable ‘pars.full’ assigned but may not be
+  used
+makeHiSSELikelihood: local variable ‘samp.freq.tree’ assigned but may
+  not be used
+plot.contMapHisse: local variable ‘H’ assigned but may not be used
+plot.contMapHisse: local variable ‘N’ assigned but may not be used
+plot.contMapHisse: local variable ‘set.null’ assigned but may not be
+  used
+plotFanHiSSE: local variable ‘ptreeB’ assigned but may not be used
+plotPhylogramHiSSE: local variable ‘ptreeB’ assigned but may not be
+  used
+plotSimmapHiSSE: local variable ‘set.null’ assigned but may not be used
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking compilation flags in Makevars ... OK
+* checking for GNU extensions in Makefiles ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking use of PKG_*FLAGS in Makefiles ... OK
+* checking use of SHLIB_OPENMP_*FLAGS in Makefiles ... OK
+* checking pragmas in C/C++ headers and code ... OK
+* checking compilation flags used ... OK
+* checking compiled code ... OK
+* checking sizes of PDF files under 'inst/doc' ... OK
+* checking installed files from 'inst/doc' ... OK
+* checking files in 'vignettes' ... OK
+* checking examples ... OK
+** found \donttest examples: check also with --run-donttest
+* checking for unstated dependencies in 'tests' ... OK
+* checking tests ...
+ OK
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in 'inst/doc' ... OK
+* checking re-building of vignette outputs ... [76s/114s] OK
+* checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 1 NOTE

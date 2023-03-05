@@ -1,0 +1,23 @@
+* installing *source* package 'GenSA' ...
+** package 'GenSA' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+make[2]: Entering directory '/tmp/Rtmpr0n001/R.INSTALL659b217c51b8/GenSA/src'
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c Caller.cpp -o Caller.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c Engine.cpp -o Engine.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c Tracer.cpp -o Tracer.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c Utils.cpp -o Utils.o
+g++ -std=gnu++14 -shared -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -L/usr/local/lib64 -o GenSA.so Caller.o Engine.o Tracer.o Utils.o -lopenblas -lgfortran -lm -lquadmath -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -lR
+make[2]: Leaving directory '/tmp/Rtmpr0n001/R.INSTALL659b217c51b8/GenSA/src'
+installing to /home/kingaa/projects/Rpkg/subplex/revdep/Library/00LOCK-GenSA/00new/GenSA/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (GenSA)

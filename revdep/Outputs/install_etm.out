@@ -1,0 +1,26 @@
+* installing *source* package 'etm' ...
+** package 'etm' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+make[2]: Entering directory '/tmp/RtmpO8G2n8/R.INSTALL117103ce5e08a/etm/src'
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c cov_aj.cc -o cov_aj.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c gen_msm.cpp -o gen_msm.o
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c init.c -o init.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c los_etm.cpp -o los_etm.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG  -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/kingaa/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c utils.cpp -o utils.o
+g++ -std=gnu++14 -shared -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -L/usr/local/lib64 -o etm.so cov_aj.o gen_msm.o init.o los_etm.o utils.o -g -lopenblas -lgfortran -lm -lquadmath -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -lR
+make[2]: Leaving directory '/tmp/RtmpO8G2n8/R.INSTALL117103ce5e08a/etm/src'
+installing to /home/kingaa/projects/Rpkg/subplex/revdep/Library/00LOCK-etm/00new/etm/libs
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (etm)

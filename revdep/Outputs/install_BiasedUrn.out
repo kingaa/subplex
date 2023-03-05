@@ -1,0 +1,28 @@
+* installing *source* package 'BiasedUrn' ...
+** package 'BiasedUrn' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+make[2]: Entering directory '/tmp/RtmpBxrO0y/R.INSTALL125c15149629c/BiasedUrn/src'
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -DR_BUILD=1 -DMAXCOLORS=32  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c fnchyppr.cpp -o fnchyppr.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -DR_BUILD=1 -DMAXCOLORS=32  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c stoc1.cpp -o stoc1.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -DR_BUILD=1 -DMAXCOLORS=32  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c stoc3.cpp -o stoc3.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -DR_BUILD=1 -DMAXCOLORS=32  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c stocR.cpp -o stocR.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -DR_BUILD=1 -DMAXCOLORS=32  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c urn1.cpp -o urn1.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -DR_BUILD=1 -DMAXCOLORS=32  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c urn2.cpp -o urn2.o
+g++ -std=gnu++14 -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG -DR_BUILD=1 -DMAXCOLORS=32  -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c wnchyppr.cpp -o wnchyppr.o
+g++ -std=gnu++14 -shared -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -L/usr/local/lib64 -o BiasedUrn.so fnchyppr.o stoc1.o stoc3.o stocR.o urn1.o urn2.o wnchyppr.o -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -lR
+make[2]: Leaving directory '/tmp/RtmpBxrO0y/R.INSTALL125c15149629c/BiasedUrn/src'
+installing to /home/kingaa/projects/Rpkg/subplex/revdep/Library/00LOCK-BiasedUrn/00new/BiasedUrn/libs
+** R
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (BiasedUrn)

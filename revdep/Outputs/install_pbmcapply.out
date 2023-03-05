@@ -1,0 +1,19 @@
+* installing *source* package 'pbmcapply' ...
+** package 'pbmcapply' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+make[2]: Entering directory '/tmp/RtmpRx89Es/R.INSTALL12c5d71e10220/pbmcapply/src'
+gcc -I"/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/include" -DNDEBUG   -I/usr/local/include   -fpic  -g -O2 -Wall -pedantic -c process.c -o process.o
+gcc -shared -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -L/usr/local/lib64 -o pbmcapply.so process.o -L/usr/local/apps/R/ubuntu_20.04/4.2.2/lib64/R/lib -lR
+make[2]: Leaving directory '/tmp/RtmpRx89Es/R.INSTALL12c5d71e10220/pbmcapply/src'
+installing to /home/kingaa/projects/Rpkg/subplex/revdep/Library/00LOCK-pbmcapply/00new/pbmcapply/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (pbmcapply)

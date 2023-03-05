@@ -1,0 +1,7 @@
+  Running ‘testthat.R’ [368s/35s]
+
+See
+  '/home/kingaa/projects/Rpkg/subplex/revdep/metafor.Rcheck/00check.log'
+for details.
+
+

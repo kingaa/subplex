@@ -1,0 +1,6 @@
+
+See
+  '/home/kingaa/projects/Rpkg/subplex/revdep/cops.Rcheck/00check.log'
+for details.
+
+

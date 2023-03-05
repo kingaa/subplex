@@ -1,0 +1,119 @@
+* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/optimx.Rcheck'
+* using R version 4.2.2 (2022-10-31)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using option '--as-cran'
+* checking for file 'optimx/DESCRIPTION' ... OK
+* this is package 'optimx' version '2022-4.30'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
+* checking whether package 'optimx' can be installed ... [12s/10s] OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking 'build' directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... [31s/35s] NOTE
+Rcgmin: local variable ‘ans’ assigned but may not be used
+Rcgminb: local variable ‘eps’ assigned but may not be used
+Rcgminb: local variable ‘grNULL’ assigned but may not be used
+Rcgminb: local variable ‘keekpgoing’ assigned but may not be used
+Rcgminu: local variable ‘dowarn’ assigned but may not be used
+Rcgminu: local variable ‘eps’ assigned but may not be used
+Rcgminu: local variable ‘grNULL’ assigned but may not be used
+Rcgminu: local variable ‘keekpgoing’ assigned but may not be used
+Rvmmin: local variable ‘ans’ assigned but may not be used
+Rvmminu: local variable ‘ceps’ assigned but may not be used
+axsearch: local variable ‘result’ assigned but may not be used
+bmstep: local variable ‘bounds’ assigned but may not be used
+bmstep: local variable ‘maxstep’ assigned but may not be used
+cnvtst: local variable ‘result’ assigned but may not be used
+ctrldefault: local variable ‘ctrl.default’ assigned but may not be used
+fnchk: local variable ‘answer’ assigned but may not be used
+fnchk: local variable ‘maxard10’ assigned but may not be used
+grnd: local variable ‘tryg’ assigned but may not be used
+initpc: local variable ‘ans’ assigned but may not be used
+kktchk: local variable ‘dotargs’ assigned but may not be used
+lin1: local variable ‘result’ assigned but may not be used
+lmqnbc: local variable ‘tmp’ assigned but may not be used
+modz: local variable ‘flast1’ assigned but may not be used
+modz: local variable ‘ipivot1’ assigned but may not be used
+msolve: local variable ‘amsolve’ assigned but may not be used
+norm2: local variable ‘res’ assigned but may not be used
+opm: local variable ‘answer’ assigned but may not be used
+opm: local variable ‘hev’ assigned but may not be used
+opm: local variable ‘ngatend’ assigned but may not be used
+opm: local variable ‘nhatend’ assigned but may not be used
+opm: local variable ‘tmp’ assigned but may not be used
+optchk: local variable ‘optcheck’ assigned but may not be used
+optchk: local variable ‘optchk’ assigned but may not be used
+optimr : efn: local variable ‘val’ assigned but may not be used
+optimr : egr: local variable ‘result’ assigned but may not be used
+optimr: local variable ‘orig.method’ assigned but may not be used
+optimx: local variable ‘optchk’ assigned but may not be used
+optimx.run: local variable ‘conv’ assigned but may not be used
+optimx.setup : ufn: local variable ‘val’ assigned but may not be used
+optimx.setup : ugr: local variable ‘gg’ assigned but may not be used
+optimx.setup : uhess: local variable ‘hh’ assigned but may not be used
+optimx.setup : ugr: local variable ‘tryg’ assigned but may not be used
+scalecheck: local variable ‘loglower’ assigned but may not be used
+scalecheck: local variable ‘logupper’ assigned but may not be used
+scalecheck: local variable ‘ratios’ assigned but may not be used
+scalechk: local variable ‘loglower’ assigned but may not be used
+scalechk: local variable ‘logupper’ assigned but may not be used
+scalechk: local variable ‘ratios’ assigned but may not be used
+snewton: local variable ‘halt’ assigned but may not be used
+snewton: local variable ‘tmp’ assigned but may not be used
+snewtonm: local variable ‘tmp’ assigned but may not be used
+snewtonm: local variable ‘trace’ assigned but may not be used
+ssbfgs: local variable ‘z’ assigned but may not be used
+ztime: local variable ‘x1’ assigned but may not be used
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking sizes of PDF files under 'inst/doc' ... OK
+* checking installed files from 'inst/doc' ... OK
+* checking files in 'vignettes' ... OK
+* checking examples ... OK
+* checking for unstated dependencies in 'tests' ... OK
+* checking tests ...
+ [32s/36s] OK
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in 'inst/doc' ... OK
+* checking re-building of vignette outputs ... [241s/64s] OK
+* checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 1 NOTE

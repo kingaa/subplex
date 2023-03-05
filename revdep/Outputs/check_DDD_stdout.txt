@@ -1,0 +1,90 @@
+* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/DDD.Rcheck'
+* using R version 4.2.2 (2022-10-31)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using option '--as-cran'
+* checking for file 'DDD/DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'DDD' version '5.2.1'
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package 'DDD' can be installed ... [105s/152s] OK
+* checking installed package size ... NOTE
+  installed size is 16.9Mb
+  sub-directories of 1Mb or more:
+    libs  16.4Mb
+* checking package directory ... OK
+* checking for future file timestamps ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... [30s/40s] NOTE
+L2brts: local variable ‘daughter’ assigned but may not be used
+L2phylo: local variable ‘daughter’ assigned but may not be used
+bd_loglik: local variable ‘abstol’ assigned but may not be used
+bd_loglik: local variable ‘reltol’ assigned but may not be used
+check_for_impossible_pars_KI: local variable ‘loglik’ assigned but may
+  not be used
+dd_KI_loglik: local variable ‘S’ assigned but may not be used
+dd_LR: local variable ‘inverse_quantile’ assigned but may not be used
+dd_MS_loglik: local variable ‘lx2’ assigned but may not be used
+dd_MS_loglik: local variable ‘tcrown’ assigned but may not be used
+dd_MS_loglik: local variable ‘tpres’ assigned but may not be used
+dd_SR_loglik2: local variable ‘abstol’ assigned but may not be used
+dd_SR_loglik2: local variable ‘expMM1’ assigned but may not be used
+dd_SR_loglik2: local variable ‘reltol’ assigned but may not be used
+dd_bootstrap_sim: local variable ‘simout’ assigned but may not be used
+dd_loglik2: local variable ‘abstol’ assigned but may not be used
+dd_loglik2: local variable ‘reltol’ assigned but may not be used
+td_loglik_rhs: local variable ‘sigdiv’ assigned but may not be used
+td_loglik_rhs_sim: local variable ‘lrs’ assigned but may not be used
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking pragmas in C/C++ headers and code ... OK
+* checking compilation flags used ... OK
+* checking compiled code ... OK
+* checking examples ... [67s/24s] OK
+Examples with CPU (user + system) or elapsed time > 5s
+              user system elapsed
+dd_SR_loglik 7.631 16.573   5.332
+dd_loglik    5.811 12.836   4.175
+dd_ML        2.536  5.388   3.282
+dd_SR_ML     1.669  4.517   1.365
+* checking for unstated dependencies in 'tests' ... OK
+* checking tests ...
+ [488s/160s] OK
+* checking PDF version of manual ... OK
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
+* DONE
+Status: 2 NOTEs
