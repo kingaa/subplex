@@ -1,0 +1,5 @@
+_site/
+_drafts
+.Rhistory
+.jekyll-cache
+tmp
