@@ -1,4 +1,9 @@
 options(
-    repos = c(CRAN="https://cran.r-project.org"),
-    useFancyQuotes=FALSE
+  help_type="html",
+  repos=c(
+    CRAN="https://repo.miserver.it.umich.edu/cran/",
+    kingaa="https://kingaa.github.io"
+  ),
+  useFancyQuotes=FALSE,
+  Ncpus=12
 )
