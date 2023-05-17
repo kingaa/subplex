@@ -1,6 +1,6 @@
 Package: subplex
-Version: 1.8.2
-Date: 2023-04-25
+Version: 1.8.3
+Date: 2023-05-17
 Title: Unconstrained Optimization using the Subplex Algorithm
 Authors@R: c(person(given=c("Aaron","A."),family="King",role=c("aut","trl","cre"),email="kingaa@umich.edu",comment=c(ORCID="0000-0001-6159-3207")),
 	  person(given=c("Tom"),family="Rowan",role=c("aut")))
@@ -13,5 +13,7 @@ Encoding: UTF-8
 Roxygen: list(roclets = c("collate", "namespace", "rd",
         "roxytest::tinytest_roclet"))
 RoxygenNote: 7.2.3
-Collate: 'subplex-package.R' 'subplex.R'
+Collate: 
+    'package.R'
+    'subplex.R'
 Suggests: tinytest

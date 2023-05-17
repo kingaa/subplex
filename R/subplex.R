@@ -11,7 +11,7 @@
 ##'
 ##' @name subplex
 ##' @rdname subplex
-##' @include subplex-package.R
+##' @include package.R
 ##'
 ##' @param par Initial guess of the parameters to be optimized over.
 ##' @param fn The function to be minimized.  Its first argument must be the
@@ -73,7 +73,7 @@ subplex <- function (par, fn, control = list(), hessian = FALSE, ...) {
   fn <- match.fun(fn)
   tryCatch(
     .Call(
-      call_subplex,
+      C_subplex,
       par,
       fn,
       tol=con$reltol,
