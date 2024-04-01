@@ -1,0 +1,38 @@
+
+Note: Setting PKG_ROOT variable to the current directory.
+Output will be in ./lib, ./build and ./libsonly subdirectories.
+If it is not, maybe your local singularity configuration does
+not allow singularity container to access your current directory;
+it may help to try with PKG_ROOT=/tmp or check the configurarion.
+
+source("/opt/rchk/scripts/utils.r"); install_package_libs("/home/kingaa/subplex/subplex_1.8.3.tar.gz")
+make[2]: Entering directory '/home/kingaa/subplex/rchk/build/ScXVGXe1/subplex/src'
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c calcc.f -o calcc.o
+/usr/local/bin/wllvm -I"/opt/R-devel/include" -DNDEBUG   -I/usr/local/include   -fPIC  -Wall -g -O0 -fPIC  -c call_subplex.c -o call_subplex.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c dist.f -o dist.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c evalf.f -o evalf.o
+/usr/local/bin/wllvm -I"/opt/R-devel/include" -DNDEBUG   -I/usr/local/include   -fPIC  -Wall -g -O0 -fPIC  -c init.c -o init.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c newpt.f -o newpt.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c order.f -o order.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c partx.f -o partx.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c setstp.f -o setstp.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c simplx.f -o simplx.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c sortd.f -o sortd.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c start.f -o start.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c subopt.f -o subopt.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2  -c subplx.f -o subplx.o
+/usr/local/bin/wllvm -shared -L/usr/local/lib -o subplex.so calcc.o call_subplex.o dist.o evalf.o init.o newpt.o order.o partx.o setstp.o simplx.o sortd.o start.o subopt.o subplx.o -L/opt/R-devel/lib -lRblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath
+make[2]: Leaving directory '/home/kingaa/subplex/rchk/build/ScXVGXe1/subplex/src'
+Installed libraries of package  subplex 
+[1] "/home/kingaa/subplex/rchk/libsonly/subplex/libs/subplex.so"
+
+ERROR: too many states (abstraction error?) in function strptime_internal
+Analyzed 6 functions, traversed 82 states.
+Library name (usually package name): subplex
+Initialization function: R_init_subplex
+Functions: 1
+Checked call to R_registerRoutines: 1
+
+Rchk version: 3d653b7c8f92dac912532856b55f44d2986c6553
+R version: 79896/R Under development (unstable) (2021-01-28 r79896)
+LLVM version: 10.0.0

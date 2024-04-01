@@ -15,7 +15,6 @@
 ##' The FORTRAN source code is maintained on the netlib repository (netlib.org).
 ##'
 ##' @name subplex-package
-##' @docType package
 ##' @author Aaron A. King (kingaa at umich dot edu)
 ##' @seealso \code{\link{subplex}}, \code{\link{optim}}
 ##' @references T. Rowan, "Functional Stability Analysis of Numerical
@@ -24,7 +23,5 @@
 ##' @keywords optimize
 ##' @useDynLib subplex, .registration = TRUE
 ##'
-NULL
-
-
+"_PACKAGE"
 
