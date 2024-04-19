@@ -17,7 +17,7 @@ inst/doc/(.+?).Rmd
 man/roxygen
 Doxyfile
 LICENSE\.md$
-README\.(.?)$
+README\.md$
 CRAN\.md$
 TODO\.md$
 BUILD\.md$
@@ -25,6 +25,7 @@ BUILD\.md$
 \.github
 ^\.travis\.yml$
 ^codecov\.yml$
+^rchk\.out$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 \.Rprofile
