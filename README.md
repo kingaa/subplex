@@ -10,7 +10,7 @@
 [![codecov](https://codecov.io/gh/kingaa/subplex/branch/master/graph/badge.svg)](https://app.codecov.io/gh/kingaa/subplex)
 ![CRAN mirror monthly downloads](https://cranlogs.r-pkg.org/badges/last-month/subplex)
 ![CRAN mirror total downloads](https://cranlogs.r-pkg.org/badges/grand-total/subplex)
-[![Dependencies](https://tinyverse.netlify.com/badge/subplex)](https://tinyverse.netlify.com/)
+[![Dependencies](https://tinyverse.netlify.app/badge/subplex)](https://tinyverse.netlify.app/)
 
 An R package implementing the Subplex optimization algorithm
 

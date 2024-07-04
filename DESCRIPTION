@@ -12,7 +12,7 @@ Description: The subplex algorithm for unconstrained optimization, developed by 
 Encoding: UTF-8
 Roxygen: list(roclets = c("collate", "namespace", "rd",
         "roxytest::tinytest_roclet"))
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Collate: 
     'package.R'
     'subplex.R'

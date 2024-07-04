@@ -2,7 +2,7 @@
 
 # File R/subplex.R: @tests
 
-## Function subplex() @ L64
+## Function subplex() @ L61
 expect_silent({
 rosen <- function (x) {
   x1 <- x[1]

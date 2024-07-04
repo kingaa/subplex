@@ -12,7 +12,6 @@
 ##' @name subplex
 ##' @rdname subplex
 ##' @include package.R
-##'
 ##' @param par Initial guess of the parameters to be optimized over.
 ##' @param fn The function to be minimized.  Its first argument must be the
 ##' vector of parameters to be optimized over.  It should return a scalar
@@ -43,9 +42,7 @@
 ##' Algorithms'', Ph.D. thesis, Department of Computer Sciences, University of
 ##' Texas at Austin, 1990.
 ##' @keywords optimize
-##' 
 ##' @example examples/ripple.R
-##' 
 ##' @example examples/rosen.R
 ##'
 ##' @tests

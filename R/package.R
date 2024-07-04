@@ -24,4 +24,3 @@
 ##' @useDynLib subplex, .registration = TRUE
 ##'
 "_PACKAGE"
-
