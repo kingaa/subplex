@@ -21,7 +21,7 @@ The subplex algorithm is due to Tom Rowan, ORNL.
 #### Binary install
 
 ```
-install.packages("subplex",repos="http://kingaa.github.io/")
+install.packages("subplex",repos="https://kingaa.github.io/")
 ```
 
 #### Source install

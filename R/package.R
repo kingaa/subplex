@@ -12,13 +12,14 @@
 ##' method.
 ##'
 ##' Subplex was written in FORTRAN by Tom Rowan (Oak Ridge National Laboratory).
-##' The FORTRAN source code is maintained on the netlib repository (netlib.org).
+##' The FORTRAN source code is maintained on the netlib repository
+##' at \url{https://www.netlib.org/opt/subplex.tgz}.
 ##'
 ##' @name subplex-package
 ##' @author Aaron A. King (kingaa at umich dot edu)
 ##' @seealso \code{\link{subplex}}, \code{\link{optim}}
-##' @references T. Rowan, "Functional Stability Analysis of Numerical
-##' Algorithms", Ph.D. thesis, Department of Computer Sciences, University of
+##' @references T. Rowan, "Functional Stability Analysis of Numerical Algorithms",
+##' Ph.D. thesis, Department of Computer Sciences, University of
 ##' Texas at Austin, 1990.
 ##' @keywords optimize
 ##' @useDynLib subplex, .registration = TRUE

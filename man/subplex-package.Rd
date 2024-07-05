@@ -18,11 +18,12 @@ most applications the subplex method is much more efficient than the simplex
 method.
 
 Subplex was written in FORTRAN by Tom Rowan (Oak Ridge National Laboratory).
-The FORTRAN source code is maintained on the netlib repository (netlib.org).
+The FORTRAN source code is maintained on the netlib repository
+at \url{https://www.netlib.org/opt/subplex.tgz}.
 }
 \references{
-T. Rowan, "Functional Stability Analysis of Numerical
-Algorithms", Ph.D. thesis, Department of Computer Sciences, University of
+T. Rowan, "Functional Stability Analysis of Numerical Algorithms",
+Ph.D. thesis, Department of Computer Sciences, University of
 Texas at Austin, 1990.
 }
 \seealso{
