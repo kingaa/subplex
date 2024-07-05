@@ -1,7 +1,6 @@
   Running ‘test_optimx.R’
 
 See
-  '/home/kingaa/projects/Rpkg/subplex/revdep/ROI.plugin.optimx.Rcheck/00check.log'
+  '/userdata/kingaa/projects/Rpkg/subplex/revdep/ROI.plugin.optimx.Rcheck/00check.log'
 for details.
-
 

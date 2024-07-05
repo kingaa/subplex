@@ -1,11 +1,15 @@
-* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/mvMORPH.Rcheck'
-* using R version 4.2.2 (2022-10-31)
-* using platform: x86_64-pc-linux-gnu (64-bit)
+* using log directory '/userdata/kingaa/projects/Rpkg/subplex/revdep/mvMORPH.Rcheck'
+* using R version 4.4.1 (2024-06-14)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+    GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+* running under: Ubuntu 22.04.4 LTS
 * using session charset: UTF-8
 * using option '--as-cran'
 * checking for file 'mvMORPH/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'mvMORPH' version '1.1.6'
+* this is package 'mvMORPH' version '1.1.9'
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -14,7 +18,8 @@
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
-* checking whether package 'mvMORPH' can be installed ... [30s/34s] OK
+* checking whether package 'mvMORPH' can be installed ... [47s/26s] OK
+* used C compiler: 'gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
@@ -24,7 +29,7 @@
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
-* checking R files for non-ASCII characters ... OK
+* checking code files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
 * checking whether the package can be loaded with stated dependencies ... OK
@@ -32,12 +37,13 @@
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking loading without being on the library search path ... OK
+* checking whether startup messages can be suppressed ... OK
 * checking use of S3 registration ... OK
 * checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [54s/91s] NOTE
+* checking R code for possible problems ... [79s/35s] NOTE
 .aov.mvgls.perm.I : <anonymous>: local variable ‘Null’ assigned but may
   not be used
 .aov.mvgls.perm.I: local variable ‘B0’ assigned but may not be used
@@ -74,6 +80,8 @@ mvgls: local variable ‘call’ assigned but may not be used
 mvgls: local variable ‘glsStruct’ assigned but may not be used
 mvgls: local variable ‘ncores’ assigned but may not be used
 mvgls.dfa: local variable ‘normalized’ assigned but may not be used
+pcaShape : <anonymous>: local variable ‘shape’ assigned but may not be
+  used
 plot.mvgls: local variable ‘pred’ assigned but may not be used
 plot.mvgls: local variable ‘scoreVar2’ assigned but may not be used
 predict.mvgls.dfa: local variable ‘grp’ assigned but may not be used
@@ -103,25 +111,26 @@ summary.mvgls: local variable ‘meth’ assigned but may not be used
 * checking sizes of PDF files under 'inst/doc' ... OK
 * checking installed files from 'inst/doc' ... OK
 * checking files in 'vignettes' ... OK
-* checking examples ... [285s/67s] OK
+* checking examples ... [523s/27s] OK
 Examples with CPU (user + system) or elapsed time > 5s
              user system elapsed
-stationary 13.338 44.836  11.270
-mvSHIFT    11.973 39.705   8.848
-halflife   10.630 32.088   9.373
-mvRWTS      7.946 26.995   5.868
-estim       8.592 23.248   6.719
-mvBM        6.378 14.111   6.341
-LRT         2.740  6.987   1.984
-mvEB        1.523  5.056   1.369
-mvSIM       1.907  3.894   1.888
+halflife   17.665 88.059   3.750
+stationary 18.457 64.898   2.524
+mvSHIFT    17.402 57.803   1.579
+mvRWTS     18.880 33.174   1.107
+estim      10.518 40.338   2.818
+LRT         7.955 35.342   1.699
+mvBM        7.916 15.003   2.045
+mvEB        3.815 10.797   0.320
+mvSIM       2.274  8.503   0.667
+mv.Precalc  1.890  4.661   0.863
 ** found \donttest examples: check also with --run-donttest
 * checking for unstated dependencies in 'tests' ... OK
 * checking tests ...
  OK
 * checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in 'inst/doc' ... OK
-* checking re-building of vignette outputs ... [852s/166s] OK
+* checking package vignettes ... OK
+* checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
 * checking HTML version of manual ... OK
 * checking for non-standard things in the check directory ... OK

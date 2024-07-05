@@ -1,7 +1,6 @@
   Running ‘testthat.R’
 
 See
-  '/home/kingaa/projects/Rpkg/subplex/revdep/hisse.Rcheck/00check.log'
+  '/userdata/kingaa/projects/Rpkg/subplex/revdep/hisse.Rcheck/00check.log'
 for details.
-
 

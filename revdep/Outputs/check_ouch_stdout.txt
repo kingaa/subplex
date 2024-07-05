@@ -1,11 +1,15 @@
-* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/ouch.Rcheck'
-* using R version 4.2.2 (2022-10-31)
-* using platform: x86_64-pc-linux-gnu (64-bit)
+* using log directory '/userdata/kingaa/projects/Rpkg/subplex/revdep/ouch.Rcheck'
+* using R version 4.4.1 (2024-06-14)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+    GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+* running under: Ubuntu 22.04.4 LTS
 * using session charset: UTF-8
 * using option '--as-cran'
 * checking for file 'ouch/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'ouch' version '2.18'
+* this is package 'ouch' version '2.20'
 * package encoding: UTF-8
 * checking package namespace information ... OK
 * checking package dependencies ... OK
@@ -16,6 +20,7 @@
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package 'ouch' can be installed ... OK
+* used C compiler: 'gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
@@ -24,7 +29,7 @@
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
-* checking R files for non-ASCII characters ... OK
+* checking code files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
 * checking whether the package can be loaded with stated dependencies ... OK
@@ -55,15 +60,11 @@
 * checking pragmas in C/C++ headers and code ... OK
 * checking compilation flags used ... OK
 * checking compiled code ... OK
-* checking examples ... [3249s/492s] OK
-Examples with CPU (user + system) or elapsed time > 5s
-              user   system elapsed
-geospiza   580.357 1387.342 321.486
-hansen     256.664  644.555 111.236
-bimac       58.557  124.556  28.622
-brown       39.934   84.693  19.355
-anolis_ssd  20.660   41.948   9.815
+* checking installed files from 'inst/doc' ... OK
+* checking examples ... OK
+** found \donttest examples: check also with --run-donttest
 * checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE

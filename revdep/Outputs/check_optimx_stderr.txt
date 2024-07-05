@@ -1,20 +1,14 @@
+  Running ‘argclash.R’
   Running ‘bdstest.R’
-  Running ‘hobbs.R’
-  Running ‘jonesrun.R’
+  Running ‘exrosen.R’
   Running ‘maxfn.R’
-  Running ‘rosenbrock.R’
+  Running ‘maxtest.R’
   Running ‘run1param.R’
-  Running ‘simplefuntst.R’
-  Running ‘snsimple.R’
-  Running ‘snwood.R’
-  Running ‘ssqbtest.R’
   Running ‘tfnchk.R’
   Running ‘tgrchk.R’
   Running ‘tkktc.R’
-  Running ‘trig1507.R’
 
 See
-  '/home/kingaa/projects/Rpkg/subplex/revdep/optimx.Rcheck/00check.log'
+  '/userdata/kingaa/projects/Rpkg/subplex/revdep/optimx.Rcheck/00check.log'
 for details.
-
 

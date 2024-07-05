@@ -1,11 +1,15 @@
-* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/geiger.Rcheck'
-* using R version 4.2.2 (2022-10-31)
-* using platform: x86_64-pc-linux-gnu (64-bit)
+* using log directory '/userdata/kingaa/projects/Rpkg/subplex/revdep/geiger.Rcheck'
+* using R version 4.4.1 (2024-06-14)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+    GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+* running under: Ubuntu 22.04.4 LTS
 * using session charset: UTF-8
 * using option '--as-cran'
 * checking for file 'geiger/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'geiger' version '2.0.10'
+* this is package 'geiger' version '2.0.11'
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -15,7 +19,9 @@
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
-* checking whether package 'geiger' can be installed ... [45s/53s] OK
+* checking whether package 'geiger' can be installed ... [54s/35s] OK
+* used C compiler: 'gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
+* used C++ compiler: 'g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
@@ -24,7 +30,7 @@
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
-* checking R files for non-ASCII characters ... OK
+* checking code files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
 * checking whether the package can be loaded with stated dependencies ... OK
@@ -37,7 +43,7 @@
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [59s/92s] NOTE
+* checking R code for possible problems ... [85s/37s] NOTE
 .adjustjump: local variable ‘fdesc’ assigned but may not be used
 .adjustjump: local variable ‘origjumps’ assigned but may not be used
 .adjustshift: local variable ‘root.des’ assigned but may not be used
@@ -168,7 +174,38 @@ rjmcmc.bm: local variable ‘lnLikelihoodRatio’ assigned but may not be
   used
 stem.limits: local variable ‘alpha’ assigned but may not be used
 write.pathd8: local variable ‘taxon’ assigned but may not be used
-* checking Rd files ... OK
+* checking Rd files ... NOTE
+checkRd: (-1) bd.ms.Rd:47: Lost braces in \itemize; \value handles \item{}{} directly
+checkRd: (-1) bd.ms.Rd:48: Lost braces in \itemize; \value handles \item{}{} directly
+checkRd: (-1) bd.ms.Rd:49-50: Lost braces in \itemize; \value handles \item{}{} directly
+checkRd: (-1) bd.ms.Rd:51-52: Lost braces in \itemize; \value handles \item{}{} directly
+checkRd: (-1) dtt.Rd:30: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) dtt.Rd:31: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) dtt.Rd:32-33: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) dtt.Rd:43: Lost braces in \itemize; \value handles \item{}{} directly
+checkRd: (-1) dtt.Rd:44: Lost braces in \itemize; \value handles \item{}{} directly
+checkRd: (-1) dtt.Rd:45: Lost braces in \itemize; \value handles \item{}{} directly
+checkRd: (-1) dtt.Rd:46: Lost braces in \itemize; \value handles \item{}{} directly
+checkRd: (-1) fitContinuous.Rd:49-51: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitContinuous.Rd:52-54: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitContinuous.Rd:55-57: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitContinuous.Rd:58: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitContinuous.Rd:59-61: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitContinuous.Rd:62-64: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitContinuous.Rd:65-67: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitContinuous.Rd:68: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitContinuous.Rd:69-70: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:40: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:41: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:42: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:43-44: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:45: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:54: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:55-57: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:58-60: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:61-63: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:64-66: Lost braces in \itemize; meant \describe ?
+checkRd: (-1) fitDiscrete.Rd:67: Lost braces in \itemize; meant \describe ?
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
 * checking Rd cross-references ... OK
@@ -190,11 +227,11 @@ write.pathd8: local variable ‘taxon’ assigned but may not be used
 * checking pragmas in C/C++ headers and code ... OK
 * checking compilation flags used ... OK
 * checking compiled code ... OK
-* checking examples ... [8s/14s] OK
+* checking examples ... [12s/11s] OK
 ** found \donttest examples: check also with --run-donttest
 * checking PDF version of manual ... OK
 * checking HTML version of manual ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 NOTE
+Status: 2 NOTEs

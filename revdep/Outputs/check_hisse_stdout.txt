@@ -1,6 +1,10 @@
-* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/hisse.Rcheck'
-* using R version 4.2.2 (2022-10-31)
-* using platform: x86_64-pc-linux-gnu (64-bit)
+* using log directory '/userdata/kingaa/projects/Rpkg/subplex/revdep/hisse.Rcheck'
+* using R version 4.4.1 (2024-06-14)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+    GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+* running under: Ubuntu 22.04.4 LTS
 * using session charset: UTF-8
 * using option '--as-cran'
 * checking for file 'hisse/DESCRIPTION' ... OK
@@ -14,7 +18,8 @@
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
-* checking whether package 'hisse' can be installed ... [57s/72s] OK
+* checking whether package 'hisse' can be installed ... [67s/43s] OK
+* used C compiler: 'gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
@@ -24,7 +29,7 @@
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
-* checking R files for non-ASCII characters ... OK
+* checking code files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
 * checking whether the package can be loaded with stated dependencies ... OK
@@ -37,7 +42,7 @@
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [97s/176s] NOTE
+* checking R code for possible problems ... [104s/71s] NOTE
 AdaptiveConfidenceIntervalSampling.old: local variable ‘actual.params’
   assigned but may not be used
 AdaptiveConfidenceIntervalSamplingGeoHiSSE: local variable
@@ -126,7 +131,13 @@ plotFanHiSSE: local variable ‘ptreeB’ assigned but may not be used
 plotPhylogramHiSSE: local variable ‘ptreeB’ assigned but may not be
   used
 plotSimmapHiSSE: local variable ‘set.null’ assigned but may not be used
-* checking Rd files ... OK
+* checking Rd files ... NOTE
+checkRd: (-1) generateMiSSEGreedyCombinations.Rd:25: Lost braces
+    25 | Estimating extinction rates is hard. This affects all diversification models (even if all you want and look at is speciation rate, extinction rate estimates still affect what this is as they affect the likelihood). It is most noticeable in MiSSE with eps, the extinction fraction (extinction rate divided by speciation rate). One option, following Magallon & Sanderson (2001), is to set extinction fraction at set values. By default, we use theirs, 0 (meaning a Yule model - no extinction) or 0.9 (a lot of extinction, though still less than paleontoligists find). You can set your own in \code{fixed.eps.tries}. If you only want to use fixed values, and not estimate, get rid of the NA, as well. However, don't \dQuote{cheat} -- if you use a range of values for fixed.eps, it's basically doing a search for this, though the default AICc calculation doesn't dQuote{know} this to penalize it for another parameter.
+       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ^
+checkRd: (-1) generateMiSSEGreedyCombinations.Rd:27: Lost braces
+    27 | HiSSE and thus MiSSE assume that a taxon has a particular hidden state (though they recognize that there can be uncertainty in which state it actually has). Thus, they're written to assume that we dQuote{paint} these states on the tree and a given state affects both turnover and eps. So if turnover has four hidden states, eps has four hidden states. They can be constrained: the easiest way is to have, say, turnover having an independent rate for each hidden state and eps having the same rate for all the hidden states. If \code{vary.both} is set to FALSE, all models are of this sort: if turnover varies, eps is constant across all hidden states, or vice versa. Jeremy Beaulieu prefers this. If \code{vary.both} is set to TRUE, both can vary: for example, there could be five hidden states for both turnover and eps, but turnover lets each of these have a different rate, but eps only allows three values (so that eps_A and eps_D might be forced to be equal, and eps_B and eps_E might be forced to be equal). Brian O'Meara would consider allowing this, while cautioning you about the risks of too many parameters.
+       |                                                                                                                                                                                                            ^
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
 * checking Rd cross-references ... OK
@@ -154,11 +165,11 @@ plotSimmapHiSSE: local variable ‘set.null’ assigned but may not be used
 * checking tests ...
  OK
 * checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in 'inst/doc' ... OK
-* checking re-building of vignette outputs ... [76s/114s] OK
+* checking package vignettes ... OK
+* checking re-building of vignette outputs ... [126s/94s] OK
 * checking PDF version of manual ... OK
 * checking HTML version of manual ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 NOTE
+Status: 2 NOTEs

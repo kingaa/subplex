@@ -1,7 +1,6 @@
-  Running ‘testthat.R’ [487s/159s]
+  Running ‘testthat.R’ [730s/44s]
 
 See
-  '/home/kingaa/projects/Rpkg/subplex/revdep/DDD.Rcheck/00check.log'
+  '/userdata/kingaa/projects/Rpkg/subplex/revdep/DDD.Rcheck/00check.log'
 for details.
-
 

@@ -1,6 +1,5 @@
 
 See
-  '/home/kingaa/projects/Rpkg/subplex/revdep/diversitree.Rcheck/00check.log'
+  '/userdata/kingaa/projects/Rpkg/subplex/revdep/diversitree.Rcheck/00check.log'
 for details.
-
 

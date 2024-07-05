@@ -1,7 +1,10 @@
   Running ‘ripple.R’
   Comparing ‘ripple.Rout’ to ‘ripple.Rout.save’ ... OK
-  Running ‘rosen.R’ [25s/35s]
+  Running ‘rosen.R’ [18s/14s]
   Comparing ‘rosen.Rout’ to ‘rosen.Rout.save’ ... OK
   Running ‘tinytest.R’
 
+See
+  '/userdata/kingaa/projects/Rpkg/subplex/revdep/subplex.Rcheck/00check.log'
+for details.
 

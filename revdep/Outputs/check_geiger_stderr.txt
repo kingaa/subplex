@@ -1,6 +1,5 @@
 
 See
-  '/home/kingaa/projects/Rpkg/subplex/revdep/geiger.Rcheck/00check.log'
+  '/userdata/kingaa/projects/Rpkg/subplex/revdep/geiger.Rcheck/00check.log'
 for details.
-
 

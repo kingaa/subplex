@@ -1,21 +1,26 @@
-* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/DAISIE.Rcheck'
-* using R version 4.2.2 (2022-10-31)
-* using platform: x86_64-pc-linux-gnu (64-bit)
+* using log directory '/userdata/kingaa/projects/Rpkg/subplex/revdep/DAISIE.Rcheck'
+* using R version 4.4.1 (2024-06-14)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+    GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+* running under: Ubuntu 22.04.4 LTS
 * using session charset: UTF-8
 * using option '--as-cran'
 * checking for file 'DAISIE/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'DAISIE' version '4.2.0'
+* this is package 'DAISIE' version '4.4.1'
 * package encoding: UTF-8
 * checking package namespace information ... OK
-* checking package dependencies ... OK
+* checking package dependencies ... NOTE
+Package which this enhances but not available for checking: 'doMC'
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
-* checking whether package 'DAISIE' can be installed ... [109s/132s] WARNING
+* checking whether package 'DAISIE' can be installed ... [115s/101s] WARNING
 Found the following significant warnings:
   Warning: Nonconforming tab character at (1) [-Wtabs]
   Warning: Unused variable ‘msg’ declared at (1) [-Wunused-variable]
@@ -23,11 +28,16 @@ Found the following significant warnings:
   Warning: Unused dummy argument ‘t’ at (1) [-Wunused-dummy-argument]
   Warning: Unused variable ‘ff1’ declared at (1) [-Wunused-variable]
   Warning: Unused variable ‘fff’ declared at (1) [-Wunused-variable]
-See '/home/kingaa/projects/Rpkg/subplex/revdep/DAISIE.Rcheck/00install.out' for details.
+See '/userdata/kingaa/projects/Rpkg/subplex/revdep/DAISIE.Rcheck/00install.out' for details.
+* used C compiler: 'gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
+* used Fortran compiler: 'GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
+* used C++ compiler: 'g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
+* checking C++ specification ... OK
+  Not all R platforms support C++17
 * checking installed package size ... NOTE
-  installed size is 37.3Mb
+  installed size is 42.7Mb
   sub-directories of 1Mb or more:
-    libs  35.3Mb
+    libs  40.6Mb
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking 'build' directory ... OK
@@ -36,7 +46,7 @@ See '/home/kingaa/projects/Rpkg/subplex/revdep/DAISIE.Rcheck/00install.out' for 
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
-* checking R files for non-ASCII characters ... OK
+* checking code files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
 * checking whether the package can be loaded with stated dependencies ... OK
@@ -49,16 +59,19 @@ See '/home/kingaa/projects/Rpkg/subplex/revdep/DAISIE.Rcheck/00install.out' for 
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [38s/68s] NOTE
+* checking R code for possible problems ... [60s/31s] NOTE
 DAISIE_IW_pars: local variable ‘Kprime’ assigned but may not be used
 DAISIE_IW_pars: local variable ‘ddep’ assigned but may not be used
 DAISIE_KLdist: local variable ‘tp’ assigned but may not be used
 DAISIE_ML1: local variable ‘max_idpars’ assigned but may not be used
+DAISIE_ML4: local variable ‘optstr’ assigned but may not be used
 DAISIE_SR_loglik: local variable ‘abstol’ assigned but may not be used
 DAISIE_SR_loglik: local variable ‘reltol’ assigned but may not be used
 DAISIE_SR_loglik_CS_M1: local variable ‘abstol’ assigned but may not be
   used
 DAISIE_SR_loglik_CS_M1: local variable ‘reltol’ assigned but may not be
+  used
+DAISIE_count_species: local variable ‘time’ assigned but may not be
   used
 DAISIE_extract_stt_median: local variable ‘time’ assigned but may not
   be used
@@ -92,14 +105,6 @@ DAISIE_plot_input: local variable ‘geom_point_’ assigned but may not be
   used
 DAISIE_plot_pc_rates: local variable ‘sims_plot’ assigned but may not
   be used
-DAISIE_sim_core_trait_dep: local variable ‘num_immigrants_trait1’
-  assigned but may not be used
-DAISIE_sim_core_trait_dep: local variable ‘num_immigrants_trait2’
-  assigned but may not be used
-DAISIE_sim_core_trait_dep: local variable ‘num_spec_trait1’ assigned
-  but may not be used
-DAISIE_sim_core_trait_dep: local variable ‘num_spec_trait2’ assigned
-  but may not be used
 add_brt_table: local variable ‘brts’ assigned but may not be used
 countspecies: local variable ‘N’ assigned but may not be used
 countspeciestype1: local variable ‘N1’ assigned but may not be used
@@ -124,26 +129,29 @@ shift_before_certain_brts: local variable ‘oldest_endemic’ assigned but
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking compilation flags in Makevars ... OK
+* checking for GNU extensions in Makefiles ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking use of PKG_*FLAGS in Makefiles ... OK
+* checking use of SHLIB_OPENMP_*FLAGS in Makefiles ... OK
 * checking pragmas in C/C++ headers and code ... OK
 * checking compilation flags used ... OK
 * checking compiled code ... OK
+* checking usage of KIND in Fortran files ... OK
 * checking installed files from 'inst/doc' ... OK
 * checking files in 'vignettes' ... OK
-* checking examples ... [33s/52s] OK
-Examples with CPU (user + system) or elapsed time > 5s
-                   user system elapsed
-DAISIE_sim        4.796  0.031   5.737
-DAISIE_plot_input 3.896  0.100   6.093
-DAISIE_SR_sim     3.318  0.005   6.003
-DAISIE_numcol     2.677  0.022   5.385
+* checking examples ... [20s/17s] OK
+** found \donttest examples: check also with --run-donttest
 * checking for unstated dependencies in 'tests' ... OK
 * checking tests ...
- [105s/115s] OK
+ [93s/87s] OK
 * checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in 'inst/doc' ... OK
-* checking re-building of vignette outputs ... [64s/63s] OK
-* checking PDF version of manual ... OK
+* checking package vignettes ... OK
+* checking re-building of vignette outputs ... [85s/68s] OK
+* checking PDF version of manual ... [14s/24s] OK
+* checking HTML version of manual ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 WARNING, 2 NOTEs
+Status: 1 WARNING, 3 NOTEs

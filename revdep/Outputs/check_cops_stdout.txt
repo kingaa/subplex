@@ -1,10 +1,14 @@
-* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/cops.Rcheck'
-* using R version 4.2.2 (2022-10-31)
-* using platform: x86_64-pc-linux-gnu (64-bit)
+* using log directory '/userdata/kingaa/projects/Rpkg/subplex/revdep/cops.Rcheck'
+* using R version 4.4.1 (2024-06-14)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+    GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+* running under: Ubuntu 22.04.4 LTS
 * using session charset: UTF-8
 * using option '--as-cran'
 * checking for file 'cops/DESCRIPTION' ... OK
-* this is package 'cops' version '1.3-1'
+* this is package 'cops' version '1.11-3'
 * package encoding: UTF-8
 * checking package namespace information ... OK
 * checking package dependencies ... OK
@@ -14,8 +18,10 @@
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
-* checking serialization versions ... OK
-* checking whether package 'cops' can be installed ... [19s/19s] OK
+* checking whether package 'cops' can be installed ... [37s/20s] WARNING
+Found the following significant warnings:
+  Warning: 'rgl.init' failed, running with 'rgl.useNULL = TRUE'.
+See '/userdata/kingaa/projects/Rpkg/subplex/revdep/cops.Rcheck/00install.out' for details.
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
@@ -25,7 +31,7 @@
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
-* checking R files for non-ASCII characters ... OK
+* checking code files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
 * checking whether the package can be loaded with stated dependencies ... OK
@@ -38,26 +44,18 @@
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [34s/42s] NOTE
-conf_adjust: local variable ‘bb’ assigned but may not be used
-conf_adjust: local variable ‘cc’ assigned but may not be used
-conf_adjust: local variable ‘metric’ assigned but may not be used
+* checking R code for possible problems ... [68s/27s] NOTE
+copStressMin: local variable ‘typo’ assigned but may not be used
+cop_powermds: local variable ‘nu’ assigned but may not be used
+copsc: local variable ‘typo’ assigned but may not be used
 copstress: local variable ‘maxstruc’ assigned but may not be used
-copstressMin: local variable ‘plot’ assigned but may not be used
-copstressMin: local variable ‘weightmato’ assigned but may not be used
+copstressMin: local variable ‘typo’ assigned but may not be used
 ljoptim: local variable ‘n’ assigned but may not be used
-powerStressFast: local variable ‘deltam’ assigned but may not be used
-powerStressFast: local variable ‘deltaoldm’ assigned but may not be
-  used
-powerStressFast: local variable ‘deltaorigm’ assigned but may not be
-  used
-powerStressFast: local variable ‘weightmato’ assigned but may not be
-  used
-powerStressMin: local variable ‘deltam’ assigned but may not be used
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
-* checking Rd cross-references ... OK
+* checking Rd cross-references ... NOTE
+Package unavailable to check Rd xrefs: ‘stops’
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
@@ -69,13 +67,18 @@ powerStressMin: local variable ‘deltam’ assigned but may not be used
 * checking data for ASCII and uncompressed saves ... OK
 * checking installed files from 'inst/doc' ... OK
 * checking files in 'vignettes' ... OK
-* checking examples ... [18s/23s] OK
+* checking examples ... [33s/17s] OK
+Examples with CPU (user + system) or elapsed time > 5s
+               user system elapsed
+jackmds.pcops 2.186  6.995   0.650
+plot.pcops    1.372  5.189   0.682
 ** found \donttest examples: check also with --run-donttest
 * checking for unstated dependencies in vignettes ... OK
-* checking package vignettes in 'inst/doc' ... OK
+* checking package vignettes ... OK
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 NOTE
+Status: 1 WARNING, 2 NOTEs

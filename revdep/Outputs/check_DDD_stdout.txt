@@ -1,11 +1,15 @@
-* using log directory '/home/kingaa/projects/Rpkg/subplex/revdep/DDD.Rcheck'
-* using R version 4.2.2 (2022-10-31)
-* using platform: x86_64-pc-linux-gnu (64-bit)
+* using log directory '/userdata/kingaa/projects/Rpkg/subplex/revdep/DDD.Rcheck'
+* using R version 4.4.1 (2024-06-14)
+* using platform: x86_64-pc-linux-gnu
+* R was compiled by
+    gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+    GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+* running under: Ubuntu 22.04.4 LTS
 * using session charset: UTF-8
 * using option '--as-cran'
 * checking for file 'DDD/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'DDD' version '5.2.1'
+* this is package 'DDD' version '5.2.2'
 * package encoding: UTF-8
 * checking package namespace information ... OK
 * checking package dependencies ... OK
@@ -15,11 +19,12 @@
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
-* checking whether package 'DDD' can be installed ... [105s/152s] OK
+* checking whether package 'DDD' can be installed ... [95s/72s] OK
+* used C++ compiler: 'g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0'
 * checking installed package size ... NOTE
-  installed size is 16.9Mb
+  installed size is 11.6Mb
   sub-directories of 1Mb or more:
-    libs  16.4Mb
+    libs  11.1Mb
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... OK
@@ -27,7 +32,7 @@
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
-* checking R files for non-ASCII characters ... OK
+* checking code files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
 * checking whether the package can be loaded with stated dependencies ... OK
@@ -40,7 +45,7 @@
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [30s/40s] NOTE
+* checking R code for possible problems ... [69s/18s] NOTE
 L2brts: local variable ‘daughter’ assigned but may not be used
 L2phylo: local variable ‘daughter’ assigned but may not be used
 bd_loglik: local variable ‘abstol’ assigned but may not be used
@@ -73,17 +78,16 @@ td_loglik_rhs_sim: local variable ‘lrs’ assigned but may not be used
 * checking pragmas in C/C++ headers and code ... OK
 * checking compilation flags used ... OK
 * checking compiled code ... OK
-* checking examples ... [67s/24s] OK
+* checking examples ... OK
 Examples with CPU (user + system) or elapsed time > 5s
               user system elapsed
-dd_SR_loglik 7.631 16.573   5.332
-dd_loglik    5.811 12.836   4.175
-dd_ML        2.536  5.388   3.282
-dd_SR_ML     1.669  4.517   1.365
+dd_loglik    3.425 14.566   0.490
+dd_SR_loglik 3.162 13.632   0.449
 * checking for unstated dependencies in 'tests' ... OK
 * checking tests ...
- [488s/160s] OK
+ [733s/45s] OK
 * checking PDF version of manual ... OK
+* checking HTML version of manual ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE

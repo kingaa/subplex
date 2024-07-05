@@ -1,0 +1,6 @@
+  Running ‘testthat.R’
+
+See
+  '/userdata/kingaa/projects/Rpkg/subplex/revdep/secsse.Rcheck/00check.log'
+for details.
+
