@@ -11,7 +11,7 @@ BugReports: https://github.com/kingaa/subplex/issues/
 Description: The subplex algorithm for unconstrained optimization, developed by Tom Rowan.
 Encoding: UTF-8
 Roxygen: list(roclets = c("collate", "namespace", "rd", "roxytest::tinytest_roclet"))
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Collate: 
     'package.R'
     'subplex.R'
